@@ -1,0 +1,32 @@
+# Local research inputs retained for audit, not part of this repository.
+/mllm-forensics-training-free/
+/server-aigc-snapshot/
+
+# Data, model weights, trajectories, and generated results.
+/data/
+/models/
+/trajectories/
+/outputs/
+/artifacts/
+*.jsonl
+*.pt
+*.pth
+*.safetensors
+
+# Python.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Editors / OS.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
