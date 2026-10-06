@@ -4,6 +4,7 @@
 
 ## 当前状态（2026-10-07）
 
+- **Actor-B0 30 图 sanity 已完成，决策待确认。** 30/30 PROBE Evidence-only、30/30 B0 推理完成；28/30 有合法最终输出，95/95 工具调用请求合法、0 重复，平均 3.17 次/图。两张失败均为 STOP 的 `final_confidence` 为空；9/30 图出现明确把 PROBE 全局偏离标成 `real`/`fake` 的归因错误。小样 balanced accuracy 0.65 仅作诊断。自动评价最初把 `inconclusive` 算作归因违规，50.4% 已撤回；原始“考虑 SFT”标签也因阈值未经确认而撤回。建议讨论 B0 原样冻结还是先结构性修复 STOP 后独立验证，不直接启动 SFT。[报告](../experiments/actor_b/baseline_b0/analysis/ACTOR_B0_BASELINE_REPORT.md)、[轨迹复核](../experiments/actor_b/baseline_b0/analysis/ACTOR_B0_AUDIT.md)。
 - **Mini FaithBench v0 停在第三轮技术小样。** 按用户最后授权，仅补强 PROBE observation / Actor inference 的归因边界和 STOP 的 `real|fake` 输出说明；固定 6 图×3 条件重跑为 18/18 最终可解析，crop 图像输入、其他工具 callable 和 PROBE 输入结论泄漏检查均正常。但人工复核发现 PROBE 偏离仍被写成真假倾向；一次原始 STOP 仍输出 `final_verdict=uncertain`，虽在下一步重试恢复。按预设门槛**不再叠加 prompt patch、不冻结 prompt、不启动正式 900 条或 SFT**。结论：Prompt-only schema adaptation is insufficient to reliably enforce evidence attribution boundaries。[本轮报告和原始轨迹](../experiments/mini_faithbench_v0/technical_sample_v3/REPORT.md)；[前轮失败](../experiments/mini_faithbench_v0/technical_sample_v2/REPORT.md)。
 - **Prompt 版本。** 旧 Actor-0 prompt material SHA-256 `a1a9dc690cec5cbc7d15eef711feffc9d7e52bf184cd707a30239d1cc429926d`；前轮 Evidence-compatible 候选 `cc128afa3e4f6ec0f0cc68509386c2668f6375f551fdc45803369746b6c8882f`；本轮**未冻结候选** `5cc7a1cd8ffda55b7d2b94b7546619944073c933ed1a064c0a2d07c0c94604f2`。完整文件与哈希记录在 `experiments/mini_faithbench_v0/config/`；三条件使用同一候选。
 - **PROBE Evidence-Only v1 已完成并冻结。** 独立 RAISE 参考集 100 图、600 patches；固定 `k=20`、percentile、top-3、crops 和 spatial pattern。300 张 eval 图形成 300 份无 classifier 结论的 Evidence Cards 与 900 张 crops；classifier 路径 300/300 与原 PROBE 对齐。[报告与验证](../experiments/probe_evidence_v1/REPORT.md)。
@@ -12,10 +13,11 @@
 
 ## 续跑位置与约束
 
-- 最近核验的 AutoDL 入口：`connect.bjb1.seetacloud.com:31805`，主机 `autodl-container-40dd41ad1f-569df20a`。AutoDL 克隆后入口可能改变；连接新实例先只读核验数据、模型、未提交改动和结果哈希。**GPU 最后核验为空闲，用户可以关卡；下次用卡先告知任务和预计时段。**
+- 最近核验的 AutoDL 入口：`connect.bjb1.seetacloud.com:31805`，主机 `autodl-container-40dd41ad1f-569df20a`。AutoDL 克隆后入口可能改变；连接新实例先只读核验数据、模型、未提交改动和结果哈希。**B0 GPU 推理已退出，GPU 最后核验为空闲，用户可以关卡；下次用卡先告知任务和预计时段。**
+- Actor-B0 远端隔离目录：`/root/autodl-tmp/actor-b0-20261007/`；30 图原始轨迹还在此目录及本地 `experiments/actor_b/baseline_b0/outputs/`（Git 忽略，不上传 GitHub）。冻结输入及运行哈希见 B0 报告。用户仅授权将这次实验的两份派生 JSONL 发往上述 AutoDL 实例，不延伸至 GitHub 或其他实例。
 - 远端 Mini FaithBench 隔离目录：`/root/autodl-tmp/mini-faithbench-v0/`；独立 Actor venv 为 `transformers==4.57.4`、`accelerate==1.10.1`，PROBE 环境未改。模型与 processor 使用上述同一 revision。三轮小样在 `technical_sample/`、`technical_sample_v2/`、`technical_sample_v3/`；`formal/` 尚无正式轨迹。
 - 本地入口：`experiments/mini_faithbench_v0/`（runner、三条件 inputs、benchmark config、prompt 与技术小样）；`experiments/probe_evidence_v1/results/output/`（Evidence v1）；`runs/actor0-bfree-20261002/`（旧 Actor-0 原始结果，忽略目录）。代码和研究文件存在未提交改动，不重置或覆盖。
-- 下一步先按新方案梳理冻结工具、Evidence Card 字段与 Actor 结构化轨迹的对应关系，明确基础 tool-use sanity check 和 FaithBench 标注口径；然后再决定是否需要轻量 Actor SFT。第三轮小样的归因失败和原始 STOP 契约失败可作为候选目标，但原先失败的 prompt 版本不因路线更新而自动冻结。本轮不启动 SFT、正式 900 条或 GPU 实验。旧实验记录保留在各报告及上述归档，历史 SSH 端口不要当作当前入口。
+- 下一步先决定 B0 版本口径：原样冻结并保留失败，或结构性修复 STOP 后在独立小样验证；同时定义 FaithBench 标注和 Monitor 错误口径。PROBE 归因错误保留为可检测的失败案例。当前不启动 SFT、正式 900 条或新 GPU 实验。旧实验记录保留在各报告及上述归档，历史 SSH 端口不要当作当前入口。
 
 ## 早期阶段索引
 
@@ -29,7 +31,9 @@
 
 ## 2026-10-07 维护记录
 
-已接收并落实 Actor-B“最小化适配、轻量 SFT、尽快冻结”执行方案的本地准备部分。新增 `experiments/actor_b/`：结构化 action schema/parser、最小中文 prompt、冻结模型与生成配置、30 图 B0 清单选择、PROBE Evidence-only dev 提取、证据合并、B0 运行与一次性评价脚本；新增 5 项协议测试。固定 B0 sanity 集来自既有 Actor dev：30 图、30 个互不重复来源组，RAISE/FLUX/SD3.5 各 10，15 个既有方向工具冲突案例和 15 个一致案例；与旧 Actor eval 和 Evidence v1 参考集来源组重叠均为 0，30/30 本地图像存在。旧 PROBE 分类输出已从 B0 输入中移除。清单 SHA-256 `455c011e8146cdccb04696bed3ad1b2c521e5424fd22d4e7edcd38e68cc8a915`；本地全套 27 项测试通过。下一步需要 RTX 4090：先对 30 图运行冻结 Evidence-only v1 提取，再运行 Actor-B0，预计合计约 25–40 分钟；得到报告前不决定 SFT，也不运行正式 900 条。
+完成用户开卡后的 B0 GPU 实验。远端模型 revision、PROBE checkpoint/参考库及 30 图清单核验通过，30/30 Evidence-only 卡片与 90 crops 提取成功；合并输入 SHA-256 `ffda7e8c15885922b3ceb510eae6bfe4eb4a296fdf0dc74aff206987778c34e9`。Actor-B0 30/30 推理完成，原始轨迹 SHA-256 `48727c6d39ee9a97265db968302b5ca0992e4f2c0143722ec72fffe04a0b62d9`。复核发现两张 STOP 字段失败、9 张明确全局证据方向性归因错误；修正指标脚本的合法调用率与归因口径，撤回误导性的 50.4% 和自动 SFT 决策。27 项本地测试通过；GPU 已空闲，可关卡。未解决：B0 冻结口径、STOP 结构修复是否需要独立验证，以及 FaithBench/Monitor 标注口径。详见 B0 报告与轨迹复核。
+
+执行前的本地准备：新增 `experiments/actor_b/`，包括结构化 action schema/parser、最小中文 prompt、冻结模型与生成配置、30 图 B0 清单选择、PROBE Evidence-only dev 提取、证据合并、B0 运行与一次性评价脚本；新增 5 项协议测试。固定 B0 sanity 集来自既有 Actor dev：30 图、30 个互不重复来源组，RAISE/FLUX/SD3.5 各 10，15 个既有方向工具冲突案例和 15 个一致案例；与旧 Actor eval 和 Evidence v1 参考集来源组重叠均为 0，30/30 本地图像存在。旧 PROBE 分类输出已从 B0 输入中移除。清单 SHA-256 `455c011e8146cdccb04696bed3ad1b2c521e5424fd22d4e7edcd38e68cc8a915`；本地全套 27 项测试通过。原定 RTX 4090 步骤已按上段完成。
 
 ## 2026-10-06 维护记录
 

@@ -13,6 +13,8 @@
 *.pt
 *.pth
 *.safetensors
+/experiments/actor_b/baseline_b0/outputs/
+/experiments/actor_b/baseline_b0/analysis/attribution_violations.json
 
 # Python.
 __pycache__/

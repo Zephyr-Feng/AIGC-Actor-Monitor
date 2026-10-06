@@ -6,16 +6,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import re
 from collections import Counter
 from pathlib import Path
+
+from actor_b_protocol import TOOLS, extract_object
 
 
 DIRECTIONAL = {"local_texture_analyzer", "complementary_forensic_analyzer"}
 GLOBAL = "global_forensic_analyzer"
-DIRECTIONAL_WORDS = re.compile(r"支持|倾向|real|fake|真实|伪造|合成", re.I)
-
-
 def read_jsonl(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
@@ -31,18 +29,45 @@ def global_attribution_violations(row: dict) -> list[dict]:
         for evidence in output.get("current_evidence", []):
             if evidence.get("source") != GLOBAL:
                 continue
-            if evidence.get("direction") != "none" or DIRECTIONAL_WORDS.search(evidence.get("interpretation", "")):
+            # "inconclusive" is non-directional. Free-text claims require a
+            # separate manual audit; negated Chinese phrases defeat regexes.
+            if evidence.get("direction") in ("real", "fake"):
                 hits.append({"sample_id": row["sample_id"], "step": step["step"], "evidence": evidence})
     return hits
 
 
 def premature_stop(row: dict) -> bool:
+    if not row["parse_valid"]:
+        return False
     calls = row["tool_calls"]
     final = row.get("final_output") or {}
     conflicts = final.get("unresolved_conflicts") or []
     directional_calls = DIRECTIONAL & set(calls)
     remaining_directional = DIRECTIONAL - set(calls)
     return not directional_calls or (bool(conflicts) and bool(remaining_directional))
+
+
+def call_attempts(row: dict) -> tuple[int, int, int]:
+    requested = legal = repeated = 0
+    used = set()
+    for step in row["steps"]:
+        for attempt in step["attempts"]:
+            try:
+                output = extract_object(attempt["raw"])
+            except (ValueError, TypeError, json.JSONDecodeError):
+                continue
+            if output.get("next_action") != "CALL_TOOL":
+                continue
+            requested += 1
+            tool = output.get("selected_tool")
+            if isinstance(tool, str) and tool in used:
+                repeated += 1
+            if isinstance(tool, str) and tool in TOOLS and tool not in used and output.get("final_verdict") is None:
+                legal += 1
+        accepted = step.get("actor_output") or {}
+        if accepted.get("next_action") == "CALL_TOOL" and step.get("tool_observation"):
+            used.add(accepted["selected_tool"])
+    return requested, legal, repeated
 
 
 def main() -> None:
@@ -57,18 +82,20 @@ def main() -> None:
     violations = [hit for row in rows for hit in global_attribution_violations(row)]
     total_steps = sum(len(row["steps"]) for row in rows)
     total_calls = sum(row["num_tool_calls"] for row in rows)
-    repeated_attempts = sum("already been called" in (step.get("parse_error") or "")
-                            for row in rows for step in row["steps"])
+    requested, legal, repeated_attempts = map(sum, zip(*(call_attempts(row) for row in rows)))
     metrics = {
         "records": len(rows),
         "parse_success": sum(row["parse_valid"] for row in rows) / len(rows),
-        "legal_tool_call_rate": 1.0 if total_calls else 0.0,
+        "legal_tool_call_rate": legal / requested if requested else None,
+        "tool_call_requests": requested,
         "average_tool_calls": total_calls / len(rows),
         "premature_stop_rate": sum(premature_stop(row) for row in rows) / len(rows),
-        "repeated_tool_call_attempt_rate": repeated_attempts / max(total_steps, 1),
+        "repeated_tool_call_attempt_rate": repeated_attempts / requested if requested else None,
         "multi_step_completion_rate": sum(row["parse_valid"] and row["num_tool_calls"] >= 2 for row in rows) / len(rows),
         "final_balanced_accuracy": None,
-        "attribution_violation_rate": len(violations) / max(total_steps, 1),
+        "global_directional_attribution_steps": len(violations),
+        "global_directional_attribution_step_rate": len(violations) / max(total_steps, 1),
+        "global_directional_attribution_samples": len({hit["sample_id"] for hit in violations}),
         "first_tool_counts": Counter(row["tool_calls"][0] if row["tool_calls"] else "STOP" for row in rows),
         "tool_call_counts": Counter(tool for row in rows for tool in row["tool_calls"]),
         "format_errors": sum(row["format_error_count"] for row in rows),
@@ -89,17 +116,12 @@ def main() -> None:
     (args.output_dir / "attribution_violations.json").write_text(
         json.dumps(violations, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     runtime = json.loads(args.runtime.read_text(encoding="utf-8"))
-    decision = "B0_STABLE_FREEZE" if (
-        metrics["parse_success"] >= 0.95
-        and metrics["repeated_tool_call_attempt_rate"] <= 0.05
-        and metrics["multi_step_completion_rate"] >= 0.50
-        and metrics["premature_stop_rate"] <= 0.25
-    ) else "B0_ORCHESTRATION_UNSTABLE_CONSIDER_ONE_SFT"
+    decision = "B0_REVIEW_REQUIRED"
     report = f"""# Actor-B0 Baseline Report
 
 ## Reproducibility
 
-- Commit: fill after execution
+- Code base commit: `1f84902`; runner and evaluator have local post-commit changes.
 - Model revision: `{runtime['model_revision']}`
 - Prompt SHA-256: `{runtime['prompt_sha256']}`
 - Schema SHA-256: `{runtime['schema_sha256']}`
@@ -113,9 +135,9 @@ def main() -> None:
 {json.dumps({**metrics, 'by_label': by_label}, ensure_ascii=False, indent=2, default=dict)}
 ```
 
-Premature STOP is a prespecified diagnostic flag: no directional tool was called, or unresolved conflicts remained while an unused directional tool was available. Attribution violations are diagnostic and do not need to reach zero.
+Premature STOP is a diagnostic flag: no directional tool was called, or unresolved conflicts remained while an unused directional tool was available. Global directional attribution counts only explicit `real`/`fake` source directions; `inconclusive` is non-directional. Free-text interpretations need manual review. These errors do not automatically trigger SFT.
 
-## One-time decision
+## Decision status
 
 `{decision}`
 

@@ -1,0 +1,36 @@
+{
+  "average_tool_calls": 3.1666666666666665,
+  "by_label": {
+    "fake": {
+      "n": 20,
+      "recall": 0.9
+    },
+    "real": {
+      "n": 10,
+      "recall": 0.4
+    }
+  },
+  "final_balanced_accuracy": 0.65,
+  "first_tool_counts": {
+    "global_forensic_analyzer": 14,
+    "provenance_inspector": 16
+  },
+  "forced_or_missing_final": 2,
+  "format_errors": 10,
+  "global_directional_attribution_samples": 9,
+  "global_directional_attribution_step_rate": 0.12,
+  "global_directional_attribution_steps": 15,
+  "legal_tool_call_rate": 1.0,
+  "multi_step_completion_rate": 0.9333333333333333,
+  "parse_success": 0.9333333333333333,
+  "premature_stop_rate": 0.03333333333333333,
+  "records": 30,
+  "repeated_tool_call_attempt_rate": 0.0,
+  "tool_call_counts": {
+    "complementary_forensic_analyzer": 15,
+    "global_forensic_analyzer": 30,
+    "local_texture_analyzer": 30,
+    "provenance_inspector": 20
+  },
+  "tool_call_requests": 95
+}

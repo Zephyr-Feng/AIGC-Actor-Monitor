@@ -122,6 +122,7 @@ def main() -> None:
         with Image.open(image_path) as source:
             image = source.convert("RGB")
         initial = ("工具定义：\n" + json.dumps(cards, ensure_ascii=False, sort_keys=True) +
+                   "\n\n每一步的 JSON schema：\n" + json.dumps(schema, ensure_ascii=False, sort_keys=True) +
                    "\n\n请观察原图，根据 schema 输出第一个动作。工具结果只能通过 CALL_TOOL 获得。")
         messages = [{"role": "system", "content": prompt},
                     {"role": "user", "content": [{"type": "image", "image": image},

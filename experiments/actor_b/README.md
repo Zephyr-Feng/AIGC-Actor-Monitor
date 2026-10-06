@@ -10,5 +10,5 @@
 4. `run_b0.py` 在同一 RTX 4090 上运行 prompt-only Structured Actor-B0。
 5. `evaluate_b0.py` 生成固定指标和 `ACTOR_B0_BASELINE_REPORT.md`，只做一次是否需要 SFT 的判断。
 
-本阶段不运行 900 条正式实验，不训练 Actor，不开发 Monitor。若 B0 达到稳定门槛，直接冻结；否则只进入一次最小 LoRA/QLoRA SFT。
+本阶段不运行 900 条正式实验，不训练 Actor，不开发 Monitor。B0 的编排结果先经轨迹审计，再决定是否冻结或进入一次最小 LoRA/QLoRA SFT；格式错误本身不作为 SFT 的充分理由。30 图运行结果与审计见 [B0 报告](baseline_b0/analysis/ACTOR_B0_BASELINE_REPORT.md)和[人工复核](baseline_b0/analysis/ACTOR_B0_AUDIT.md)。原始轨迹只保存在本地与获授权的 AutoDL 实例，不上传 GitHub。
 
