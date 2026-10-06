@@ -29,6 +29,8 @@
 
 ## 2026-10-06 维护记录
 
+已将现行方案、历史快照、项目源码、测试、实验脚本、配置及小体积分析摘要共 252 个文件提交并推送到 GitHub `Zephyr-Feng/AIGC-Actor-Monitor` 的 `main` 分支，提交 `69ab505`。本地 22 项单元测试通过，远端分支更新成功。原始图像、模型权重、下载缓存、第三方仓库和大体积实验产物仍留在本地，不属于本次 GitHub 归档；后续若需共享数据或完整轨迹，先核对来源许可、体积和匿名化要求。研究进度本身未因归档而推进，下一步仍是按新方案核对工具、Evidence Card、Actor 轨迹和 FaithBench 标注协议。
+
 用户明确将项目主方案更新为 Evidence-Grounded Actor–Monitor Framework。已将贴出的原文逐字复制为现行主方案，并将此前 MVP v2 保存为历史快照；同步 README、文档导航和本页的研究主线。核对新文件与用户附件 SHA-256 一致，旧方案快照已保存。旧实验结果及未提交代码未改；新方案中引用的外部论文、具体工具组合、FaithBench 标注规则与 Monitor 评价协议尚未独立核验或冻结。下一步从协议梳理和复用核对开始，不直接启动采集或训练。
 
 按用户授权完成最后一轮两处 prompt 归因/STOP 契约说明修复并重跑原 18 条。工程检查 18/18 最终可解析、0 非法 callable、crop 像素一致、输入 classifier 结论泄漏 0；人工检查仍发现 PROBE 方向性归因，且一次原始 STOP 的 `final_verdict=uncertain` 被 parser 拒绝后才恢复。候选 SHA 和全部原始轨迹已归档；未改 Evidence、工具、parser 或 Actor 取证策略。门槛失败，正式采集与 SFT 均未启动；GPU 推理进程退出，可关卡。详细见[第三轮小样](../experiments/mini_faithbench_v0/technical_sample_v3/REPORT.md)。本页先前压缩前版本仍在[归档](archive/PROJECT_PROGRESS_20261006_precompact.md)，SHA-256 `4d70b710b77029a4e99748679da416061449e55521208798dd502c1848797c82`。
