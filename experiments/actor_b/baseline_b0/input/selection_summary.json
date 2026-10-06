@@ -1,0 +1,20 @@
+{
+  "directional_conflict_count": 15,
+  "generator_counts": {
+    "flux": 10,
+    "raise": 10,
+    "sd3_5": 10
+  },
+  "images": 30,
+  "label_counts": {
+    "fake": 20,
+    "real": 10
+  },
+  "manifest_sha256": "455c011e8146cdccb04696bed3ad1b2c521e5424fd22d4e7edcd38e68cc8a915",
+  "nonprobe_tools_sha256": "9bc999a0f88e10a2dbc82ea490be0b783175b2ca912b0251a4869373d2e53f76",
+  "note": "PROBE classifier observations were removed. Frozen Evidence-only cards must be generated separately.",
+  "selection": "30 Actor-0 development images; unique source groups; 5 conflict and 5 agreement cases per generator",
+  "source_groups": 30,
+  "source_manifest_sha256": "b5529fc7f4abc2c0f2a279133c69258027f3a8c218199b53b1ce9c6ea92ebb84",
+  "source_tool_results_sha256": "72fb6c9e2e6a63928f3a60cc623d56bede3c02e3bbd1036af1e25cbddfcba464"
+}

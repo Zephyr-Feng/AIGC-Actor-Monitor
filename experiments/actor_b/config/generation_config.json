@@ -1,0 +1,10 @@
+{
+  "seed": 20261006,
+  "max_actor_steps": 6,
+  "max_tool_calls": 4,
+  "max_format_repairs_per_step": 1,
+  "max_new_tokens": 768,
+  "do_sample": false,
+  "repetition_penalty": 1.05
+}
+

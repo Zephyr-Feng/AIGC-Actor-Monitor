@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Actor-B action",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "current_evidence",
+    "unresolved_conflicts",
+    "evidence_gap",
+    "next_action",
+    "selected_tool",
+    "action_reason",
+    "final_verdict",
+    "final_confidence"
+  ],
+  "properties": {
+    "current_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "observation", "interpretation", "direction"],
+        "properties": {
+          "source": {"enum": ["visual", "global_forensic_analyzer", "local_texture_analyzer", "complementary_forensic_analyzer", "provenance_inspector"]},
+          "observation": {"type": "string"},
+          "interpretation": {"type": "string"},
+          "direction": {"enum": ["none", "real", "fake", "inconclusive"]}
+        }
+      }
+    },
+    "unresolved_conflicts": {"type": "array", "items": {"type": "string"}},
+    "evidence_gap": {"type": "string"},
+    "next_action": {"enum": ["CALL_TOOL", "STOP"]},
+    "selected_tool": {"type": ["string", "null"], "enum": [null, "global_forensic_analyzer", "local_texture_analyzer", "complementary_forensic_analyzer", "provenance_inspector"]},
+    "action_reason": {"type": "string"},
+    "final_verdict": {"type": ["string", "null"], "enum": [null, "real", "fake"]},
+    "final_confidence": {"type": ["string", "null"], "enum": [null, "low", "moderate", "high"]}
+  }
+}
+

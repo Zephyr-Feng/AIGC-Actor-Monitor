@@ -29,6 +29,8 @@
 
 ## 2026-10-06 维护记录
 
+已接收并落实 Actor-B“最小化适配、轻量 SFT、尽快冻结”执行方案的本地准备部分。新增 `experiments/actor_b/`：结构化 action schema/parser、最小中文 prompt、冻结模型与生成配置、30 图 B0 清单选择、PROBE Evidence-only dev 提取、证据合并、B0 运行与一次性评价脚本；新增 5 项协议测试。固定 B0 sanity 集来自既有 Actor dev：30 图、30 个互不重复来源组，RAISE/FLUX/SD3.5 各 10，15 个既有方向工具冲突案例和 15 个一致案例；与旧 Actor eval 和 Evidence v1 参考集来源组重叠均为 0，30/30 本地图像存在。旧 PROBE 分类输出已从 B0 输入中移除。清单 SHA-256 `455c011e8146cdccb04696bed3ad1b2c521e5424fd22d4e7edcd38e68cc8a915`；本地全套 27 项测试通过。下一步需要 RTX 4090：先对 30 图运行冻结 Evidence-only v1 提取，再运行 Actor-B0，预计合计约 25–40 分钟；得到报告前不决定 SFT，也不运行正式 900 条。
+
 已将现行方案、历史快照、项目源码、测试、实验脚本、配置及小体积分析摘要共 252 个文件提交并推送到 GitHub `Zephyr-Feng/AIGC-Actor-Monitor` 的 `main` 分支，提交 `69ab505`。本地 22 项单元测试通过，远端分支更新成功。原始图像、模型权重、下载缓存、第三方仓库和大体积实验产物仍留在本地，不属于本次 GitHub 归档；后续若需共享数据或完整轨迹，先核对来源许可、体积和匿名化要求。研究进度本身未因归档而推进，下一步仍是按新方案核对工具、Evidence Card、Actor 轨迹和 FaithBench 标注协议。
 
 用户明确将项目主方案更新为 Evidence-Grounded Actor–Monitor Framework。已将贴出的原文逐字复制为现行主方案，并将此前 MVP v2 保存为历史快照；同步 README、文档导航和本页的研究主线。核对新文件与用户附件 SHA-256 一致，旧方案快照已保存。旧实验结果及未提交代码未改；新方案中引用的外部论文、具体工具组合、FaithBench 标注规则与 Monitor 评价协议尚未独立核验或冻结。下一步从协议梳理和复用核对开始，不直接启动采集或训练。

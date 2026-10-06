@@ -4,6 +4,7 @@
 
 - [项目主方案](Actor_Monitor_MVP_Protocol.md)：Evidence-Grounded Actor–Monitor Framework；后续研究路线以此为准。
 - [项目进度与交接](PROJECT_PROGRESS.md)：已完成工作、当前限制、远端续跑位置和下一步。
+- [Actor-B 当前执行决策](ACTOR_B_EXECUTION_DECISION.md)：Structured Actor-B0 的冻结边界、30 图 sanity 集和进入 SFT 的门槛。
 - [仓库协作原则](../AGENTS.md)：研究决策、未提交工作、GPU 与服务器操作约束。
 
 ## 已有证据与实验记录
