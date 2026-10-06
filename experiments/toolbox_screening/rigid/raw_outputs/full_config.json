@@ -1,0 +1,22 @@
+{
+  "tool": "RIGID",
+  "source": "IBM/RIGID",
+  "manifest_sha256": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465",
+  "dino_checkpoint_sha256": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428",
+  "seed": 100,
+  "backbone": "facebookresearch/dinov2:dinov2_vitl14",
+  "transform": "Resize((224,224)), ToTensor(), ImageNet Normalize(mean=(0.485,0.456,0.406), std=(0.229,0.224,0.225))",
+  "noise": {
+    "distribution": "standard_normal",
+    "space": "normalized tensor",
+    "lambda": 0.05,
+    "draws_per_image": 1
+  },
+  "similarity": "cosine_similarity(original_features, perturbed_features, dim=-1)",
+  "batch_size": 256,
+  "shuffle": true,
+  "num_workers": 2,
+  "fake_direction": "lower similarity indicates more synthetic; raw_decision_score = -similarity",
+  "threshold_similarity": 0.9698531627655029,
+  "threshold_source": "/root/autodl-tmp/toolbox_screening/rigid/calibration_threshold.json"
+}

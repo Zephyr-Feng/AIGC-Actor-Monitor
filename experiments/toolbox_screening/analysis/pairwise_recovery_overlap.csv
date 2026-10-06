@@ -1,0 +1,7 @@
+first_tool,second_tool,probe_failure_n,overlap,first_only,second_only,neither,overlap_image_ids,first_only_image_ids,second_only_image_ids,neither_image_ids
+PatchCraft,SAFE,6,2,2,2,0,r06743f8ft:sd3_5|r0b13d2a2t:flux,r0670f47ft:flux|r17b2f789t:flux,r01a5f38at:flux|r1cd8d9a4t:flux,none
+PatchCraft,FSD,6,1,3,1,1,r06743f8ft:sd3_5,r0670f47ft:flux|r0b13d2a2t:flux|r17b2f789t:flux,r01a5f38at:flux,r1cd8d9a4t:flux
+PatchCraft,AIDE,6,1,3,1,1,r17b2f789t:flux,r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux,r1cd8d9a4t:flux,r01a5f38at:flux
+SAFE,FSD,6,2,2,0,2,r01a5f38at:flux|r06743f8ft:sd3_5,r0b13d2a2t:flux|r1cd8d9a4t:flux,none,r0670f47ft:flux|r17b2f789t:flux
+SAFE,AIDE,6,1,3,1,1,r1cd8d9a4t:flux,r01a5f38at:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux,r17b2f789t:flux,r0670f47ft:flux
+FSD,AIDE,6,0,2,2,2,none,r01a5f38at:flux|r06743f8ft:sd3_5,r17b2f789t:flux|r1cd8d9a4t:flux,r0670f47ft:flux|r0b13d2a2t:flux

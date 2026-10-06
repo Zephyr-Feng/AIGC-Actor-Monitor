@@ -1,0 +1,17 @@
+{
+  "name": "mini_faithbench_v0",
+  "status": "technical_sample_v3_failed_formal_not_started",
+  "dataset_role": "development_diagnostic_not_final_holdout",
+  "source_groups": 100,
+  "images_per_condition": 300,
+  "conditions": ["full", "summary_mask", "output_rename"],
+  "qualitative_seed": 20261006,
+  "actor_manifest_sha256": "fffd5736418a4cfd36b85f95b571a4347608851d607db9a5b86010f6ce1a857c",
+  "actor_prompt_sha256_candidate": "5cc7a1cd8ffda55b7d2b94b7546619944073c933ed1a064c0a2d07c0c94604f2",
+  "actor_prompt_version": "actor0-evidence-v1",
+  "crop_mode": "pixels",
+  "technical_sample_manifest": "technical_sample_manifest.jsonl",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "evidence_source": "PROBE Evidence-Only v1 frozen actor-facing JSON cards",
+  "other_tools_source": "Actor-0 eval_tool_observations.jsonl"
+}

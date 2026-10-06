@@ -1,0 +1,15 @@
+AutoDL cloned instance used for this screening
+Host name: autodl-container-c0lvq7fw2w-a7ff623b
+OS: Ubuntu 22.04.5 LTS; system glibc 2.35
+GPU: NVIDIA GeForce RTX 4090, 24564 MiB
+Base Python: /root/miniconda3/bin/python 3.12.3
+Base PyTorch: 2.12.1+cu130; torchvision 0.27.1+cu130
+CUDA available: true; runtime driver reports CUDA 13.2
+Isolated environment: /root/autodl-tmp/toolbox_screening/venv, sharing the base CUDA PyTorch
+Additional environment packages: scipy 1.18.1; scikit-learn 1.9.1; opencv-python-headless 5.0.0.93; scikit-image 0.26.0; imageio 2.38.0
+ExifTool: 13.59; official SHA-1 8429367c8289c21499696dcba6fc6b8eb2de5017
+c2patool: official v0.28.1; official release archive SHA-256 66f6fadff747a6f22e7473663dd5b35a358ddc9f43eadc8993414e1bae98de61; Ubuntu glibc 2.39 isolated in the experiment directory because prebuilt releases require GLIBC_2.39; Ubuntu libc6 package SHA-256 ff5557d99b51f761c4b7c92368b9cc45565eda17df9bf9eb4b134d09825008be
+DINOv2 ViT-L/14 official checkpoint size: 1217586395 bytes
+DINOv2 checkpoint SHA-256: d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428
+RIGID separate calibration manifest SHA-256: 6b986d1bc1cb88188c40e3c289e1e77830b6278755d1d12bcb43bb5f793822e0
+Frozen test manifest SHA-256: 61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465

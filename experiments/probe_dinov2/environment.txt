@@ -1,0 +1,32 @@
+Experiment date: 2026-10-01
+Remote host: autodl-container-ujxcycmw77-c2077387 (user-provided SSH endpoint; no credential recorded)
+Remote isolated work directory: /root/autodl-tmp/probe-dinov2-bfree-20261001/
+GPU: NVIDIA RTX 4090, 24,564 MiB
+
+PROBE / FSD / AIDE isolated runtime:
+  Python 3.12.3
+  PyTorch 2.12.1+cu130
+  torchvision 0.27.1+cu130
+  CUDA runtime 13.0
+  NumPy 2.5.3
+  SciPy 1.17.0
+  scikit-learn 1.7.2
+  Transformers 4.50.3
+  AIDE-only additions in isolated deps/: timm 0.9.6, open-clip-torch 2.24.0,
+    openai-clip 1.0.1, ftfy 6.1.3 (installed without replacing base Torch)
+
+SAFE isolated runtime:
+  Python 3.9.25
+  PyTorch 2.2.1+cu121
+  torchvision 0.17.1+cu121
+  SAFE source commit 4e998724651b227def64f5be0cd60c0aa1552c35
+
+Inference settings:
+  PROBE batch size 1; official 336-pixel patch evaluation and score aggregation
+  FSD/AIDE/SAFE used their recorded official or prior project inference paths
+  No model training, fine-tuning, or test-set threshold fitting
+
+End state:
+  All four score files contain 300 predictions aligned to the frozen manifest.
+  Inference and analysis processes exited; GPU utilization 0%, VRAM 0 MiB at final check.
+  No test suite was run.

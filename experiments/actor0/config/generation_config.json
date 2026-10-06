@@ -1,0 +1,11 @@
+{
+  "do_sample": false,
+  "max_new_tokens_action": 512,
+  "max_new_tokens_final": 512,
+  "max_actor_steps": 6,
+  "max_tool_calls": 4,
+  "repetition_penalty": 1.0,
+  "seed": 20261002,
+  "temperature": null,
+  "note": "Deterministic greedy decoding. Temperature is omitted because do_sample=false. Keep identical on development and evaluation."
+}

@@ -1,0 +1,1194 @@
+IDENTITY
+autodl-container-sbhn4u78c0-c07a45ba
+2026-10-05T19:50:31+08:00
+
+MOUNTS
+TARGET           SOURCE                                                                       FSTYPE OPTIONS
+/root/autodl-tmp /dev/md0[/docker/volumes/autodl-container-sbhn4u78c0-c07a45ba-storage/_data] xfs    rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,prjquota
+Filesystem     Type     Size  Used Avail Use% Mounted on
+overlay        overlay   30G   11G   20G  35% /
+overlay        overlay   30G   11G   20G  35% /
+/dev/md0       xfs       50G   49G  1.5G  98% /root/autodl-tmp
+overlay        overlay   30G   11G   20G  35% /
+Filesystem     Inodes IUsed IFree IUse% Mounted on
+overlay          1.4G   38M  1.4G    3% /
+/dev/md0         1.4G   38M  1.4G    3% /root/autodl-tmp
+
+DIRECTORY_SIZES_DEPTH1
+0	/root/.config
+0	/root/.ipython
+0	/root/tf-logs
+4.0K	/root/.ssh
+8.0K	/root/.conda
+12K	/root/.jupyter
+56K	/root/.local
+716K	/root/.nv
+984K	/root/autodl-tmp/.autodl
+14M	/root/autodl-tmp/SAFE_positive_control
+165M	/root/actor0-qwen-20261002-venv
+632M	/root/autodl-tmp/SAFE_patch_diagnostic
+1.9G	/root/autodl-tmp/toolbox_screening
+3.3G	/root/.cache
+6.1G	/root/autodl-tmp/probe-dinov2-bfree-20261001
+12G	/root/miniconda3
+16G	/root
+18G	/root/autodl-tmp/actor0-bfree-20261002
+23G	/root/autodl-tmp/SAFE_official_data
+49G	/root/autodl-tmp
+
+HF_CACHE_DEPTH2
+absent
+
+TOP_DATA_DEPTH2
+4.0K	/root/autodl-tmp/actor0-bfree-20261002/bin
+4.0K	/root/autodl-tmp/toolbox_screening/analysis
+8.0K	/root/autodl-tmp/SAFE_positive_control/scripts
+24K	/root/autodl-tmp/SAFE_positive_control/models
+36K	/root/autodl-tmp/SAFE_positive_control/__pycache__
+36K	/root/autodl-tmp/actor0-bfree-20261002/debug_prompt_v2
+36K	/root/autodl-tmp/actor0-bfree-20261002/tool_layout
+40K	/root/autodl-tmp/SAFE_positive_control/positive_control_output
+52K	/root/autodl-tmp/toolbox_screening/logs
+88K	/root/autodl-tmp/SAFE_patch_diagnostic/patch_output
+88K	/root/autodl-tmp/probe-dinov2-bfree-20261001/logs
+108K	/root/autodl-tmp/toolbox_screening/scripts
+228K	/root/autodl-tmp/actor0-bfree-20261002/manifests
+264K	/root/autodl-tmp/toolbox_screening/patchcraft
+384K	/root/autodl-tmp/actor0-bfree-20261002/logs
+444K	/root/autodl-tmp/probe-dinov2-bfree-20261001/scores
+624K	/root/autodl-tmp/actor0-bfree-20261002/code
+984K	/root/autodl-tmp/.autodl
+1.8M	/root/autodl-tmp/SAFE_positive_control/data
+3.6M	/root/autodl-tmp/actor0-bfree-20261002/actor0-dev-v3
+5.5M	/root/autodl-tmp/actor0-bfree-20261002/baselines
+5.6M	/root/autodl-tmp/SAFE_positive_control/checkpoint
+6.0M	/root/autodl-tmp/SAFE_positive_control/.git
+7.2M	/root/autodl-tmp/toolbox_screening/provenance
+8.0M	/root/autodl-tmp/toolbox_screening/vendor
+8.3M	/root/autodl-tmp/actor0-bfree-20261002/scores
+9.6M	/root/autodl-tmp/actor0-bfree-20261002/trajectories
+14M	/root/autodl-tmp/SAFE_positive_control
+73M	/root/autodl-tmp/probe-dinov2-bfree-20261001/src
+90M	/root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache
+140M	/root/autodl-tmp/toolbox_screening/bin
+141M	/root/autodl-tmp/toolbox_screening/rigid
+400M	/root/autodl-tmp/toolbox_screening/venv
+416M	/root/autodl-tmp/probe-dinov2-bfree-20261001/deps
+490M	/root/autodl-tmp/probe-dinov2-bfree-20261001/data
+582M	/root/autodl-tmp/actor0-bfree-20261002/model-cache
+631M	/root/autodl-tmp/SAFE_patch_diagnostic/cropped_images
+632M	/root/autodl-tmp/SAFE_patch_diagnostic
+778M	/root/autodl-tmp/actor0-bfree-20261002/data
+1.2G	/root/autodl-tmp/toolbox_screening/torch_home
+1.9G	/root/autodl-tmp/toolbox_screening
+4.6G	/root/autodl-tmp/probe-dinov2-bfree-20261001/weights
+6.1G	/root/autodl-tmp/probe-dinov2-bfree-20261001
+17G	/root/autodl-tmp/actor0-bfree-20261002/model-cache-xet
+18G	/root/autodl-tmp/actor0-bfree-20261002
+23G	/root/autodl-tmp/SAFE_official_data
+23G	/root/autodl-tmp/SAFE_official_data/DiTFake_repo
+49G	/root/autodl-tmp
+
+LARGEST_CACHE_FILES
+755534513 /root/.cache/pip/http-v2/9/1/5/8/c/9158c6d1a4a3141f04ca3e8567ed76f37b27ff094f5f6560c58dec5c.body
+731725872 /root/.cache/pip/http-v2/5/2/b/8/a/52b8a38697a5644bfd222abde6d2205e856f27efff6724aeb404142a.body
+410594774 /root/.cache/pip/http-v2/5/3/1/c/6/531c628f6f448ce2d5cba9ffb71ec11561e8ff461dc341793350d6d1.body
+195958278 /root/.cache/pip/http-v2/4/1/d/1/5/41d15f2aac2633bd9cbf39a171ff72ee9a732a1cf575b58d070a1cc4.body
+167902013 /root/.cache/pip/http-v2/9/8/c/6/1/98c6188a86809d4f357687fe01d230015d1110368740df70ae3dd3d8.body
+165987969 /root/.cache/pip/http-v2/3/a/d/f/6/3adf64c22b595c628c862ee6b957298b6825bd7eaede470720663c48.body
+124161928 /root/.cache/pip/http-v2/1/c/2/f/a/1c2fa43bdc3a5c241f252c43571857cefa2213eb8380a0589c7acc40.body
+121635161 /root/.cache/pip/http-v2/b/8/d/6/d/b8d6d0c000231464aae5ebf1e84e8b0f2c2f0585f6b9b97bdc0f65be.body
+77393698 /root/.cache/pip/http-v2/d/7/9/5/5/d79555281a92946be928b41cd2027cae370a21ad6bf2ca4449a684b1.body
+73783032 /root/.cache/pip/http-v2/9/1/0/b/f/910bf12cd325a97358f29919b7c28107804d780999ce8dd1e7556750.body
+72927042 /root/.cache/pip/http-v2/2/9/d/6/4/29d6447b3bc9cd5f34f993dc2ae14c8bd4a050a5fe51f2b21453c74b.body
+72926629 /root/.cache/pip/http-v2/4/a/7/2/8/4a728724ce4ab7a5a02463c958562279b0f9e43f8843f2ae459c368b.body
+67041680 /root/.cache/pip/http-v2/2/4/4/7/5/24475e5e36415451be3508f9632b5aa8f49ec137c9501333b5f8936b.body
+62986597 /root/.cache/pip/http-v2/8/1/b/0/c/81b0c43db06fa9ba23b893e9d64295b7c77037d9520cdc42c20a9852.body
+61204038 /root/.cache/pip/http-v2/7/5/e/0/8/75e087a4bcdf6902ee7a08897dce7e3dfdbf47b050f5d3cae79ad0f3.body
+56467784 /root/.cache/pip/http-v2/8/3/2/0/2/8320226a38c2f11fe71249a9719a594b54ed7a6d8edc6c38c8cc5663.body
+39748338 /root/.cache/pip/http-v2/2/f/6/c/d/2f6cdb8a363a5bd60e2d8936a4c39c4f22a7b278bc7c54dd5abfdc42.body
+38612244 /root/.cache/pip/http-v2/c/2/6/9/5/c269518dba6abf74be692e239c1967716a191801c2d25ba52db7d136.body
+35344199 /root/.cache/pip/http-v2/8/8/8/5/9/88859f27c48a10d95fa58ab468056b19193f6314c28ceabe5ffd9d72.body
+23671734 /root/.cache/pip/http-v2/6/d/d/e/a/6ddea5581172f39609723e191aae2f8addc230fb6ca9cd7b74fc8391.body
+19526099 /root/.cache/pip/http-v2/b/2/2/1/1/b221161d8d85fae009c3aea5c2923db71a1717e04e16460a1fe6c60f.body
+18249516 /root/.cache/pip/http-v2/9/b/2/1/3/9b213b1360d26607abff94c200329ebd6ae1054f86ec6b6a43a4b373.body
+14109015 /root/.cache/pip/http-v2/7/8/1/2/2/781225355e4909e75e2acbf649c7d3a371f424b0962a9274a3fb37f1.body
+13561683 /root/.cache/pip/http-v2/3/1/7/c/1/317c1f48629833fd8304c6952d3ad39152b7105a8073d02c7d9e91c0.body
+13518605 /root/.cache/pip/http-v2/e/c/9/b/2/ec9b257d8f6d5303ae3fcd765eec9d68a282234bc76caadd1cc677ea.body
+9166043 /root/.cache/pip/http-v2/0/e/a/3/5/0ea35cf422a6cc1b2fa1e2d2186694dcae008eba0f493d35e25a370a.body
+6917383 /root/.cache/pip/http-v2/b/7/9/b/d/b79bd53f2ed70ad0b12d3053c7229b1749dbcfdebe49f5cca2b8c9eb.body
+6624404 /root/.cache/pip/http-v2/8/e/5/9/f/8e59fa53ff72a68629b62a301b34de3da139378473ae45d0c4e8bf90.body
+6299353 /root/.cache/pip/http-v2/8/6/7/d/8/867d843d85a8e6da02376bf3b7cebd20c90a4fc9d155b56e65dea1e0.body
+5337102 /root/.cache/pip/http-v2/0/c/0/7/f/0c07fa5834e70028cffaef6a872770bc499a2deba844c82b2d58b168.body
+4528220 /root/.cache/pip/http-v2/e/b/b/9/9/ebb99520ad1358a65301f6b775acc113afe089c9ca7a60c31932b82b.body
+4464663 /root/.cache/pip/http-v2/d/6/2/b/7/d62b7be3812ca2a3680abcd060ea093d1c6d607fec3f088237a4554c.body
+1745849 /root/.cache/pip/http-v2/f/3/7/2/e/f372e1c3da76e157b5eee5d86b3eacc449bc99e82149094ab54e05cc.body
+1647772 /root/.cache/pip/http-v2/f/7/b/d/8/f7bd8a0770072b1d2c4d9e604eb8faae6a54ec26fc312086bba2eb6a.body
+1553149 /root/.cache/pip/http-v2/e/9/e/8/3/e9e83ea912ba892f431ab31c75adc0a74ca6310fd9485ff28124fc04.body
+1250147 /root/.cache/pip/http-v2/7/8/6/f/1/786f13d441f0acaeaac0b7f53db4587b0da044e1bb25f587ded905da.body
+1168778 /root/.cache/pip/http-v2/e/b/7/8/c/eb78c4bddf3f1dce2212097e16482beb19168e16dced525858a5f290.body
+1060236 /root/.cache/pip/http-v2/c/4/2/7/8/c4278393df023c246ae0bf48f099a8fe1e565dfa1d6b3483f9c9e1ec.body
+1022808 /root/.cache/pip/http-v2/9/6/1/7/b/9617b47c9cc73bcf95281bf9ef474bc9e637b9782e3dba57d60bad44.body
+825393 /root/.cache/pip/http-v2/c/3/1/8/8/c3188ac4b853777525615066eeb471ef841e6dd0a6cd3fa1e1e96703.body
+823596 /root/.cache/pip/http-v2/a/7/5/5/5/a7555f3ce7d46790d124eb1fad0f7fd82b4cb05c2abaef7bd2744fa4.body
+750767 /root/.cache/pip/http-v2/9/d/e/4/d/9de4def401ea03d1eeea609f85709e48a8e90656a91638d296900c7e.body
+677390 /root/.cache/pip/http-v2/8/3/c/0/8/83c08e53c75aa07d4e0d6819beb76c4f7d5cef1d08c0f0691950bd80.body
+625208 /root/.cache/pip/http-v2/0/2/2/6/5/0226500206902ef5c26d7288a858f794b312b0cbae5674becea18e0c.body
+549065 /root/.cache/pip/http-v2/d/3/8/1/e/d381e4c9e2ff9a9c649a5ce9feeee9821acd39c3c71266064cfa2e47.body
+536198 /root/.cache/pip/http-v2/2/3/d/a/5/23da5dd67b172890e503790e129205ab641dff01e17576ba7a6e1dbd.body
+489185 /root/.cache/pip/http-v2/8/1/4/4/a/8144a7f7d85e87c12f892bd5b50eb2f440857ca3c12a1786a568203f.body
+474746 /root/.cache/pip/http-v2/5/9/f/7/c/59f7cc080b4363f528699dcd1fd8d37fe25332352583b2142348ba3c.body
+474034 /root/.cache/pip/http-v2/4/3/7/0/e/4370e395eac73a84740ff22b42b451bc7b681d49be0a8f8bc0108054.body
+409967 /root/.cache/pip/http-v2/f/0/4/3/e/f043e0125978b2a6e372a7fa7ecaf771ab2afa786483499c31384b37.body
+
+CROP_TMP_VISUAL_DIRS
+/root/autodl-tmp
+/root/autodl-tmp/SAFE_official_data/DiTFake_repo/.cache
+/root/autodl-tmp/SAFE_patch_diagnostic/cropped_images
+/root/autodl-tmp/SAFE_positive_control/__pycache__
+/root/autodl-tmp/SAFE_positive_control/data/__pycache__
+/root/autodl-tmp/SAFE_positive_control/models/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/clip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/ftfy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/ftfy/bad_codecs/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/open_clip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/data/readers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/layers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/loss/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/models/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/models/layers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/optim/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/scheduler/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/timm/utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/aide/training/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/_yaml/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/certifi/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/certifi/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/charset_normalizer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/charset_normalizer/cli/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/cloudpickle/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/filelock/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/filelock/_soft_rw/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/fsspec/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/fsspec/implementations/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/fsspec/tests/abstract/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/hf_xet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/cli/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/commands/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/inference/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/inference/_generated/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/inference/_generated/types/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/inference/_mcp/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/inference/_providers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/serialization/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/huggingface_hub/utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/idna/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/joblib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/joblib/externals/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/joblib/externals/loky/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/joblib/externals/loky/backend/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/joblib/test/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/joblib/test/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_core/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_core/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_core/tests/examples/cython/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_core/tests/examples/limited_api/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_pyinstaller/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_pyinstaller/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_typing/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/_utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/char/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/core/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/ctypeslib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/doc/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/f2py/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/f2py/_backends/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/f2py/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/fft/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/fft/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/lib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/lib/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/linalg/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/linalg/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/ma/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/ma/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/matrixlib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/matrixlib/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/polynomial/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/polynomial/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/random/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/random/_examples/cffi/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/random/_examples/numba/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/random/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/random/tests/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/rec/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/strings/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/testing/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/testing/_private/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/testing/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/typing/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/typing/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/numpy/typing/tests/data/pass/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/packaging/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/packaging/licenses/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/regex/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/regex/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/requests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/safetensors/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/_uarray/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_compat/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_compat/common/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_compat/cupy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_compat/dask/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_compat/dask/array/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_compat/numpy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_compat/torch/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_extra/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_extra/_lib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/array_api_extra/_lib/_utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/cobyqa/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/cobyqa/subsolvers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/cobyqa/utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/pyprima/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/pyprima/cobyla/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/pyprima/common/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/_lib/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/cluster/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/cluster/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/constants/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/constants/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/datasets/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/datasets/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/differentiate/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/differentiate/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/fft/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/fft/_pocketfft/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/fft/_pocketfft/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/fft/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/fftpack/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/fftpack/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/integrate/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/integrate/_ivp/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/integrate/_ivp/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/integrate/_rules/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/integrate/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/interpolate/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/interpolate/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/_fast_matrix_market/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/_harwell_boeing/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/_harwell_boeing/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/arff/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/arff/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/matlab/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/matlab/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/io/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/linalg/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/linalg/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/misc/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/ndimage/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/ndimage/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/odr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/odr/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/_highspy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/_lsq/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/_shgo_lib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/_trlib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/_trustregion_constr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/_trustregion_constr/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/cython_optimize/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/optimize/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/signal/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/signal/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/signal/windows/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/csgraph/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/csgraph/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_dsolve/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_dsolve/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_eigen/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_eigen/arpack/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_eigen/arpack/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_eigen/lobpcg/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_eigen/lobpcg/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_eigen/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_isolve/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/_isolve/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/linalg/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/sparse/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/spatial/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/spatial/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/spatial/transform/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/spatial/transform/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/special/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/special/_precompute/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/special/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/special/tests/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/stats/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/stats/_levy_stable/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/stats/_rcont/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/stats/_unuran/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/stats/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/scipy/stats/tests/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/__check_build/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/_build_utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/_loss/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/_loss/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/cluster/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/cluster/_hdbscan/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/cluster/_hdbscan/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/cluster/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/compose/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/compose/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/covariance/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/covariance/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/cross_decomposition/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/cross_decomposition/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/descr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/images/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_1/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_1119/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_1590/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_292/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_40589/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_40675/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_40945/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_40966/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_42074/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_42585/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_561/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_61/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/datasets/tests/data/openml/id_62/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/decomposition/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/decomposition/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/ensemble/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/ensemble/_hist_gradient_boosting/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/ensemble/_hist_gradient_boosting/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/ensemble/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/experimental/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/experimental/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/_packaging/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/_scipy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/_scipy/sparse/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/_scipy/sparse/csgraph/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_compat/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_compat/common/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_compat/cupy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_compat/dask/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_compat/dask/array/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_compat/numpy/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_compat/torch/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_extra/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_extra/_lib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/externals/array_api_extra/_lib/_utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/feature_extraction/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/feature_extraction/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/feature_selection/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/feature_selection/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/frozen/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/frozen/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/gaussian_process/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/gaussian_process/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/impute/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/impute/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/inspection/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/inspection/_plot/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/inspection/_plot/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/inspection/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/linear_model/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/linear_model/_glm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/linear_model/_glm/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/linear_model/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/manifold/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/manifold/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/metrics/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/metrics/_pairwise_distances_reduction/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/metrics/_plot/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/metrics/_plot/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/metrics/cluster/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/metrics/cluster/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/metrics/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/mixture/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/mixture/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/model_selection/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/model_selection/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/neighbors/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/neighbors/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/neural_network/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/neural_network/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/preprocessing/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/preprocessing/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/semi_supervised/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/semi_supervised/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/svm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/svm/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/tree/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/tree/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/utils/_repr_html/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/utils/_repr_html/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/utils/_test_common/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/sklearn/utils/tests/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/decoders/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/implementations/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/models/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/normalizers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/pre_tokenizers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/processors/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/tools/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tokenizers/trainers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tqdm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/tqdm/contrib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/agents/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/commands/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/data/datasets/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/data/metrics/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/data/processors/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/generation/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/integrations/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/kernels/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/kernels/falcon_mamba/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/loss/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/albert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/align/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/altclip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/aria/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/audio_spectrogram_transformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/auto/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/autoformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/aya_vision/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bamba/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bark/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bart/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/barthez/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bartpho/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/beit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bert_generation/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bert_japanese/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bertweet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/big_bird/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bigbird_pegasus/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/biogpt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/blenderbot/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/blenderbot_small/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/blip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/blip_2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bloom/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bridgetower/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/bros/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/byt5/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/camembert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/canine/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/chameleon/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/chinese_clip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/clap/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/clip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/clipseg/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/clvp/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/code_llama/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/codegen/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/cohere/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/cohere2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/colpali/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/conditional_detr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/convbert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/convnext/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/convnextv2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/cpm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/cpmant/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/ctrl/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/cvt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dab_detr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dac/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/data2vec/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dbrx/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deberta/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deberta_v2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/decision_transformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deformable_detr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/bort/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/deta/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/efficientformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/ernie_m/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/gptsan_japanese/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/graphormer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/jukebox/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/mctct/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/mega/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/mmbt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/nat/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/nezha/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/open_llama/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/qdqbert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/realm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/retribert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/speech_to_text_2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/tapex/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/trajectory_transformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/transfo_xl/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/tvlt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/van/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/vit_hybrid/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/deprecated/xlm_prophetnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/depth_anything/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/depth_pro/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/detr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dialogpt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/diffllama/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dinat/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dinov2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dinov2_with_registers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/distilbert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/donut/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dpr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/dpt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/efficientnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/electra/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/emu3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/encodec/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/encoder_decoder/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/ernie/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/esm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/esm/openfold_utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/falcon/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/falcon_mamba/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/fastspeech2_conformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/flaubert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/flava/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/fnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/focalnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/fsmt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/funnel/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/fuyu/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gemma/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gemma2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gemma3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/git/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/glm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/glpn/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/got_ocr2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gpt2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gpt_bigcode/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gpt_neo/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gpt_neox/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gpt_neox_japanese/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gpt_sw3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/gptj/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/granite/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/granitemoe/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/granitemoeshared/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/grounding_dino/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/groupvit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/helium/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/herbert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/hiera/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/hubert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/ibert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/idefics/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/idefics2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/idefics3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/ijepa/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/imagegpt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/informer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/instructblip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/instructblipvideo/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/jamba/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/jetmoe/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/kosmos2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/layoutlm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/layoutlmv2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/layoutlmv3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/layoutxlm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/led/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/levit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/lilt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/llama/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/llava/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/llava_next/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/llava_next_video/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/llava_onevision/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/longformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/longt5/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/luke/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/lxmert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/m2m_100/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mamba/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mamba2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/marian/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/markuplm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mask2former/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/maskformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mbart/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mbart50/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/megatron_bert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/megatron_gpt2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mgp_str/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mimi/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mistral/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mistral3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mixtral/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mllama/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mluke/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mobilebert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mobilenet_v1/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mobilenet_v2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mobilevit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mobilevitv2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/modernbert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/moonshine/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/moshi/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mpnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mpt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mra/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mt5/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/musicgen/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/musicgen_melody/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/mvp/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/myt5/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/nemotron/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/nllb/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/nllb_moe/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/nougat/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/nystromformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/olmo/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/olmo2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/olmoe/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/omdet_turbo/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/oneformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/openai/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/opt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/owlv2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/owlvit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/paligemma/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/patchtsmixer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/patchtst/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/pegasus/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/pegasus_x/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/perceiver/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/persimmon/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/phi/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/phi3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/phimoe/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/phobert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/pix2struct/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/pixtral/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/plbart/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/poolformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/pop2piano/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/prompt_depth_anything/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/prophetnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/pvt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/pvt_v2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/qwen2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/qwen2_5_vl/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/qwen2_audio/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/qwen2_moe/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/qwen2_vl/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/rag/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/recurrent_gemma/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/reformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/regnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/rembert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/resnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/roberta/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/roberta_prelayernorm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/roc_bert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/roformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/rt_detr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/rt_detr_v2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/rwkv/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/sam/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/seamless_m4t/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/seamless_m4t_v2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/segformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/seggpt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/sew/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/sew_d/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/shieldgemma2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/siglip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/siglip2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/smolvlm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/speech_encoder_decoder/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/speech_to_text/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/speecht5/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/splinter/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/squeezebert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/stablelm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/starcoder2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/superglue/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/superpoint/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/swiftformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/swin/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/swin2sr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/swinv2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/switch_transformers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/t5/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/table_transformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/tapas/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/textnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/time_series_transformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/timesformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/timm_backbone/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/timm_wrapper/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/trocr/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/tvp/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/udop/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/umt5/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/unispeech/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/unispeech_sat/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/univnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/upernet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/video_llava/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/videomae/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vilt/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vipllava/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vision_encoder_decoder/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vision_text_dual_encoder/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/visual_bert
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/visual_bert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vit_mae/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vit_msn/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vitdet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vitmatte/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vitpose/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vitpose_backbone/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vits/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/vivit/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/wav2vec2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/wav2vec2_bert/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/wav2vec2_conformer/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/wav2vec2_phoneme/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/wav2vec2_with_lm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/wavlm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/whisper/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/x_clip/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/xglm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/xlm/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/xlm_roberta/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/xlm_roberta_xl/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/xlnet/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/xmod/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/yolos/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/yoso/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/zamba/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/zamba2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/models/zoedepth/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/onnx/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/pipelines/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/quantizers/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/sagemaker/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/transformers/utils/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/urllib3/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/urllib3/contrib/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/urllib3/contrib/emscripten/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/urllib3/http2/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/urllib3/util/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe/yaml/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache
+/root/autodl-tmp/probe-dinov2-bfree-20261001/src/aide/AIDE-main/data/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/src/aide/AIDE-main/models/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/src/aide/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/src/fsd/Forensic-Self-Descriptions-CVPR25-main/fsd/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/src/probe/PROBE-AIGI-Detection-b145f7130004c02725e9b3703954a3329ebf56de/Detector/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/src/probe/PROBE-AIGI-Detection-b145f7130004c02725e9b3703954a3329ebf56de/Detector/model/__pycache__
+/root/autodl-tmp/probe-dinov2-bfree-20261001/src/probe/PROBE-AIGI-Detection-b145f7130004c02725e9b3703954a3329ebf56de/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/dinov2/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/dinov2/hub/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/dinov2/hub/cell_dino/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/dinov2/hub/depth/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/dinov2/hub/xray_dino/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/dinov2/layers/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/dinov2/dinov2/models/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/modelscope/PatchCraft/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/modelscope/PatchCraft/data/__pycache__
+/root/autodl-tmp/toolbox_screening/vendor/modelscope/PatchCraft/networks/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/cloudpickle/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/cv2/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/cv2/data/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/cv2/mat_wrapper/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/cv2/misc/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/cv2/typing/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/cv2/utils/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/imageio/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/imageio/config/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/imageio/core/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/imageio/plugins/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/joblib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/joblib/externals/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/joblib/externals/loky/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/joblib/externals/loky/backend/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/joblib/test/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/joblib/test/data/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/lazy_loader/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_arrow/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_compliant/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_dask/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_duckdb/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_ibis/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_interchange/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_pandas_like/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_polars/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_spark_like/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/_sql/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/stable/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/stable/v1/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/stable/v2/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/testing/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/narwhals/testing/asserts/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/cli/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/commands/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/distributions/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/index/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/locations/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/metadata/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/metadata/importlib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/models/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/network/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/operations/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/operations/build/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/operations/install/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/req/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/resolution/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/resolution/legacy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/utils/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_internal/vcs/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/cachecontrol
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/cachecontrol/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/cachecontrol/caches
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/cachecontrol/caches/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/certifi/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/chardet/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/chardet/cli/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/chardet/metadata/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/colorama/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/colorama/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/distlib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/distro/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/idna/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/msgpack/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/packaging/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pkg_resources/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/platformdirs/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pygments/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pygments/filters/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pygments/formatters/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pygments/styles/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pyparsing/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pyparsing/diagram/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/requests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/resolvelib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/resolvelib/compat/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/rich/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/tenacity/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/tomli/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/truststore/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/contrib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/packages/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/pip/_vendor/webencodings/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_compat/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_compat/common/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_compat/cupy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_compat/dask/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_compat/dask/array/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_compat/numpy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_compat/torch/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_extra/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_extra/_lib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/array_api_extra/_lib/_utils/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/cobyqa/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/cobyqa/subsolvers/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/cobyqa/utils/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/packaging_version/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/pyprima/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/pyprima/cobyla/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_external/pyprima/common/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_lib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_lib/_uarray/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/_lib/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/cluster/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/cluster/hierarchy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/cluster/hierarchy/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/cluster/vq/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/cluster/vq/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/constants/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/constants/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/datasets/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/datasets/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/differentiate/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/differentiate/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/fft/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/fft/_duccfft/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/fft/_duccfft/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/fft/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/fftpack/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/fftpack/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/integrate/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/integrate/_ivp/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/integrate/_ivp/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/integrate/_rules/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/integrate/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/interpolate/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/interpolate/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/_fast_matrix_market/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/_harwell_boeing/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/_harwell_boeing/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/arff/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/arff/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/matlab/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/matlab/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/io/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/linalg/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/linalg/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/misc/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/ndimage/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/ndimage/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/odr/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/odr/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/_highspy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/_lsq/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/_shgo_lib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/_trlib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/_trustregion_constr/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/_trustregion_constr/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/cython_optimize/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/optimize/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/signal/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/signal/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/signal/windows/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/csgraph/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/csgraph/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_dsolve/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_dsolve/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/arpack/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/arpack/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/lobpcg/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/lobpcg/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_eigen/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_isolve/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/_isolve/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/linalg/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/sparse/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/spatial/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/spatial/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/spatial/transform/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/spatial/transform/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/special/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/special/_precompute/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/special/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/special/tests/data/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/stats/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/stats/_levy_stable/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/stats/_rcont/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/stats/_unuran/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/stats/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/stats/tests/data/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/scipy/stats/tests/test_generation/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/_shared/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/_vendored/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/color/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/data/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/draw/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/exposure/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/feature/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/filters/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/filters/rank/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/future/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/graph/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/io/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/io/_plugins/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/measure/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/metrics/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/morphology/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/registration/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/restoration/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/segmentation/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/transform/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/skimage/util/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/__check_build/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/_build_utils/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/_loss/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/_loss/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/callback/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/callback/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/cluster/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/cluster/_hdbscan/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/cluster/_hdbscan/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/cluster/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/compose/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/compose/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/covariance/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/covariance/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/cross_decomposition/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/cross_decomposition/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/data/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/descr/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/images/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_1/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_1119/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_1590/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_2/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_292/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_3/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_40589/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_40675/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_40945/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_40966/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_42074/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_42585/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_561/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_61/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/datasets/tests/data/openml/id_62/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/decomposition/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/decomposition/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/ensemble/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/ensemble/_hist_gradient_boosting/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/ensemble/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/experimental/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/experimental/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/_numpydoc/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/_packaging/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/_scipy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/_scipy/sparse/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/_scipy/sparse/csgraph/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_compat/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_compat/common/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_compat/cupy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_compat/dask/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_compat/dask/array/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_compat/numpy/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_compat/torch/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_extra/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_extra/_agnostic/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_extra/_lib/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/externals/array_api_extra/testing/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/feature_extraction/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/feature_extraction/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/feature_selection/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/feature_selection/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/frozen/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/frozen/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/gaussian_process/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/gaussian_process/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/impute/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/impute/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/inspection/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/inspection/_plot/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/inspection/_plot/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/inspection/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/linear_model/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/linear_model/_glm/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/linear_model/_glm/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/linear_model/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/manifold/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/manifold/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/metrics/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/metrics/_pairwise_distances_reduction/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/metrics/_plot/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/metrics/_plot/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/metrics/cluster/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/metrics/cluster/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/metrics/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/mixture/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/mixture/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/model_selection/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/model_selection/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/neighbors/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/neighbors/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/neural_network/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/neural_network/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/preprocessing/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/preprocessing/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/semi_supervised/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/semi_supervised/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/svm/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/svm/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/tree/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/tree/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/utils/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/utils/_repr_html/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/utils/_repr_html/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/utils/_test_common/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/sklearn/utils/tests/__pycache__
+/root/autodl-tmp/toolbox_screening/venv/lib/python3.12/site-packages/tifffile/__pycache__
+/root/autodl-tmp/actor0-bfree-20261002/model-cache
+/root/autodl-tmp/actor0-bfree-20261002/model-cache-xet
+/root/autodl-tmp/actor0-bfree-20261002/code/actor0/scripts/__pycache__
+/root/autodl-tmp/actor0-bfree-20261002/debug_prompt_v2
+
+PROCESS_TOP
+   PID     ELAPSED %CPU %MEM CMD
+   735       06:32  1.0  0.0 /root/miniconda3/bin/python /root/miniconda3/bin/jupyter-lab --allow-root --config=/init/jupyter/jupyter_config.py
+   734       06:32  0.3  0.0 autopanel serve --work-dir=/root/autodl-tmp --cache-dir=/root/autodl-tmp
+   732       06:32  0.5  0.0 /root/miniconda3/bin/python /root/miniconda3/bin/tensorboard --host 0.0.0.0 --port 6007 --logdir /root/tf-logs
+   710       06:32  1.6  0.0 /bin/supervisord -c /init/supervisor/supervisor.ini
+   736       06:32  0.0  0.0 proxy -c /init/proxy/proxy.ini
+   738       06:32  0.0  0.0 proxy -c /init/proxy/proxy-hot-backup.ini
+  1122       00:03  1.0  0.0 sshd: root@notty
+   789       06:23  0.0  0.0 /root/miniconda3/lib/python3.12/site-packages/tensorboard_data_server/bin/server --logdir=/root/tf-logs --reload=5 --samples-per-plugin= --port=0 --port-file=/tmp/tensorboard_data_server_krfwwzmp/port --die-after-stdin --error-file=/tmp/tensorboard_data_server_krfwwzmp/startup_error
+   733       06:32  0.0  0.0 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+     1       06:37  0.0  0.0 bash /init/boot/boot.sh
+  1133       00:02  0.5  0.0 bash -c set -o pipefail printf "IDENTITY\n"; hostname; date -Iseconds printf "\nMOUNTS\n"; findmnt -T /root/autodl-tmp -o TARGET,SOURCE,FSTYPE,OPTIONS; df -hT / /root /root/autodl-tmp /root/.cache; df -ih / /root/autodl-tmp printf "\nDIRECTORY_SIZES_DEPTH1\n"; du -h --max-depth=1 /root/autodl-tmp /root /root/.cache 2>/dev/null | sort -h printf "\nHF_CACHE_DEPTH2\n"; if [ -d /root/.cache/huggingface ]; then du -h --max-depth=2 /root/.cache/huggingface 2>/dev/null | sort -h; else echo absent; fi printf "\nTOP_DATA_DEPTH2\n"; du -h --max-depth=2 /root/autodl-tmp 2>/dev/null | sort -h | tail -n 50 printf "\nLARGEST_CACHE_FILES\n"; find /root/.cache -type f -printf "%s %p\n" 2>/dev/null | sort -nr | head -n 50 printf "\nCROP_TMP_VISUAL_DIRS\n"; find /root/autodl-tmp -type d \( -iname "*crop*" -o -iname "*processed*" -o -iname "*visual*" -o -iname "*tmp*" -o -iname "*debug*" -o -iname "*cache*" \) -print 2>/dev/null printf "\nPROCESS_TOP\n"; ps -eo pid,etime,%cpu,%mem,cmd --sort=-%mem | head -n 25 printf "\nGPU\n"; nvidia-smi
+  1148       00:00  0.0  0.0 ps -eo pid,etime,%cpu,%mem,cmd --sort=-%mem
+  1149       00:00  0.0  0.0 head -n 25
+
+GPU

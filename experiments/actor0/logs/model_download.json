@@ -1,0 +1,31 @@
+{
+  "repo_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "snapshot_path": "/root/autodl-tmp/actor0-bfree-20261002/model-cache-xet/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "weight_shards": {
+    "model-00002-of-00004.safetensors": 4915962496,
+    "model-00001-of-00004.safetensors": 4902275944,
+    "model-00003-of-00004.safetensors": 4999831048,
+    "model-00004-of-00004.safetensors": 2716270024
+  },
+  "weight_bytes": 17534339512,
+  "files": [
+    ".gitattributes",
+    "README.md",
+    "chat_template.json",
+    "config.json",
+    "generation_config.json",
+    "merges.txt",
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors",
+    "model.safetensors.index.json",
+    "preprocessor_config.json",
+    "tokenizer.json",
+    "tokenizer_config.json",
+    "video_preprocessor_config.json",
+    "vocab.json"
+  ],
+  "transfer": "Hugging Face Hub HTTP backend (HF_HUB_DISABLE_XET=1)"
+}

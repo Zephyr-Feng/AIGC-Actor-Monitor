@@ -1,0 +1,75 @@
+{
+  "purpose": "calibrate the RIGID score threshold only; never used to choose the model or inference parameters",
+  "selection_seed": 20261002,
+  "selection_unit": "source_group",
+  "selection_rule": "simple random sample of 30 groups from the 500 source groups reserved after excluding Stage 1, SAFE-independent, and frozen test groups",
+  "groups": 30,
+  "images": 90,
+  "generator_counts": {
+    "raise": 30,
+    "flux": 30,
+    "sd3_5": 30
+  },
+  "orientation_counts": {
+    "landscape": 26,
+    "portrait": 4
+  },
+  "source_groups": [
+    "r0515a051t",
+    "r171d73aat",
+    "r046852c1t",
+    "r1c2ac865t",
+    "r1db351a2t",
+    "r133c5a52t",
+    "r0c3a8ea0t",
+    "r0e35d1fct",
+    "r17c76042t",
+    "r0bbbb097t",
+    "r1d9a31fct",
+    "r02e1abe2t",
+    "r1661f358t",
+    "r1d2bb70at",
+    "r11b292cbt",
+    "r0ab7202ft",
+    "r098a8a22t",
+    "r1104e9e6t",
+    "r1565a7e7t",
+    "r1904147dt",
+    "r1c31a90bt",
+    "r1570dd6at",
+    "r1d3bc675t",
+    "r1b177fe1t",
+    "r19d92967t",
+    "r0965e155t",
+    "r00816405t",
+    "r1c9fdcf4t",
+    "r1ca254b2t",
+    "r17228bbdt"
+  ],
+  "excluded_group_counts": {
+    "stage1": 200,
+    "safe_independent": 200,
+    "frozen_test": 100
+  },
+  "overlap_with_frozen_test": [],
+  "archive_integrity": {
+    "real_RAISE_1k.zip": {
+      "md5": "a6aad7728226218f22a28b9c9aacaa2c",
+      "sha256": "bd25842eb4069937d6676a31538bb557dc78db9867fa6e463df5af11d86fa73e",
+      "bytes": 1646333296
+    },
+    "sd3_flux.zip": {
+      "md5": "5a255c18fa99eb3115c7ed39d2840796",
+      "sha256": "92a1d7f4f33e9a34c4556c3677e190a6db63ff6821fff98425271926013116b6",
+      "bytes": 3436462649
+    }
+  },
+  "source_manifest_sha256": {
+    "stage1": "f305e5ffd99f3ec9d908494f2dcbfdcb856d7e74dedb8a3dd1130fad0c99660b",
+    "safe_independent": "ceb396cbf9a78d2aa04a4e77307e6062e4486de900b6c8bd12be13f7732fcc58",
+    "frozen_test": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465"
+  },
+  "calibration_manifest_sha256": "6b986d1bc1cb88188c40e3c289e1e77830b6278755d1d12bcb43bb5f793822e0",
+  "threshold_policy": "choose similarity threshold maximizing image-level balanced accuracy on this calibration set; fake iff similarity < threshold; tie-break at median of maximizing finite candidate thresholds",
+  "preprocessing": "original PNG bytes; no transformation during calibration data preparation"
+}

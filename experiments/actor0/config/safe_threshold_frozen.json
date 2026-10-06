@@ -1,0 +1,11 @@
+{
+  "threshold": 0.9561132788658143,
+  "rule": "80th sorted calibration real fake score, then nextafter toward +inf; fake iff score >= threshold",
+  "target_specificity": 0.8,
+  "calibration_real_correct": 80,
+  "calibration_manifest_sha256": "ceb396cbf9a78d2aa04a4e77307e6062e4486de900b6c8bd12be13f7732fcc58",
+  "calibration_scores_sha256": "366081cf3e026cc09eafe46612f9246e37c43c92022a77a610596fcbd23c6ed3",
+  "source": "experiments/probe_dinov2/prior_calibrations/safe_threshold.json",
+  "reuse_only": true,
+  "test_labels_used_for_threshold": false
+}

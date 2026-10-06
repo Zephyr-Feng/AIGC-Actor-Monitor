@@ -1,0 +1,30 @@
+{
+  "global_forensic_analyzer": {
+    "purpose": "检查图像区域表征与独立真实图参考库的偏离，并提供可定位区域和图块供核查。",
+    "evidence_type": "参考表征偏离证据",
+    "useful_when": "需要检查区域表征是否偏离真实参考分布，并决定是否获取其他独立证据。",
+    "returns": ["scope: 检查区域数", "observations 或 findings: 区域偏离统计与空间模式", "most_atypical_regions 或 highlighted_regions: top-3 区域的 bbox、偏离百分位和图块", "limitations: 证据局限"],
+    "limitations": "偏离百分位是相对真实参考图块的距离位置，不是假图概率，也不能证明图像来源；罕见真实内容和后处理也可能高度偏离。本工具不返回 real/fake signal 或 classifier score。"
+  },
+  "local_texture_analyzer": {
+    "purpose": "检查局部纹理与残差特征中的合成倾向模式。",
+    "evidence_type": "局部纹理/残差证据",
+    "useful_when": "全局证据不确定，或需要不同空间尺度的补充证据。",
+    "returns": ["signal: real_like 或 synthetic_like", "score: raw_score", "strength: low/moderate/high"],
+    "limitations": "真实图像也可能出现局部误报，不应单独作为最终结论。强度是原始分数幅度的固定描述，不代表校准概率。"
+  },
+  "complementary_forensic_analyzer": {
+    "purpose": "使用不同训练与表征流程的额外模型，给出补充取证意见。",
+    "evidence_type": "互补学习型取证证据",
+    "useful_when": "现有证据较弱、不完整或互相矛盾。",
+    "returns": ["signal: real 或 fake", "score: synthetic_score", "strength: low/moderate/high"],
+    "limitations": "分布变化时可能不可靠，应与其他证据共同解释；决策阈值沿用独立校准结果。"
+  },
+  "provenance_inspector": {
+    "purpose": "检查 C2PA、EXIF、XMP、相机信息和软件信息等非像素来源线索。",
+    "evidence_type": "来源凭据/元数据证据",
+    "useful_when": "图像来源、拍摄或编辑链条可能提供独立证据。",
+    "returns": ["signal: real/fake/inconclusive", "score: null", "strength: none/weak/moderate/strong"],
+    "limitations": "没有元数据或 C2PA 凭据不代表图像由 AI 生成；缺少来源信息必须视为 inconclusive。未经验证或不可信的声明不能证明来源。"
+  }
+}

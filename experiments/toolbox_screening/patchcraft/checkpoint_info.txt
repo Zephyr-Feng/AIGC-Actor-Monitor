@@ -1,0 +1,11 @@
+Tool: PatchCraft RPTC
+Official source: https://modelscope.cn/models/aemilia/AIGCDetectionBenchMark
+Subdirectory: PatchCraft
+Source revision: bbbce9dfb36d86c36fc49585d2e24962644f296c
+Checkpoint: weights/RPTC.pth
+Checkpoint size: 512674 bytes
+Checkpoint SHA-256: c1c9612cc47215d7c4cbdc5ddff52a4312519d697fd0830ce478f63f58e733fd
+Inference: official TestOptions defaults; seed 42; official read_data_new / processing_RPTC preprocessing; sigmoid score, higher means fake; official prediction uses score > 0.5.
+Input processing: RGB to [0,1], random 32x32 crop sampling, patch_num=3, official 3*8*8 crop generation and rich/poor texture ordering; no alternate crop, resize, or test-time augmentation.
+Checkpoint provenance: downloaded from the official ModelScope model API and checked against its published file size and SHA-256 before inference.
+Runtime environment: pending verification on the cloned AutoDL instance; record Python, PyTorch, CUDA and device there.

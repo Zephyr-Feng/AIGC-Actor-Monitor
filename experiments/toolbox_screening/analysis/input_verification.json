@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "test": {
+    "name": "frozen_test",
+    "manifest": "D:\\Codex\\AIGC\\experiments\\toolbox_screening\\dataset_manifest.jsonl",
+    "manifest_sha256": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465",
+    "image_root": "D:\\Codex\\AIGC\\runs\\probe-dinov2-bfree-20261001",
+    "images": 300,
+    "source_groups": 100,
+    "generator_counts": {
+      "raise": 100,
+      "flux": 100,
+      "sd3_5": 100
+    },
+    "images_sha256_verified": 300
+  },
+  "rigid_calibration": {
+    "name": "rigid_calibration",
+    "manifest": "D:\\Codex\\AIGC\\experiments\\toolbox_screening\\rigid\\calibration\\calibration_manifest.jsonl",
+    "manifest_sha256": "6b986d1bc1cb88188c40e3c289e1e77830b6278755d1d12bcb43bb5f793822e0",
+    "image_root": "D:\\Codex\\AIGC\\experiments\\toolbox_screening\\rigid\\calibration\\images",
+    "images": 90,
+    "source_groups": 30,
+    "generator_counts": {
+      "raise": 30,
+      "flux": 30,
+      "sd3_5": 30
+    },
+    "images_sha256_verified": 90,
+    "overlap_with_frozen_test": []
+  }
+}

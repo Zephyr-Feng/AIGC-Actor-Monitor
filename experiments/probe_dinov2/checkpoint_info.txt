@@ -1,0 +1,34 @@
+PROBE-DINOv2 official source
+  Repository: https://github.com/Amamiya-C/PROBE-AIGI-Detection
+  Commit: b145f7130004c02725e9b3703954a3329ebf56de
+  Source archive SHA-256: 5f748901f69fcc7153977f743e27c981899865bbf38fd29a7aeef8f360169093
+
+PROBE detector checkpoint
+  File: DINOv2_best_model_step_34999.pth
+  ModelScope revision: 423e5877bc5ac51248508de56f3ac22f7dd1128f
+  Size: 1,217,679,947 bytes
+  SHA-256: c8caa9bad54c029e4d22e1909c4673e46a239d8419a986e0ab461d423a450156
+  Strict state-dict load: passed, 442 keys
+
+DINOv2 architecture config
+  Repository/revision: facebook/dinov2-with-registers-large @ e4c89a4e05589de9b3e188688a303d0f3c04d0f3
+  Local copy: dinov2_config.json
+  SHA-256: 902dad80eeb93434dc19bb0099d3dd45a8a40f9333ef0084ea2b55d3e39fea77
+
+Prior expert checkpoints/source
+  AIDE checkpoint size: 3,592,077,976 bytes
+  AIDE checkpoint SHA-256: ce3a9d66c124e4c24846a6e513d4c66a7e34a16c46bd46a8041f809c2a4a756e
+  AIDE source archive SHA-256: ac10669273d8742b667cdacbd772a0d749d56851ecff00779fd0852bf492797e
+  FSD source archive SHA-256: ef0be83f1e1007cd927577d41e9384f094c833686be432663d63b68784a84943
+  FSD config.json SHA-256: 7cc34433045adb998762e00de7de25c50f9c1e10dbac1c18899c6c63c4cfafe4
+  FSD fre.pt SHA-256: d95b9c50837dbf7b660bbefa20cda5db5e59601a9d6544573c10e78e04906bb
+  FSD fsd_transforms.pt SHA-256: 1e87d792b413101e58d9de71551182a1fab8b879ca6f6ba9780b6adcb9a5a699
+  FSD gmm.pt SHA-256: 0f9fa030a3d5816266d0329fd0fb614b65e322d4bda6d083613c713bfe9bc829
+  SAFE source commit: 4e998724651b227def64f5be0cd60c0aa1552c35
+  SAFE checkpoint size: 5,840,638 bytes
+  SAFE checkpoint SHA-256: b3f5ecfb46a154ed553aaaf4bf3ba59182310726ddb0cbb1fe42bd0e22d2f20e
+
+Frozen test dataset
+  Manifest SHA-256: 61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465
+  B-Free real_RAISE_1k.zip SHA-256: bd25842eb4069937d6676a31538bb557dc78db9867fa6e463df5af11d86fa73e
+  B-Free sd3_flux.zip SHA-256: 92a1d7f4f33e9a34c4556c3677e190a6db63ff6821fff98425271926013116b6

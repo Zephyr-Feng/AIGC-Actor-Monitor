@@ -1,0 +1,15 @@
+{
+  "tool": "RIGID",
+  "threshold_similarity": 0.9698531627655029,
+  "decision": "fake iff similarity_score < threshold_similarity",
+  "selection_method": "maximum image-level balanced accuracy on the separate calibration set",
+  "tie_break": "median of finite maximizing midpoint candidates",
+  "calibration_balanced_accuracy": 0.5083333333333333,
+  "calibration_groups": 30,
+  "calibration_images": 90,
+  "calibration_manifest_sha256": "6b986d1bc1cb88188c40e3c289e1e77830b6278755d1d12bcb43bb5f793822e0",
+  "calibration_scores_sha256": "391bd3406509b5c141eb91a04aecd8a697b9b0261aa1d25ec53f4c634de67bdd",
+  "test_manifest_sha256_recorded_for_disjointness_only": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465",
+  "overlap_with_test_groups": [],
+  "test_labels_used": false
+}

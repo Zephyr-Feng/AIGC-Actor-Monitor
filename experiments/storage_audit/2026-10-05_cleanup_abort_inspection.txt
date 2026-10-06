@@ -1,0 +1,33 @@
+HOST AND TIME
+autodl-container-sbhn4u78c0-c07a45ba
+2026-10-05T19:59:40+08:00
+PIP_CACHE_TYPE
+directory 755 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache
+PIP_CACHE_FILES_COUNT_AND_SUM
+files=126 sum=93485218
+PIP_CACHE_SYMLINKS
+PIP_CACHE_TOP
+d 47 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache -> 
+d 4096 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2 -> 
+d 75 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/0 -> 
+d 36 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/1 -> 
+d 36 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/2 -> 
+d 49 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/3 -> 
+d 36 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/4 -> 
+d 75 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/5 -> 
+d 75 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/6 -> 
+d 33 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/7 -> 
+d 36 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/8 -> 
+d 36 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/9 -> 
+d 24 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/a -> 
+d 49 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/b -> 
+d 36 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/c -> 
+d 75 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/d -> 
+d 36 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/e -> 
+d 75 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/http-v2/f -> 
+d 24 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/wheels -> 
+d 24 /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache/wheels/ae -> 
+93503772	/root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache
+TARGETS_UNCHANGED
+partial_count=4 bytes=608174080
+crop_count=1500 bytes=657821604

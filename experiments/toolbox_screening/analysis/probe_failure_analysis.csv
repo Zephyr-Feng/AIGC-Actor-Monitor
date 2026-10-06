@@ -1,0 +1,7 @@
+path,source_group_id,sample_id,label,generator,probe_score,probe_pred,patchcraft_score,patchcraft_pred,patchcraft_correct,rigid_score,rigid_pred,rigid_correct,safe_score,safe_pred,safe_correct,provenance_actionable,provenance_type
+probe_eval_data/fake_flux/r0670f47ft.png,r0670f47ft,r0670f47ft:flux,1,flux,0.3425769507884979,0,0.9447951912879944,1,1,-0.9743250608444214,0,0,0.7395595908164978,0,0,0,none
+probe_eval_data/fake_flux/r01a5f38at.png,r01a5f38at,r01a5f38at:flux,1,flux,0.032174330204725266,0,0.17921854555606842,0,0,-0.9854586720466614,0,0,0.9694513082504272,1,1,0,none
+probe_eval_data/fake_sd35/r06743f8ft.png,r06743f8ft,r06743f8ft:sd3_5,1,sd3_5,0.274584025144577,0,0.9802007675170898,1,1,-0.9958596229553223,0,0,0.9785600304603577,1,1,0,none
+probe_eval_data/fake_flux/r0b13d2a2t.png,r0b13d2a2t,r0b13d2a2t:flux,1,flux,0.29466718435287476,0,0.6486225128173828,1,1,-0.9903151392936707,0,0,0.9684528708457947,1,1,0,none
+probe_eval_data/fake_flux/r1cd8d9a4t.png,r1cd8d9a4t,r1cd8d9a4t:flux,1,flux,0.31075072288513184,0,0.05066888779401779,0,0,-0.9847562909126282,0,0,0.9813401103019714,1,1,0,none
+probe_eval_data/fake_flux/r17b2f789t.png,r17b2f789t,r17b2f789t:flux,1,flux,0.02715890482068062,0,0.9999693632125854,1,1,-0.9851877689361572,0,0,0.9527646899223328,0,0,0,none

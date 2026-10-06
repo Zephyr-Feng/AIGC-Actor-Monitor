@@ -1,0 +1,1173 @@
+# Actor-0 eval qualitative audit evidence bundle
+
+This review aid uses the fixed 50-case set in `qualitative_audit.csv`. Ground-truth labels are intentionally omitted.
+
+## 01. r000da54ft:flux
+- Selection stratum: wrong_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.2783008813858032 — 全局取证原始合成分数为 0.278301，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 前景樱花清晰，背景操场模糊，天空蓝色，有明显景深效果。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=real_like | score=0.21480830013751984 — 局部纹理原始合成分数为 0.214808，固定判定阈值为 0.5，信号为 real_like。
+  - Visual: 前景樱花清晰，背景操场模糊，天空蓝色，有明显景深效果。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.2783"]
+  - Conflict: []; gap: 缺乏局部纹理、互补模型或来源凭据证据。; reason: 全局证据倾向 real，需局部纹理证据补充验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.2838541269302368 — 互补取证原始合成分数为 0.283854，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 前景樱花清晰，背景操场模糊，天空蓝色，有明显景深效果。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.2783", "local_texture_analyzer | signal=real_like | score=0.2148"]
+  - Conflict: []; gap: 缺少互补模型或来源凭据证据。; reason: 局部与全局证据均倾向 real，需互补模型提供不同视角验证。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 前景樱花清晰，背景操场模糊，天空蓝色，有明显景深效果。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.2783", "local_texture_analyzer | signal=real_like | score=0.2148", "complementary_forensic_analyzer | signal=real | score=0.2839"]
+  - Conflict: []; gap: 缺少来源凭据证据，无法确认拍摄链。; reason: 三类模型均倾向 real，需来源凭据补全证据链。
+- Step 5: action `STOP`
+  - Visual: 前景樱花清晰，背景操场模糊，天空蓝色，有明显景深效果。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.2783", "local_texture_analyzer | signal=real_like | score=0.2148", "complementary_forensic_analyzer | signal=real | score=0.2839", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: []; gap: 无; reason: 多模型一致倾向 real，来源证据不足但无冲突。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局、局部、互补模型均倾向真实", "图像景深与细节符合真实拍摄特征"]; contradictory_evidence=[]; remaining_uncertainty=无来源凭据，无法确认拍摄链。; stop_reason=证据一致支持真实，无矛盾或关键缺口。
+
+## 02. r1882b6e6t:flux
+- Selection stratum: wrong_cases
+- Actor verdict: real | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.08575762808322906 — 全局取证原始合成分数为 0.085758，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 画框内为雪山小屋风景画，右上角有签名。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取分析。; reason: 需先获取全局取证倾向作为基础判断。
+- Step 2: action `STOP`
+  - Visual: 画框内为雪山小屋风景画，右上角有签名。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0858", "全局模型倾向真实，合成分数低"]
+  - Conflict: []; gap: 无显著缺口，全局证据已支持真实倾向。; reason: 全局证据强支持真实，无冲突或缺口。
+- Final: final_verdict=real; final_confidence=high; supporting_evidence=["全局模型高置信度判定为真实"]; contradictory_evidence=[]; remaining_uncertainty=无显著不确定性。; stop_reason=全局证据充分支持真实，无需进一步调查。
+
+## 03. r133bb357t:flux
+- Selection stratum: wrong_cases
+- Actor verdict: real | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9992163181304932 — 全局取证原始合成分数为 0.999216，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 木工室内老人操作缝纫机，背景有鞋架和时钟。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=real_like | score=0.0015568215167149901 — 局部纹理原始合成分数为 0.001557，固定判定阈值为 0.5，信号为 real_like。
+  - Visual: 木工室内老人操作缝纫机，背景有鞋架和时钟。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999216"]
+  - Conflict: []; gap: 无其他工具证据交叉验证，单工具高分可能误报。; reason: 需局部纹理证据交叉验证全局高分结论。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.9544014930725098 — 互补取证原始合成分数为 0.954401，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 木工室内老人操作缝纫机，背景有鞋架和时钟。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999216", "local_texture_analyzer | signal=real_like | score=0.001557"]
+  - Conflict: ["全局倾向 fake 与局部纹理 real_like 冲突"]; gap: 缺少来源凭据或互补模型证据。; reason: 需互补模型证据缓解全局与局部冲突。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 木工室内老人操作缝纫机，背景有鞋架和时钟。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999216", "local_texture_analyzer | signal=real_like | score=0.001557", "complementary_forensic_analyzer | signal=real | score=0.954401"]
+  - Conflict: ["全局 fake 与互补 real 信号冲突"]; gap: 无来源凭据证据，无法确认元数据。; reason: 需来源凭据证据解决全局与互补模型冲突。
+- Step 5: action `STOP`
+  - Visual: 木工室内老人操作缝纫机，背景有鞋架和时钟。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999216", "local_texture_analyzer | signal=real_like | score=0.001557", "complementary_forensic_analyzer | signal=real | score=0.954401", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局 fake 与互补 real 信号冲突"]; gap: 无来源凭据，无法确认拍摄或编辑链条。; reason: 证据冲突未解，且无来源凭据支持任一方。
+- Final: final_verdict=real; final_confidence=low; supporting_evidence=["局部纹理 real_like 与互补模型 real 信号支持真实"]; contradictory_evidence=["全局模型 fake 信号强烈反对真实"]; remaining_uncertainty=全局模型高分可能误报，无来源凭据。; stop_reason=证据冲突未解，且无来源凭据支持任一方。
+
+## 04. r096982ddt:raise
+- Selection stratum: wrong_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.02363692782819271 — 全局取证原始合成分数为 0.023637，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 山坡、木栅栏、小屋、枯树、蓝天，无明显AI痕迹。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 获取全局真实/合成倾向评估，作为初始证据基础。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=1.0 — 局部纹理原始合成分数为 1.000000，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 山坡、木栅栏、小屋、枯树、蓝天，无明显AI痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0236"]
+  - Conflict: []; gap: 无局部或来源证据，可选调用以增强信心。; reason: 补充局部纹理证据，验证全局结论的稳健性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=fake | score=0.9695631265640259 — 互补取证原始合成分数为 0.969563，既有独立校准阈值为 0.9561132789，信号倾向 fake。
+  - Visual: 山坡、木栅栏、小屋、枯树、蓝天，无明显AI痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0236", "local_texture_analyzer | signal=synthetic_like | score=1.0000"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据或互补模型证据。; reason: 调用互补模型缓解局部与全局证据冲突。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 山坡、木栅栏、小屋、枯树、蓝天，无明显AI痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0236", "local_texture_analyzer | signal=synthetic_like | score=1.0000", "complementary_forensic_analyzer | signal=fake | score=0.9696"]
+  - Conflict: ["全局真实 vs 局部合成 vs 互补模型合成"]; gap: 无来源凭据，无法验证拍摄链。; reason: 检查来源凭据，可能独立解决冲突或提供新证据。
+- Step 5: action `STOP`
+  - Visual: 山坡、木栅栏、小屋、枯树、蓝天，无明显AI痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0236", "local_texture_analyzer | signal=synthetic_like | score=1.0000", "complementary_forensic_analyzer | signal=fake | score=0.9696", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局真实 vs 局部合成 vs 互补模型合成"]; gap: 无; reason: 证据冲突未解，但互补模型高分支持 fake，优先选择该侧。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["互补模型高分倾向 fake", "局部纹理高分倾向合成"]; contradictory_evidence=["全局模型高分倾向 real"]; remaining_uncertainty=全局模型与局部/互补模型存在冲突。; stop_reason=证据冲突未解，但互补模型支持 fake 且置信度高。
+
+## 05. r1a499b96t:raise
+- Selection stratum: wrong_cases
+- Actor verdict: fake | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.24391257762908936 — 全局取证原始合成分数为 0.243913，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 雪山顶峰，蓝天白云，阳光穿透云层。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据支持或反驳。; reason: 需获取全局真实/合成倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9997209906578064 — 局部纹理原始合成分数为 0.999721，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 雪山顶峰，蓝天白云，阳光穿透云层。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.24391257762908936"]
+  - Conflict: []; gap: 缺乏局部纹理、互补模型或来源凭据证据。; reason: 补充局部纹理证据以增强结论可靠性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=fake | score=0.9599382877349854 — 互补取证原始合成分数为 0.959938，既有独立校准阈值为 0.9561132789，信号倾向 fake。
+  - Visual: 雪山顶峰，蓝天白云，阳光穿透云层。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.24391257762908936", "local_texture_analyzer | signal=synthetic_like | score=0.9997209906578064"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少互补模型或来源凭据证据。; reason: 需互补模型缓解局部与全局证据冲突。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 雪山顶峰，蓝天白云，阳光穿透云层。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.24391257762908936", "local_texture_analyzer | signal=synthetic_like | score=0.9997209906578064", "complementary_forensic_analyzer | signal=fake | score=0.9599382877349854"]
+  - Conflict: ["全局倾向真实，局部与互补倾向合成"]; gap: 缺少来源凭据证据。; reason: 检查来源凭据以补充证据链。
+- Step 5: action `STOP`
+  - Visual: 雪山顶峰，蓝天白云，阳光穿透云层。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.24391257762908936", "local_texture_analyzer | signal=synthetic_like | score=0.9997209906578064", "complementary_forensic_analyzer | signal=fake | score=0.9599382877349854", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局倾向真实，局部与互补倾向合成"]; gap: 无; reason: 证据冲突未解，但互补模型支持 fake，优先选 fake。
+- Final: final_verdict=fake; final_confidence=moderate; supporting_evidence=["局部纹理与互补模型均强烈倾向合成"]; contradictory_evidence=["全局模型倾向真实"]; remaining_uncertainty=全局模型与局部/互补模型存在冲突。; stop_reason=证据冲突未解，但互补模型支持 fake，优先选 fake。
+
+## 06. r072d955bt:sd3_5
+- Selection stratum: wrong_cases
+- Actor verdict: real | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9999690055847168 — 全局取证原始合成分数为 0.999969，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 石拱门下三人背影，晾衣绳挂毛巾，石墙与植物。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.8825386762619019 — 互补取证原始合成分数为 0.882539，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 石拱门下三人背影，晾衣绳挂毛巾，石墙与植物。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999969"]
+  - Conflict: []; gap: 无其他工具证据，当前证据单一，建议调用互补工具验证。; reason: 全局证据强倾向 fake，需互补工具验证是否一致。
+- Step 3: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=real_like | score=0.003646974451839924 — 局部纹理原始合成分数为 0.003647，固定判定阈值为 0.5，信号为 real_like。
+  - Visual: 石拱门下三人背影，晾衣绳挂毛巾，石墙与植物。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999969", "complementary_forensic_analyzer | signal=real | score=0.882539"]
+  - Conflict: ["全局模型强倾向 fake，互补模型倾向 real"]; gap: 无纹理或来源证据，冲突需局部或元数据佐证。; reason: 工具信号冲突，需局部纹理证据辅助判断。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 石拱门下三人背影，晾衣绳挂毛巾，石墙与植物。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999969", "complementary_forensic_analyzer | signal=real | score=0.882539", "local_texture_analyzer | signal=real_like | score=0.003647"]
+  - Conflict: ["全局模型倾向 fake，局部纹理倾向 real"]; gap: 无来源凭据，元数据缺失，无法确认生成链。; reason: 局部证据支持 real，需来源证据补强或解冲突。
+- Step 5: action `STOP`
+  - Visual: 石拱门下三人背影，晾衣绳挂毛巾，石墙与植物。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999969", "complementary_forensic_analyzer | signal=real | score=0.882539", "local_texture_analyzer | signal=real_like | score=0.003647", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局模型倾向 fake，局部纹理倾向 real"]; gap: 无来源凭据，无法验证生成链或拍摄真实性。; reason: 证据冲突未解，来源信息缺失，无法得出确定结论。
+- Final: final_verdict=real; final_confidence=low; supporting_evidence=["局部纹理分析强支持真实"]; contradictory_evidence=["全局模型强烈倾向伪造"]; remaining_uncertainty=全局模型高分可能误报，来源无凭据。; stop_reason=证据冲突未解，来源缺失，无法提升置信度。
+
+## 07. r191488c6t:raise
+- Selection stratum: wrong_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.0012114477576687932 — 全局取证原始合成分数为 0.001211，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 桥梁横跨水面，山间有雾，远处有塔状物。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据支持或反驳图像真实性。; reason: 需获取全局取证倾向以启动分析。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9994577765464783 — 局部纹理原始合成分数为 0.999458，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 桥梁横跨水面，山间有雾，远处有塔状物。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0012114477576687932"]
+  - Conflict: []; gap: 无显著证据缺口，但缺乏局部与来源证据。; reason: 补充局部纹理证据以增强结论稳健性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=fake | score=0.9623643755912781 — 互补取证原始合成分数为 0.962364，既有独立校准阈值为 0.9561132789，信号倾向 fake。
+  - Visual: 桥梁横跨水面，山间有雾，远处有塔状物。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0012114477576687932", "local_texture_analyzer | signal=synthetic_like | score=0.9994577765464783"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据与互补模型证据。; reason: 需互补模型缓解冲突，提供独立意见。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 桥梁横跨水面，山间有雾，远处有塔状物。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0012114477576687932", "local_texture_analyzer | signal=synthetic_like | score=0.9994577765464783", "complementary_forensic_analyzer | signal=fake | score=0.9623643755912781"]
+  - Conflict: ["全局倾向真实，局部与互补倾向合成"]; gap: 缺少来源凭据证据，无法验证元数据。; reason: 需检查来源凭据以补充证据链。
+- Step 5: action `STOP`
+  - Visual: 桥梁横跨水面，山间有雾，远处有塔状物。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0012114477576687932", "local_texture_analyzer | signal=synthetic_like | score=0.9994577765464783", "complementary_forensic_analyzer | signal=fake | score=0.9623643755912781", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局倾向真实，局部与互补倾向合成"]; gap: 无来源凭据，无法验证拍摄链。; reason: 证据冲突未解，但互补模型支持 fake，且无来源证据可补充。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["局部纹理与互补模型强烈倾向合成"]; contradictory_evidence=["全局模型倾向真实"]; remaining_uncertainty=全局模型与局部/互补模型存在冲突。; stop_reason=证据冲突未解，但多数工具支持 fake，无新证据可调用。
+
+## 08. r0149a21ct:sd3_5
+- Selection stratum: wrong_cases
+- Actor verdict: real | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9997879862785339 — 全局取证原始合成分数为 0.999788，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 湖边水泥小径，两侧绿植茂盛，天空晴朗。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=1.0 — 局部纹理原始合成分数为 1.000000，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 湖边水泥小径，两侧绿植茂盛，天空晴朗。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999788"]
+  - Conflict: []; gap: 缺乏局部纹理、互补模型或来源凭据证据。; reason: 全局证据倾向 fake，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.9538851380348206 — 互补取证原始合成分数为 0.953885，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 湖边水泥小径，两侧绿植茂盛，天空晴朗。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999788", "local_texture_analyzer | signal=synthetic_like | score=1.0"]
+  - Conflict: []; gap: 缺乏互补模型或来源凭据证据。; reason: 全局与局部均倾向 fake，需互补模型交叉验证。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 湖边水泥小径，两侧绿植茂盛，天空晴朗。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999788", "local_texture_analyzer | signal=synthetic_like | score=1.0", "complementary_forensic_analyzer | signal=real | score=0.953885"]
+  - Conflict: ["全局与局部倾向 fake，互补倾向 real"]; gap: 缺乏来源凭据证据。; reason: 三类工具证据冲突，需来源凭据破局。
+- Step 5: action `STOP`
+  - Visual: 湖边水泥小径，两侧绿植茂盛，天空晴朗。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999788", "local_texture_analyzer | signal=synthetic_like | score=1.0", "complementary_forensic_analyzer | signal=real | score=0.953885", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局与局部倾向 fake，互补倾向 real"]; gap: 无; reason: 工具证据冲突，来源凭据缺失，无法定论。
+- Final: final_verdict=real; final_confidence=low; supporting_evidence=["互补模型倾向 real，分数接近阈值"]; contradictory_evidence=["全局与局部倾向 fake"]; remaining_uncertainty=来源凭据缺失，工具证据冲突。; stop_reason=工具证据冲突，来源凭据缺失。
+
+## 09. r1b61c7b1t:raise
+- Selection stratum: wrong_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.00791478343307972 — 全局取证原始合成分数为 0.007915，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 古罗马神庙遗迹，柱体与石基破损，天空有云，前景有游客与植被。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局真实倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9999291896820068 — 局部纹理原始合成分数为 0.999929，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 古罗马神庙遗迹，柱体与石基破损，天空有云，前景有游客与植被。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.007915"]
+  - Conflict: []; gap: 无显著缺口，但局部纹理证据未获取。; reason: 全局证据强支持真实，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=fake | score=0.9689031839370728 — 互补取证原始合成分数为 0.968903，既有独立校准阈值为 0.9561132789，信号倾向 fake。
+  - Visual: 古罗马神庙遗迹，柱体与石基破损，天空有云，前景有游客与植被。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.007915", "local_texture_analyzer | signal=synthetic_like | score=0.999929"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据或互补证据，冲突未解。; reason: 现有证据冲突，需互补模型提供独立意见。
+- Step 4: action `STOP`
+  - Visual: 古罗马神庙遗迹，柱体与石基破损，天空有云，前景有游客与植被。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.007915", "local_texture_analyzer | signal=synthetic_like | score=0.999929", "complementary_forensic_analyzer | signal=fake | score=0.968903"]
+  - Conflict: ["全局真实 vs 局部合成 vs 互补合成"]; gap: 无来源凭据，无法验证拍摄链。; reason: 证据冲突显著，无新工具可调用，停止调查。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["互补模型高分倾向合成", "局部纹理高分倾向合成"]; contradictory_evidence=["全局模型高分倾向真实"]; remaining_uncertainty=无来源凭据，无法确认真实拍摄。; stop_reason=证据冲突未解，无工具可调用，选择合成倾向更强侧。
+
+## 10. r0e63ca9ft:sd3_5
+- Selection stratum: wrong_cases
+- Actor verdict: real | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9958688020706177 — 全局取证原始合成分数为 0.995869，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 咖啡杯在红色织物上，光影自然，有胶片颗粒感。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.8986852169036865 — 局部纹理原始合成分数为 0.898685，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 咖啡杯在红色织物上，光影自然，有胶片颗粒感。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99587"]
+  - Conflict: []; gap: 缺乏局部纹理、互补模型或来源凭据证据。; reason: 全局证据倾向 fake，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.9400948286056519 — 互补取证原始合成分数为 0.940095，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 咖啡杯在红色织物上，光影自然，有胶片颗粒感。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99587", "local_texture_analyzer | signal=synthetic_like | score=0.89869"]
+  - Conflict: []; gap: 缺乏互补模型或来源凭据证据。; reason: 全局与局部证据均倾向 fake，需互补模型交叉验证。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 咖啡杯在红色织物上，光影自然，有胶片颗粒感。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99587", "local_texture_analyzer | signal=synthetic_like | score=0.89869", "complementary_forensic_analyzer | signal=real | score=0.94009"]
+  - Conflict: ["全局与局部证据倾向 fake，互补模型倾向 real"]; gap: 缺乏来源凭据证据。; reason: 证据冲突明显，需来源凭据证据打破僵局。
+- Step 5: action `STOP`
+  - Visual: 咖啡杯在红色织物上，光影自然，有胶片颗粒感。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99587", "local_texture_analyzer | signal=synthetic_like | score=0.89869", "complementary_forensic_analyzer | signal=real | score=0.94009", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局与局部倾向 fake，互补模型倾向 real"]; gap: 无; reason: 证据冲突未解，来源凭据缺失，无法得出最终结论。
+- Final: final_verdict=real; final_confidence=low; supporting_evidence=["互补模型高置信度倾向 real"]; contradictory_evidence=["全局与局部模型倾向 fake"]; remaining_uncertainty=来源凭据缺失，模型间存在冲突。; stop_reason=证据冲突未解，来源凭据缺失。
+
+## 11. r170632f5t:raise
+- Selection stratum: conflict_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=6.960741302464157e-05 — 全局取证原始合成分数为 0.000070，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 运河边有游客、花船和自然反射，场景真实。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具。; reason: 先获取全局真实倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9562163949012756 — 局部纹理原始合成分数为 0.956216，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 运河边有游客、花船和自然反射，场景真实。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=6.96e-05"]
+  - Conflict: []; gap: 无冲突，但局部纹理证据未收集。; reason: 补充局部纹理证据以增强结论可靠性。
+- Step 3: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 运河边有游客、花船和自然反射，场景真实。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=6.96e-05", "local_texture_analyzer | signal=synthetic_like | score=0.956"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据，需检查元数据。; reason: 来源凭据可独立验证真实与否。
+- Step 4: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.1135217547416687 — 互补取证原始合成分数为 0.113522，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 运河边有游客、花船和自然反射，场景真实。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=6.96e-05", "local_texture_analyzer | signal=synthetic_like | score=0.956", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局真实 vs 局部合成倾向"]; gap: 无来源凭据，无法验证拍摄链。; reason: 互补模型可缓解局部纹理与全局证据冲突。
+- Step 5: action `STOP`
+  - Visual: 运河边有游客、花船和自然反射，场景真实。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=6.96e-05", "local_texture_analyzer | signal=synthetic_like | score=0.956", "provenance_inspector | signal=inconclusive | score=null", "complementary_forensic_analyzer | signal=real | score=0.114"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 无; reason: 证据冲突未解，但多数工具支持真实。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型高置信度倾向真实", "互补模型倾向真实"]; contradictory_evidence=["局部纹理分析倾向合成"]; remaining_uncertainty=局部纹理证据可能误报。; stop_reason=证据冲突未解，但多数工具支持真实。
+
+## 12. r1bca2388t:raise
+- Selection stratum: conflict_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.14232029020786285 — 全局取证原始合成分数为 0.142320，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 木柜内多顶印字帽子，暖光照明，有阴影。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用工具获取分析。; reason: 需全局模型初步评估整图真实倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9958428740501404 — 局部纹理原始合成分数为 0.995843，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 木柜内多顶印字帽子，暖光照明，有阴影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.142320"]
+  - Conflict: []; gap: 缺乏局部纹理与来源凭据证据。; reason: 补充局部纹理证据以增强结论可靠性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.7651683688163757 — 互补取证原始合成分数为 0.765168，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 木柜内多顶印字帽子，暖光照明，有阴影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.142320", "local_texture_analyzer | signal=synthetic_like | score=0.995843"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据与互补模型证据。; reason: 需互补模型缓解证据冲突，提供独立意见。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 木柜内多顶印字帽子，暖光照明，有阴影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.142320", "local_texture_analyzer | signal=synthetic_like | score=0.995843", "complementary_forensic_analyzer | signal=real | score=0.765168"]
+  - Conflict: ["局部纹理倾向合成，全局与互补倾向真实"]; gap: 缺少来源凭据证据。; reason: 来源凭据可独立验证图像真实性。
+- Step 5: action `STOP`
+  - Visual: 木柜内多顶印字帽子，暖光照明，有阴影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.142320", "local_texture_analyzer | signal=synthetic_like | score=0.995843", "complementary_forensic_analyzer | signal=real | score=0.765168", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理倾向合成，全局与互补倾向真实"]; gap: ; reason: 证据冲突未解，但全局与互补模型支持真实。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型倾向真实", "互补模型倾向真实"]; contradictory_evidence=["局部纹理倾向合成"]; remaining_uncertainty=局部纹理证据强度高，存在冲突。; stop_reason=现有证据支持真实，冲突未解但可接受。
+
+## 13. r1986e42bt:raise
+- Selection stratum: conflict_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.0002756454632617533 — 全局取证原始合成分数为 0.000276，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 古建筑外墙有风化痕迹，阳光下阴影自然，未见明显AI生成伪影。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据支持或反驳图像真实性。; reason: 需全局模型初步评估整图真实倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9418610334396362 — 局部纹理原始合成分数为 0.941861，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 古建筑外墙有风化痕迹，阳光下阴影自然，未见明显AI生成伪影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000276"]
+  - Conflict: []; gap: 缺乏局部纹理与来源凭据证据。; reason: 补充局部纹理证据以增强结论可靠性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.8355884552001953 — 互补取证原始合成分数为 0.835588，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 古建筑外墙有风化痕迹，阳光下阴影自然，未见明显AI生成伪影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000276", "local_texture_analyzer | signal=synthetic_like | score=0.941861"]
+  - Conflict: ["全局倾向真实与局部纹理倾向合成冲突"]; gap: 缺少来源凭据与互补模型证据。; reason: 需互补模型缓解局部纹理与全局证据冲突。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 古建筑外墙有风化痕迹，阳光下阴影自然，未见明显AI生成伪影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000276", "local_texture_analyzer | signal=synthetic_like | score=0.941861", "complementary_forensic_analyzer | signal=real | score=0.835588"]
+  - Conflict: ["局部纹理与全局/互补模型证据冲突"]; gap: 缺少来源凭据证据。; reason: 来源凭据可独立验证图像真实性。
+- Step 5: action `STOP`
+  - Visual: 古建筑外墙有风化痕迹，阳光下阴影自然，未见明显AI生成伪影。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000276", "local_texture_analyzer | signal=synthetic_like | score=0.941861", "complementary_forensic_analyzer | signal=real | score=0.835588", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理与全局/互补模型证据冲突"]; gap: ; reason: 证据冲突未解，但全局与互补模型支持真实，局部纹理为次要冲突。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型高置信度判定为真实", "互补模型支持真实倾向"]; contradictory_evidence=["局部纹理分析倾向合成"]; remaining_uncertainty=局部纹理证据存在误报可能。; stop_reason=现有证据支持真实，冲突可接受，无新工具可调用。
+
+## 14. r1882b6e6t:raise
+- Selection stratum: conflict_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.0020353796426206827 — 全局取证原始合成分数为 0.002035，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 画框内为山景油画，画框有磨损，挂于白墙。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，无法判断真实/合成。; reason: 需全局模型初步评估图像整体倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9148381948471069 — 局部纹理原始合成分数为 0.914838，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 画框内为山景油画，画框有磨损，挂于白墙。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.002035"]
+  - Conflict: []; gap: 无局部纹理或来源凭据证据。; reason: 补充局部纹理证据以增强结论可靠性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.35587242245674133 — 互补取证原始合成分数为 0.355872，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 画框内为山景油画，画框有磨损，挂于白墙。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.002035", "local_texture_analyzer | signal=synthetic_like | score=0.9148"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据或互补模型证据。; reason: 互补模型可缓解冲突，提供独立评估意见。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 画框内为山景油画，画框有磨损，挂于白墙。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.002035", "local_texture_analyzer | signal=synthetic_like | score=0.9148", "complementary_forensic_analyzer | signal=real | score=0.3559"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 缺少来源凭据证据。; reason: 来源凭据可独立验证图像真实性。
+- Step 5: action `STOP`
+  - Visual: 画框内为山景油画，画框有磨损，挂于白墙。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.002035", "local_texture_analyzer | signal=synthetic_like | score=0.9148", "complementary_forensic_analyzer | signal=real | score=0.3559", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: ; reason: 证据冲突未解，但全局与互补模型支持真实。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型倾向真实", "互补模型倾向真实"]; contradictory_evidence=["局部纹理倾向合成"]; remaining_uncertainty=局部纹理证据存疑，可能误报。; stop_reason=现有证据支持真实，冲突未解但可接受。
+
+## 15. r12638c95t:sd3_5
+- Selection stratum: conflict_cases
+- Actor verdict: fake | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9998422861099243 — 全局取证原始合成分数为 0.999842，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 多人在画廊观展，画作具古典风格，细节丰富。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用工具获取分析。; reason: 需全局模型初步判断图像整体真实/合成倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=real_like | score=0.4906783103942871 — 局部纹理原始合成分数为 0.490678，固定判定阈值为 0.5，信号为 real_like。
+  - Visual: 多人在画廊观展，画作具古典风格，细节丰富。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999842"]
+  - Conflict: []; gap: 无其他工具证据佐证或反驳，需调用其他工具交叉验证。; reason: 需局部纹理证据交叉验证全局模型的 fake 判定。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.9011111855506897 — 互补取证原始合成分数为 0.901111，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 多人在画廊观展，画作具古典风格，细节丰富。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999842", "local_texture_analyzer | signal=real_like | score=0.490678"]
+  - Conflict: ["全局模型判 fake，局部纹理判 real_like"]; gap: 缺少来源凭据或互补模型证据。; reason: 需互补模型证据缓解当前冲突，提供独立判断。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 多人在画廊观展，画作具古典风格，细节丰富。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999842", "local_texture_analyzer | signal=real_like | score=0.490678", "complementary_forensic_analyzer | signal=real | score=0.901111"]
+  - Conflict: ["全局判 fake，互补判 real，局部判 real_like"]; gap: 缺少来源凭据（provenance_inspector）。; reason: 来源凭据可提供独立证据，缓解当前多工具冲突。
+- Step 5: action `STOP`
+  - Visual: 多人在画廊观展，画作具古典风格，细节丰富。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999842", "local_texture_analyzer | signal=real_like | score=0.490678", "complementary_forensic_analyzer | signal=real | score=0.901111", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局判 fake，互补判 real，局部判 real_like"]; gap: 无; reason: 证据冲突未解，无新缺口，停止调查。
+- Final: final_verdict=fake; final_confidence=low; supporting_evidence=["全局模型高分判 fake"]; contradictory_evidence=["局部纹理与互补模型判 real"]; remaining_uncertainty=多工具结果冲突，无来源凭据佐证。; stop_reason=证据冲突未解，无新工具可调用。
+
+## 16. r1ef15cb3t:raise
+- Selection stratum: conflict_cases
+- Actor verdict: real | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.0003998914617113769 — 全局取证原始合成分数为 0.000400，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 古罗马遗址，有拱门、石柱、游客和自然光照。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 获取全局真实/合成倾向评估，作为初始证据基础。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9617939591407776 — 局部纹理原始合成分数为 0.961794，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 古罗马遗址，有拱门、石柱、游客和自然光照。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000400"]
+  - Conflict: []; gap: 缺乏局部纹理和来源凭据证据，可补充验证。; reason: 补充局部纹理证据，验证全局结论的稳健性。
+- Step 3: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 古罗马遗址，有拱门、石柱、游客和自然光照。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000400", "local_texture_analyzer | signal=synthetic_like | score=0.961794"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据证据，无法确认拍摄链路。; reason: 获取来源凭据，判断是否可解释当前冲突。
+- Step 4: action `STOP`
+  - Visual: 古罗马遗址，有拱门、石柱、游客和自然光照。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000400", "local_texture_analyzer | signal=synthetic_like | score=0.961794", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据，无法验证拍摄或编辑链路。; reason: 证据冲突未解，且无来源凭据可解释，停止调查。
+- Final: final_verdict=real; final_confidence=low; supporting_evidence=["全局模型倾向真实，分数极低"]; contradictory_evidence=["局部纹理分析倾向合成，分数极高"]; remaining_uncertainty=局部纹理误报或图像编辑可能。; stop_reason=证据冲突未解，无来源凭据可解释。
+
+## 17. r108ba35et:sd3_5
+- Selection stratum: conflict_cases
+- Actor verdict: fake | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9999387264251709 — 全局取证原始合成分数为 0.999939，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 古建筑、大树、田野，光线自然。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取。; reason: 无工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=1.0 — 局部纹理原始合成分数为 1.000000，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 古建筑、大树、田野，光线自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999939"]
+  - Conflict: []; gap: 无其他工具证据交叉验证。; reason: 需局部纹理证据交叉验证全局结论。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.889742910861969 — 互补取证原始合成分数为 0.889743，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 古建筑、大树、田野，光线自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999939", "local_texture_analyzer | signal=synthetic_like | score=1.0"]
+  - Conflict: []; gap: 无来源凭据或互补证据。; reason: 需互补模型证据增强结论可靠性。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 古建筑、大树、田野，光线自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999939", "local_texture_analyzer | signal=synthetic_like | score=1.0", "complementary_forensic_analyzer | signal=real | score=0.889743"]
+  - Conflict: ["互补模型判定为 real，与全局/局部模型冲突"]; gap: 无元数据或来源凭据证据。; reason: 需来源凭据证据解决模型间冲突。
+- Step 5: action `STOP`
+  - Visual: 古建筑、大树、田野，光线自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999939", "local_texture_analyzer | signal=synthetic_like | score=1.0", "complementary_forensic_analyzer | signal=real | score=0.889743", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["互补模型判定为 real，与全局/局部模型冲突"]; gap: 无来源凭据，无法验证生成链。; reason: 证据冲突未解，但全局与局部证据更强。
+- Final: final_verdict=fake; final_confidence=moderate; supporting_evidence=["全局模型高分判定为 fake", "局部纹理高分判定为 synthetic_like"]; contradictory_evidence=["互补模型判定为 real"]; remaining_uncertainty=互补模型与全局/局部模型存在冲突。; stop_reason=证据冲突未解，但多数工具支持 fake。
+
+## 18. r017904f0t:sd3_5
+- Selection stratum: conflict_cases
+- Actor verdict: fake | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9999547004699707 — 全局取证原始合成分数为 0.999955，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 两尊石雕女性托举花盆，背景为绿树，有自然光影。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.999496579170227 — 局部纹理原始合成分数为 0.999497，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 两尊石雕女性托举花盆，背景为绿树，有自然光影。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999955"]
+  - Conflict: []; gap: 无其他工具证据交叉验证。; reason: 需局部纹理证据交叉验证全局结论。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.891800582408905 — 互补取证原始合成分数为 0.891801，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 两尊石雕女性托举花盆，背景为绿树，有自然光影。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999955", "local_texture_analyzer | signal=synthetic_like | score=0.999497"]
+  - Conflict: []; gap: 无来源凭据或互补证据。; reason: 需互补模型证据增强结论可靠性。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 两尊石雕女性托举花盆，背景为绿树，有自然光影。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999955", "local_texture_analyzer | signal=synthetic_like | score=0.999497", "complementary_forensic_analyzer | signal=real | score=0.891801"]
+  - Conflict: ["互补模型判定为 real，与全局/局部模型冲突"]; gap: 无来源凭据（provenance_inspector）。; reason: 来源凭据可独立解决当前证据冲突。
+- Step 5: action `STOP`
+  - Visual: 两尊石雕女性托举花盆，背景为绿树，有自然光影。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999955", "local_texture_analyzer | signal=synthetic_like | score=0.999497", "complementary_forensic_analyzer | signal=real | score=0.891801", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["互补模型判定为 real，与全局/局部模型冲突"]; gap: 无; reason: 证据冲突未解，但全局与局部证据更强，优先支持 fake。
+- Final: final_verdict=fake; final_confidence=moderate; supporting_evidence=["全局模型高分判定为 fake", "局部纹理高分判定为 synthetic_like"]; contradictory_evidence=["互补模型判定为 real"]; remaining_uncertainty=互补模型与主流模型结论冲突。; stop_reason=证据冲突未解，但主流模型支持 fake，无新工具可调用。
+
+## 19. r0db011b4t:raise
+- Selection stratum: conflict_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.00020927240257151425 — 全局取证原始合成分数为 0.000209，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 山谷绿坡，教堂建筑，云雾缭绕，前景松林。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需全局模型先获取总体倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9998809099197388 — 局部纹理原始合成分数为 0.999881，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 山谷绿坡，教堂建筑，云雾缭绕，前景松林。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000209"]
+  - Conflict: []; gap: 无局部或来源证据，可选调用以交叉验证。; reason: 全局证据强倾向 real，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.8927870392799377 — 互补取证原始合成分数为 0.892787，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 山谷绿坡，教堂建筑，云雾缭绕，前景松林。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000209", "local_texture_analyzer | signal=synthetic_like | score=0.999881"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据或互补模型证据。; reason: 全局与局部证据冲突，需互补模型提供独立意见。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 山谷绿坡，教堂建筑，云雾缭绕，前景松林。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000209", "local_texture_analyzer | signal=synthetic_like | score=0.999881", "complementary_forensic_analyzer | signal=real | score=0.892787"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 缺少来源凭据证据，无法确认拍摄链。; reason: 来源凭据可独立验证真实与否，优先调用。
+- Step 5: action `STOP`
+  - Visual: 山谷绿坡，教堂建筑，云雾缭绕，前景松林。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000209", "local_texture_analyzer | signal=synthetic_like | score=0.999881", "complementary_forensic_analyzer | signal=real | score=0.892787", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 无; reason: 证据冲突未解，但全局与互补模型支持真实，优先采信。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型强倾向真实", "互补模型倾向真实"]; contradictory_evidence=["局部纹理倾向合成"]; remaining_uncertainty=局部纹理证据可能误报。; stop_reason=证据冲突未解，但多数工具支持真实。
+
+## 20. r15c91802t:raise
+- Selection stratum: conflict_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.0005035683279857039 — 全局取证原始合成分数为 0.000504，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 山谷城市与山脉，天空有云，前景有树木。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9886366724967957 — 局部纹理原始合成分数为 0.988637，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 山谷城市与山脉，天空有云，前景有树木。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000504"]
+  - Conflict: []; gap: 无显著缺口，但局部纹理证据未获取。; reason: 全局证据强支持真实，补充局部纹理证据增强结论。
+- Step 3: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 山谷城市与山脉，天空有云，前景有树木。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000504", "local_texture_analyzer | signal=synthetic_like | score=0.988637"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据，需检查元数据。; reason: 证据冲突，需来源凭据辅助判断。
+- Step 4: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.9357796907424927 — 互补取证原始合成分数为 0.935780，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 山谷城市与山脉，天空有云，前景有树木。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000504", "local_texture_analyzer | signal=synthetic_like | score=0.988637", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局真实 vs 局部合成倾向"]; gap: 无来源凭据，无法验证拍摄链。; reason: 冲突未解，需互补模型提供独立意见。
+- Step 5: action `STOP`
+  - Visual: 山谷城市与山脉，天空有云，前景有树木。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000504", "local_texture_analyzer | signal=synthetic_like | score=0.988637", "provenance_inspector | signal=inconclusive | score=null", "complementary_forensic_analyzer | signal=real | score=0.935780"]
+  - Conflict: ["局部纹理倾向合成"]; gap: 无; reason: 多模型支持真实，局部冲突可接受，证据充分。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型高置信真实", "互补模型高置信真实"]; contradictory_evidence=["局部纹理高合成倾向"]; remaining_uncertainty=局部纹理证据存疑，来源不可考。; stop_reason=多模型共识支持真实，局部冲突可接受。
+
+## 21. r10c5fc29t:flux
+- Selection stratum: single_tool_stop
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.987302303314209 — 全局取证原始合成分数为 0.987302，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 前景灌木丛细节丰富，天空云层层次分明，远处山峦有雨幕效果。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 获取全局真实/合成倾向评估，作为初始证据基础。
+- Step 2: action `STOP`
+  - Visual: 前景灌木丛细节丰富，天空云层层次分明，远处山峦有雨幕效果。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9873"]
+  - Conflict: []; gap: 无其他工具证据，当前证据单一但强度高。; reason: 全局取证信号强且倾向 fake，无冲突证据，可停止调查。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=全局取证证据强且一致，无矛盾。
+
+## 22. r18d72ab2t:flux
+- Selection stratum: single_tool_stop
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9672366976737976 — 全局取证原始合成分数为 0.967237，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 黄色建筑、行人、雪山背景，窗户与门框细节清晰。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `STOP`
+  - Visual: 黄色建筑、行人、雪山背景，窗户与门框细节清晰。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9672"]
+  - Conflict: []; gap: 无其他工具证据，当前仅依赖全局模型。; reason: 全局模型高分倾向 fake，无冲突证据，可停止。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分倾向 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=全局模型高分倾向 fake，无冲突证据。
+
+## 23. r019eb1cbt:sd3_5
+- Selection stratum: single_tool_stop
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9999606609344482 — 全局取证原始合成分数为 0.999961，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 圣彼得大教堂穹顶，广场人群，天空云彩。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用任一工具获取初始证据。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `STOP`
+  - Visual: 圣彼得大教堂穹顶，广场人群，天空云彩。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999961"]
+  - Conflict: []; gap: 无其他工具证据，可停止调查。; reason: 已有高置信度全局证据倾向 fake，无冲突或缺口。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为合成图像"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=全局取证证据已足够支持 fake 判定。
+
+## 24. r14bfe6f4t:sd3_5
+- Selection stratum: single_tool_stop
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9999699592590332 — 全局取证原始合成分数为 0.999970，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 庭院建筑对称，藤蔓与花卉繁茂，光影自然。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个分析工具。; reason: 获取全局真实/合成倾向初步评估。
+- Step 2: action `STOP`
+  - Visual: 庭院建筑对称，藤蔓与花卉繁茂，光影自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99997"]
+  - Conflict: []; gap: 无其他工具证据佐证或反驳，可停止调查。; reason: 全局模型高分倾向 fake，证据充分，可停止。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具证据佐证。; stop_reason=全局模型高分倾向 fake，证据充分。
+
+## 25. r1b2765ebt:flux
+- Selection stratum: single_tool_stop
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9257988929748535 — 全局取证原始合成分数为 0.925799，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 男子坐公园长椅，背景山景与秋树，前景有树枝遮挡。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局取证倾向。
+- Step 2: action `STOP`
+  - Visual: 男子坐公园长椅，背景山景与秋树，前景有树枝遮挡。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9258"]
+  - Conflict: []; gap: 无其他工具证据，可停止调查。; reason: 全局证据强倾向 fake，无冲突且无缺口。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分倾向 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=全局证据强且无冲突，可停止调查。
+
+## 26. r00c0995ft:sd3_5
+- Selection stratum: single_tool_stop
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.999811589717865 — 全局取证原始合成分数为 0.999812，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 石柱拱顶大厅，暖光反射地面，细节丰富。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用任一工具获取初始证据。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `STOP`
+  - Visual: 石柱拱顶大厅，暖光反射地面，细节丰富。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999812"]
+  - Conflict: []; gap: 无其他工具证据，当前证据单一。; reason: 全局工具高置信度指向 fake，无冲突且无缺口。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=单一高置信度工具证据已足够支持结论。
+
+## 27. r09a60f63t:flux
+- Selection stratum: all_tool_cases
+- Actor verdict: fake | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9936010241508484 — 全局取证原始合成分数为 0.993601，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 桌面摆放大量手工艺品，纹理丰富，背景有绿植。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.7336379289627075 — 局部纹理原始合成分数为 0.733638，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 桌面摆放大量手工艺品，纹理丰富，背景有绿植。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9936"]
+  - Conflict: []; gap: 无局部或来源证据，无法交叉验证。; reason: 需局部纹理证据交叉验证全局结论。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.9469975233078003 — 互补取证原始合成分数为 0.946998，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 桌面摆放大量手工艺品，纹理丰富，背景有绿植。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9936", "local_texture_analyzer | signal=synthetic_like | score=0.7336"]
+  - Conflict: []; gap: 无来源凭据或互补模型证据。; reason: 需互补模型证据增强结论可靠性。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 桌面摆放大量手工艺品，纹理丰富，背景有绿植。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9936", "local_texture_analyzer | signal=synthetic_like | score=0.7336", "complementary_forensic_analyzer | signal=real | score=0.9470"]
+  - Conflict: ["全局与互补模型结论冲突"]; gap: 无来源凭据证据，无法确认生成链。; reason: 需来源凭据证据解决模型间冲突。
+- Step 5: action `STOP`
+  - Visual: 桌面摆放大量手工艺品，纹理丰富，背景有绿植。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9936", "local_texture_analyzer | signal=synthetic_like | score=0.7336", "complementary_forensic_analyzer | signal=real | score=0.9470", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局模型与互补模型结论冲突"]; gap: 无来源凭据，无法确认生成链。; reason: 证据冲突未解，来源信息缺失，无法提升置信度。
+- Final: final_verdict=fake; final_confidence=low; supporting_evidence=["全局模型高分倾向 fake"]; contradictory_evidence=["互补模型倾向 real"]; remaining_uncertainty=模型间结论冲突，无来源凭据。; stop_reason=证据冲突未解，来源信息缺失。
+
+## 28. r082626aft:sd3_5
+- Selection stratum: all_tool_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.999859094619751 — 全局取证原始合成分数为 0.999859，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 雪地中的塑料儿童屋，内有穿红衣儿童，旁有长椅，背景为树林。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用工具获取初步分析。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.999871015548706 — 局部纹理原始合成分数为 0.999871，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 雪地中的塑料儿童屋，内有穿红衣儿童，旁有长椅，背景为树林。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999859"]
+  - Conflict: []; gap: 无局部或来源证据，无法交叉验证。; reason: 需局部纹理证据交叉验证全局高分fake判断。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.8426342010498047 — 互补取证原始合成分数为 0.842634，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 雪地中的塑料儿童屋，内有穿红衣儿童，旁有长椅，背景为树林。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999859", "local_texture_analyzer | signal=synthetic_like | score=0.999871"]
+  - Conflict: []; gap: 无来源凭据或互补模型证据。; reason: 需互补模型证据增强结论可靠性。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 雪地中的塑料儿童屋，内有穿红衣儿童，旁有长椅，背景为树林。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999859", "local_texture_analyzer | signal=synthetic_like | score=0.999871", "complementary_forensic_analyzer | signal=real | score=0.842634"]
+  - Conflict: ["互补模型判定为real，与全局/局部冲突"]; gap: 无来源凭据，无法追溯生成链。; reason: 需来源凭据证据解决模型间冲突。
+- Step 5: action `STOP`
+  - Visual: 雪地中的塑料儿童屋，内有穿红衣儿童，旁有长椅，背景为树林。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999859", "local_texture_analyzer | signal=synthetic_like | score=0.999871", "complementary_forensic_analyzer | signal=real | score=0.842634", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["互补模型判定为real，与全局/局部冲突"]; gap: 无来源凭据，无法追溯生成链。; reason: 多工具支持fake，互补模型冲突但无来源证据可解。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为fake", "局部纹理高分判定为synthetic_like"]; contradictory_evidence=["互补模型判定为real"]; remaining_uncertainty=互补模型与全局/局部冲突，来源缺失。; stop_reason=多工具支持fake，无新证据可解冲突。
+
+## 29. r0fa077bet:sd3_5
+- Selection stratum: all_tool_cases
+- Actor verdict: fake | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9752206206321716 — 全局取证原始合成分数为 0.975221，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 黄色路牌有雪，文字含德语和意大利语混合，字体有磨损和涂鸦痕迹。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初步判断。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9999971389770508 — 局部纹理原始合成分数为 0.999997，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 黄色路牌有雪，文字含德语和意大利语混合，字体有磨损和涂鸦痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.97522"]
+  - Conflict: []; gap: 缺乏局部纹理、互补模型或来源凭据证据。; reason: 全局证据倾向 fake，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.8983279466629028 — 互补取证原始合成分数为 0.898328，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 黄色路牌有雪，文字含德语和意大利语混合，字体有磨损和涂鸦痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.97522", "local_texture_analyzer | signal=synthetic_like | score=0.999997"]
+  - Conflict: []; gap: 缺乏来源凭据或互补模型证据。; reason: 全局与局部均倾向 fake，需互补模型交叉验证。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 黄色路牌有雪，文字含德语和意大利语混合，字体有磨损和涂鸦痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.97522", "local_texture_analyzer | signal=synthetic_like | score=0.999997", "complementary_forensic_analyzer | signal=real | score=0.898328"]
+  - Conflict: ["互补模型信号为 real，与全局/局部冲突"]; gap: 缺乏来源凭据证据。; reason: 互补模型信号 real 与全局/局部冲突，需来源凭据破局。
+- Step 5: action `STOP`
+  - Visual: 黄色路牌有雪，文字含德语和意大利语混合，字体有磨损和涂鸦痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.97522", "local_texture_analyzer | signal=synthetic_like | score=0.999997", "complementary_forensic_analyzer | signal=real | score=0.898328", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["互补模型信号为 real，与全局/局部冲突"]; gap: ; reason: 证据冲突未解，来源凭据缺失，无新证据可调用。
+- Final: final_verdict=fake; final_confidence=low; supporting_evidence=["全局模型高分倾向 fake", "局部纹理高分倾向 synthetic_like"]; contradictory_evidence=["互补模型信号为 real"]; remaining_uncertainty=互补模型与全局/局部冲突，来源缺失。; stop_reason=证据冲突未解，无新工具可调用。
+
+## 30. r18d1abact:raise
+- Selection stratum: all_tool_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.00011993571388302371 — 全局取证原始合成分数为 0.000120，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 山坡草地有羊群，远处有村庄和水库。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9999992847442627 — 局部纹理原始合成分数为 0.999999，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 山坡草地有羊群，远处有村庄和水库。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000120"]
+  - Conflict: []; gap: 无局部或来源证据，可选调用以交叉验证。; reason: 全局证据强倾向 real，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=fake | score=0.9611817598342896 — 互补取证原始合成分数为 0.961182，既有独立校准阈值为 0.9561132789，信号倾向 fake。
+  - Visual: 山坡草地有羊群，远处有村庄和水库。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000120", "local_texture_analyzer | signal=synthetic_like | score=0.999999"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据或互补模型证据。; reason: 全局与局部证据冲突，需互补模型提供不同视角。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 山坡草地有羊群，远处有村庄和水库。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000120", "local_texture_analyzer | signal=synthetic_like | score=0.999999", "complementary_forensic_analyzer | signal=fake | score=0.961182"]
+  - Conflict: ["全局倾向真实，局部与互补倾向合成"]; gap: 无来源凭据，无法确认拍摄链。; reason: 来源凭据可独立验证真实或合成，优先调用。
+- Step 5: action `STOP`
+  - Visual: 山坡草地有羊群，远处有村庄和水库。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000120", "local_texture_analyzer | signal=synthetic_like | score=0.999999", "complementary_forensic_analyzer | signal=fake | score=0.961182", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局倾向真实，局部与互补倾向合成"]; gap: 无来源凭据，无法确认拍摄链。; reason: 证据冲突未解，但互补模型高分倾向 fake，优先支持 fake。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["互补模型高分倾向 fake", "局部纹理高分倾向合成"]; contradictory_evidence=["全局模型高分倾向真实"]; remaining_uncertainty=全局模型与局部/互补模型存在冲突。; stop_reason=证据冲突未解，但互补模型支持 fake，优先选择 fake。
+
+## 31. r1bc23d6et:raise
+- Selection stratum: all_tool_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=4.784343400388025e-05 — 全局取证原始合成分数为 0.000048，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 山地碎石坡，夹杂绿草与粉黄野花。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个分析工具。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9999815225601196 — 局部纹理原始合成分数为 0.999982，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 山地碎石坡，夹杂绿草与粉黄野花。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=4.784343400388025e-05"]
+  - Conflict: []; gap: 无明显缺口，但局部纹理证据未获取。; reason: 全局证据强支持真实，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.3008686602115631 — 互补取证原始合成分数为 0.300869，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 山地碎石坡，夹杂绿草与粉黄野花。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=4.784343400388025e-05", "local_texture_analyzer | signal=synthetic_like | score=0.9999815225601196"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据或互补证据，冲突未解。; reason: 现有证据冲突，需互补模型提供独立意见。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 山地碎石坡，夹杂绿草与粉黄野花。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=4.784343400388025e-05", "local_texture_analyzer | signal=synthetic_like | score=0.9999815225601196", "complementary_forensic_analyzer | signal=real | score=0.3008686602115631"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 无来源凭据，无法验证拍摄链。; reason: 需来源凭据排除元数据伪造或编辑链干扰。
+- Step 5: action `STOP`
+  - Visual: 山地碎石坡，夹杂绿草与粉黄野花。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=4.784343400388025e-05", "local_texture_analyzer | signal=synthetic_like | score=0.9999815225601196", "complementary_forensic_analyzer | signal=real | score=0.3008686602115631", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 无来源凭据，无法验证拍摄链。; reason: 证据冲突未解，但全局与互补证据支持真实，停止调查。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型高置信度倾向真实", "互补模型倾向真实"]; contradictory_evidence=["局部纹理分析倾向合成"]; remaining_uncertainty=局部纹理证据存在误报可能。; stop_reason=现有证据支持真实，冲突未解但可接受。
+
+## 32. r0149a21ct:raise
+- Selection stratum: all_tool_cases
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.00011404079123167321 — 全局取证原始合成分数为 0.000114，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 林间小径旁有湖水和芦苇，树皮纹理自然。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据支持或反驳图像真实性。; reason: 需获取全局取证倾向以启动分析。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9992486834526062 — 局部纹理原始合成分数为 0.999249，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 林间小径旁有湖水和芦苇，树皮纹理自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000114"]
+  - Conflict: []; gap: 无显著证据缺口，但局部纹理证据未获取。; reason: 补充局部纹理证据以增强结论稳健性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.7053189277648926 — 互补取证原始合成分数为 0.705319，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 林间小径旁有湖水和芦苇，树皮纹理自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000114", "local_texture_analyzer | signal=synthetic_like | score=0.999249"]
+  - Conflict: ["全局倾向真实与局部纹理倾向合成冲突"]; gap: 缺少来源凭据或互补模型证据。; reason: 需互补模型缓解冲突并提供独立意见。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 林间小径旁有湖水和芦苇，树皮纹理自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000114", "local_texture_analyzer | signal=synthetic_like | score=0.999249", "complementary_forensic_analyzer | signal=real | score=0.705319"]
+  - Conflict: ["局部纹理与全局/互补模型结果冲突"]; gap: 缺少来源凭据（provenance_inspector）。; reason: 来源凭据可独立验证图像真实性。
+- Step 5: action `STOP`
+  - Visual: 林间小径旁有湖水和芦苇，树皮纹理自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000114", "local_texture_analyzer | signal=synthetic_like | score=0.999249", "complementary_forensic_analyzer | signal=real | score=0.705319", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理与全局/互补模型结果冲突"]; gap: ; reason: 证据冲突未解，但全局与互补模型支持真实。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型高置信度倾向真实", "互补模型倾向真实"]; contradictory_evidence=["局部纹理分析倾向合成"]; remaining_uncertainty=局部纹理证据存在误报可能。; stop_reason=现有证据支持真实，冲突可接受，无新工具可调用。
+
+## 33. r0cea5432t:flux
+- Selection stratum: global_tool_failure
+- Actor verdict: fake | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.4672015309333801 — 全局取证原始合成分数为 0.467202，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 三只天鹅在水面游动，光影与倒影自然。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个分析工具。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9144107103347778 — 局部纹理原始合成分数为 0.914411，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 三只天鹅在水面游动，光影与倒影自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.4672"]
+  - Conflict: []; gap: 缺乏局部纹理与来源凭据证据，不足以支撑最终结论。; reason: 全局证据倾向 real，但需局部纹理证据补充验证。
+- Step 3: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 三只天鹅在水面游动，光影与倒影自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.4672", "local_texture_analyzer | signal=synthetic_like | score=0.9144"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据证据，无法确认拍摄链路。; reason: 全局与局部证据冲突，需来源凭据补充判断。
+- Step 4: action `STOP`
+  - Visual: 三只天鹅在水面游动，光影与倒影自然。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.4672", "local_texture_analyzer | signal=synthetic_like | score=0.9144", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据，无法验证拍摄链路。; reason: 证据冲突未解，来源信息缺失，无法提升置信度。
+- Final: final_verdict=fake; final_confidence=low; supporting_evidence=["局部纹理高分倾向合成"]; contradictory_evidence=["全局模型倾向真实"]; remaining_uncertainty=来源信息缺失，局部与全局证据冲突。; stop_reason=证据冲突未解，来源信息缺失，无法提升置信度。
+
+## 34. r0d0ff43at:raise
+- Selection stratum: global_tool_failure
+- Actor verdict: fake | confidence: low
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.6426970362663269 — 全局取证原始合成分数为 0.642697，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 大理石雕塑，人物姿态优雅，背景有雕刻纹饰。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.5530260801315308 — 局部纹理原始合成分数为 0.553026，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 大理石雕塑，人物姿态优雅，背景有雕刻纹饰。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.642697"]
+  - Conflict: []; gap: 缺乏局部纹理、互补模型或来源凭据证据。; reason: 全局证据倾向 fake，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.5684889554977417 — 互补取证原始合成分数为 0.568489，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 大理石雕塑，人物姿态优雅，背景有雕刻纹饰。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.642697", "local_texture_analyzer | signal=synthetic_like | score=0.553026"]
+  - Conflict: []; gap: 缺少来源凭据或互补模型证据。; reason: 局部与全局证据均倾向 fake，需互补模型补充意见。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 大理石雕塑，人物姿态优雅，背景有雕刻纹饰。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.642697", "local_texture_analyzer | signal=synthetic_like | score=0.553026", "complementary_forensic_analyzer | signal=real | score=0.568489"]
+  - Conflict: ["全局与局部证据倾向 fake，互补模型倾向 real"]; gap: 缺少来源凭据证据，无法确认拍摄或编辑链条。; reason: 证据冲突明显，需来源凭据判断是否可追溯真实拍摄。
+- Step 5: action `STOP`
+  - Visual: 大理石雕塑，人物姿态优雅，背景有雕刻纹饰。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.642697", "local_texture_analyzer | signal=synthetic_like | score=0.553026", "complementary_forensic_analyzer | signal=real | score=0.568489", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["全局与局部证据倾向 fake，互补模型倾向 real"]; gap: 无; reason: 证据冲突未解，来源凭据缺失，无法确认真实拍摄。
+- Final: final_verdict=fake; final_confidence=low; supporting_evidence=["全局与局部纹理证据倾向 fake"]; contradictory_evidence=["互补模型证据倾向 real"]; remaining_uncertainty=互补模型与全局/局部证据冲突未解。; stop_reason=证据冲突未解，来源凭据缺失，无法确认真实拍摄。
+
+## 35. r1c6b4a23t:sd3_5
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9985927939414978 — 全局取证原始合成分数为 0.998593，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 钟楼、苏格兰旗、蓝天，建筑细节清晰。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `STOP`
+  - Visual: 钟楼、苏格兰旗、蓝天，建筑细节清晰。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9986"]
+  - Conflict: []; gap: 无其他工具证据，当前证据单一。; reason: 全局工具高分倾向 fake，无冲突证据，可停止。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=全局模型高分倾向 fake，证据充分。
+
+## 36. r072649fdt:flux
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9996004700660706 — 全局取证原始合成分数为 0.999600，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 多人背对镜头拍船，晴空无云，美国国旗在桅杆上。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9954532384872437 — 局部纹理原始合成分数为 0.995453，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 多人背对镜头拍船，晴空无云，美国国旗在桅杆上。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9996"]
+  - Conflict: []; gap: 无其他工具证据交叉验证，全局证据强度高但单一。; reason: 需局部纹理证据交叉验证全局fake倾向。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=fake | score=0.96528559923172 — 互补取证原始合成分数为 0.965286，既有独立校准阈值为 0.9561132789，信号倾向 fake。
+  - Visual: 多人背对镜头拍船，晴空无云，美国国旗在桅杆上。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9996", "local_texture_analyzer | signal=synthetic_like | score=0.9955"]
+  - Conflict: []; gap: 无来源凭据或互补模型证据，可选调用以增强结论。; reason: 互补模型可提供不同表征的独立支持证据。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 多人背对镜头拍船，晴空无云，美国国旗在桅杆上。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9996", "local_texture_analyzer | signal=synthetic_like | score=0.9955", "complementary_forensic_analyzer | signal=fake | score=0.9653"]
+  - Conflict: []; gap: 无元数据或来源凭据，但三类工具均支持fake结论。; reason: 检查来源凭据可提供独立证据，增强结论可信度。
+- Step 5: action `STOP`
+  - Visual: 多人背对镜头拍船，晴空无云，美国国旗在桅杆上。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9996", "local_texture_analyzer | signal=synthetic_like | score=0.9955", "complementary_forensic_analyzer | signal=fake | score=0.9653", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: []; gap: 无; reason: 三类取证工具一致支持fake，来源凭据无信息，可停止调查。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为fake", "局部纹理高分判定为合成倾向"]; contradictory_evidence=[]; remaining_uncertainty=无来源凭据可验证真实性。; stop_reason=多工具一致支持fake，证据充分且无冲突。
+
+## 37. r1a499b96t:flux
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9485465288162231 — 全局取证原始合成分数为 0.948547，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 雪山日出，云层与镜头光晕明显。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用任一工具获取初始证据。; reason: 获取全局真实倾向评估，启动取证流程。
+- Step 2: action `STOP`
+  - Visual: 雪山日出，云层与镜头光晕明显。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9485"]
+  - Conflict: []; gap: 无其他工具证据，当前证据单一。; reason: 全局模型高分倾向 fake，证据充足。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分倾向 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具佐证，依赖单一模型。; stop_reason=全局模型高分倾向 fake，证据充分。
+
+## 38. r11a7deb7t:flux
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9995967745780945 — 全局取证原始合成分数为 0.999597，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 雪地多人滑雪，背景山林房屋，树枝无叶。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用任一工具获取初始证据。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `STOP`
+  - Visual: 雪地多人滑雪，背景山林房屋，树枝无叶。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9996"]
+  - Conflict: []; gap: 无其他工具证据，可停止调查。; reason: 全局工具已给出高置信度 fake 证据，无冲突或缺口。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=已获高置信度 fake 证据，无进一步调查必要。
+
+## 39. r1b2765ebt:sd3_5
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9998921155929565 — 全局取证原始合成分数为 0.999892，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 老人背对镜头坐长椅，背景有山、游乐设施和落叶。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `STOP`
+  - Visual: 老人背对镜头坐长椅，背景有山、游乐设施和落叶。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999892"]
+  - Conflict: []; gap: 无其他工具证据，当前仅有一项高置信度工具证据。; reason: 已有高置信度工具证据支持 fake，无冲突或缺口。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为合成图像"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=单一高置信度工具证据已足够支持结论。
+
+## 40. r14bfe6f4t:flux
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9996646642684937 — 全局取证原始合成分数为 0.999665，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 庭院建筑被藤蔓覆盖，前景花坛色彩丰富，一人站立其中。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `STOP`
+  - Visual: 庭院建筑被藤蔓覆盖，前景花坛色彩丰富，一人站立其中。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.9997"]
+  - Conflict: []; gap: 无其他工具证据，当前仅有一项高置信度工具证据。; reason: 已有高置信度工具证据支持 fake，无冲突或缺口。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为合成图像"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=单一高置信度工具证据已足够支持结论。
+
+## 41. r0a8b59bbt:sd3_5
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9999548196792603 — 全局取证原始合成分数为 0.999955，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 古典建筑内有两座雕像，背景为夜空，雕像后方有美元图案。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用工具获取分析。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `STOP`
+  - Visual: 古典建筑内有两座雕像，背景为夜空，雕像后方有美元图案。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999955"]
+  - Conflict: []; gap: 无其他工具证据，当前证据单一。; reason: 全局工具高分倾向 fake，证据足够支持结论。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=全局取证证据足够支持 fake 判定。
+
+## 42. r1df374c1t:flux
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.8700474500656128 — 全局取证原始合成分数为 0.870047，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 红砖废墟在绿草地与蓝天中，结构有破损与风化痕迹。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始取证信息。; reason: 无工具证据，需先获取全局真实/合成倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9986617565155029 — 局部纹理原始合成分数为 0.998662，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 红砖废墟在绿草地与蓝天中，结构有破损与风化痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.870047"]
+  - Conflict: []; gap: 缺少局部纹理、互补模型或来源凭据证据。; reason: 需局部纹理证据验证全局判断，减少误报风险。
+- Step 3: action `STOP`
+  - Visual: 红砖废墟在绿草地与蓝天中，结构有破损与风化痕迹。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.870047", "local_texture_analyzer | signal=synthetic_like | score=0.998662"]
+  - Conflict: []; gap: 缺少来源凭据或互补模型证据，但非必需。; reason: 多工具证据一致指向 fake，不确定性已降低。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型判定为 fake", "局部纹理高度倾向合成"]; contradictory_evidence=[]; remaining_uncertainty=无来源凭据，无法追溯生成链。; stop_reason=多工具证据一致，可终止调查。
+
+## 43. r0149a21ct:flux
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9976792931556702 — 全局取证原始合成分数为 0.997679，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 湖边小径被绿植环绕，水面平静，远处有树林。
+  - Evidence summary: []
+  - Conflict: []; gap: 无任何工具证据，需调用工具获取初始分析。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9999815225601196 — 局部纹理原始合成分数为 0.999982，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 湖边小径被绿植环绕，水面平静，远处有树林。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99768"]
+  - Conflict: []; gap: 无局部纹理或来源凭据证据，无法交叉验证。; reason: 全局证据倾向 fake，需局部纹理证据交叉验证。
+- Step 3: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 湖边小径被绿植环绕，水面平静，远处有树林。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99768", "local_texture_analyzer | signal=synthetic_like | score=0.99998"]
+  - Conflict: []; gap: 无来源凭据证据，无法确认生成链路。; reason: 全局与局部证据均倾向 fake，需来源凭据佐证。
+- Step 4: action `STOP`
+  - Visual: 湖边小径被绿植环绕，水面平静，远处有树林。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.99768", "local_texture_analyzer | signal=synthetic_like | score=0.99998", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: []; gap: ; reason: 多工具证据一致倾向 fake，来源证据无矛盾。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake", "局部纹理高分判定为 synthetic_like"]; contradictory_evidence=[]; remaining_uncertainty=无来源凭据，无法确认生成工具或过程。; stop_reason=多工具证据一致倾向 fake，来源证据无矛盾。
+
+## 44. r072d955bt:raise
+- Selection stratum: correct_easy_cases
+- Actor verdict: real | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=9.23584884731099e-05 — 全局取证原始合成分数为 0.000092，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 狭窄巷道，石墙，晾衣，儿童与成人。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `STOP`
+  - Visual: 狭窄巷道，石墙，晾衣，儿童与成人。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=9.23584884731099e-05"]
+  - Conflict: []; gap: 无冲突或缺口，全局证据已足够。; reason: 全局证据强支持真实，无冲突或缺口。
+- Final: final_verdict=real; final_confidence=high; supporting_evidence=["全局模型高置信度倾向真实"]; contradictory_evidence=[]; remaining_uncertainty=无显著不确定性。; stop_reason=全局证据充分支持真实，无需进一步调查。
+
+## 45. r170632f5t:sd3_5
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9999269247055054 — 全局取证原始合成分数为 0.999927，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 运河船旁人群与花坛，背景有桥，水面有倒影。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.989680826663971 — 局部纹理原始合成分数为 0.989681，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 运河船旁人群与花坛，背景有桥，水面有倒影。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999927"]
+  - Conflict: []; gap: 无局部或来源证据，无法交叉验证。; reason: 需局部纹理证据交叉验证全局高分fake判断。
+- Step 3: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 运河船旁人群与花坛，背景有桥，水面有倒影。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999927", "local_texture_analyzer | signal=synthetic_like | score=0.989681"]
+  - Conflict: []; gap: 无来源凭据，无法确认生成链路。; reason: 需来源凭据证据补充，确认是否为AI生成。
+- Step 4: action `STOP`
+  - Visual: 运河船旁人群与花坛，背景有桥，水面有倒影。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999927", "local_texture_analyzer | signal=synthetic_like | score=0.989681", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: []; gap: ; reason: 全局与局部证据一致指向fake，来源证据无矛盾。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为fake", "局部纹理高分判定为synthetic_like"]; contradictory_evidence=[]; remaining_uncertainty=无来源凭据，无法确认生成链路。; stop_reason=多工具证据一致支持fake，无矛盾。
+
+## 46. r1b61c7b1t:sd3_5
+- Selection stratum: correct_easy_cases
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.999955415725708 — 全局取证原始合成分数为 0.999955，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 古希腊神庙遗址，人群穿古典服饰，天空湛蓝无云。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `STOP`
+  - Visual: 古希腊神庙遗址，人群穿古典服饰，天空湛蓝无云。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999955"]
+  - Conflict: []; gap: 无其他工具证据，可停止调查。; reason: 全局工具已给出高置信度 fake 证据，无冲突且无缺口。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分判定为 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具验证，依赖单一模型。; stop_reason=已获高置信度 fake 证据，无进一步调查必要。
+
+## 47. r05839451t:sd3_5
+- Selection stratum: fixed_seed_fill
+- Actor verdict: fake | confidence: high
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=fake | score=0.9998644590377808 — 全局取证原始合成分数为 0.999864，固定判定阈值为 0.5，信号倾向 fake。
+  - Visual: 山林秋色，湖面倒影，云雾缭绕。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `STOP`
+  - Visual: 山林秋色，湖面倒影，云雾缭绕。
+  - Evidence summary: ["global_forensic_analyzer | signal=fake | score=0.999864"]
+  - Conflict: []; gap: 无其他工具证据佐证或反驳，可停止调查。; reason: 全局模型高分倾向 fake，无冲突证据，可停止。
+- Final: final_verdict=fake; final_confidence=high; supporting_evidence=["全局模型高分倾向 fake"]; contradictory_evidence=[]; remaining_uncertainty=无其他工具证据佐证。; stop_reason=全局模型高分倾向 fake，无冲突证据。
+
+## 48. r04e7644dt:raise
+- Selection stratum: fixed_seed_fill
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.0009213313460350037 — 全局取证原始合成分数为 0.000921，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 青铜雕像立于户外，背景有云和建筑。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用工具获取分析。; reason: 无任何工具证据，需先获取全局倾向评估。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9962639212608337 — 局部纹理原始合成分数为 0.996264，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 青铜雕像立于户外，背景有云和建筑。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0009213313460350037"]
+  - Conflict: []; gap: 无冲突，但局部纹理证据未获取。; reason: 全局证据强支持真实，需局部纹理补充确认。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.9323456883430481 — 互补取证原始合成分数为 0.932346，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 青铜雕像立于户外，背景有云和建筑。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0009213313460350037", "local_texture_analyzer | signal=synthetic_like | score=0.9962639212608337"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据或互补证据。; reason: 全局与局部证据冲突，需互补模型缓解矛盾。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 青铜雕像立于户外，背景有云和建筑。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0009213313460350037", "local_texture_analyzer | signal=synthetic_like | score=0.9962639212608337", "complementary_forensic_analyzer | signal=real | score=0.9323456883430481"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 无来源凭据或元数据证据。; reason: 互补证据支持真实，需来源凭据佐证或排除AI。
+- Step 5: action `STOP`
+  - Visual: 青铜雕像立于户外，背景有云和建筑。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.0009213313460350037", "local_texture_analyzer | signal=synthetic_like | score=0.9962639212608337", "complementary_forensic_analyzer | signal=real | score=0.9323456883430481", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理倾向合成，其余倾向真实"]; gap: 无来源凭据，无法确认拍摄链。; reason: 证据冲突未解，但多数工具支持真实，停止调查。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型强支持真实", "互补模型支持真实"]; contradictory_evidence=["局部纹理倾向合成"]; remaining_uncertainty=局部纹理证据存疑，来源不可考。; stop_reason=证据冲突未解，但多数工具支持真实，停止调查。
+
+## 49. r1644d874t:raise
+- Selection stratum: fixed_seed_fill
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.00014679211017210037 — 全局取证原始合成分数为 0.000147，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 华丽穹顶壁画与金色雕饰，透视结构清晰。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用任一工具获取初始证据。; reason: 获取全局真实倾向评估，启动取证流程。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.5514427423477173 — 局部纹理原始合成分数为 0.551443，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 华丽穹顶壁画与金色雕饰，透视结构清晰。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000147"]
+  - Conflict: []; gap: 无显著缺口，但局部纹理证据未获取。; reason: 补充局部纹理证据，增强结论稳健性。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.26130950450897217 — 互补取证原始合成分数为 0.261310，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 华丽穹顶壁画与金色雕饰，透视结构清晰。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000147", "local_texture_analyzer | signal=synthetic_like | score=0.551443"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 缺少来源凭据或互补模型证据。; reason: 获取互补模型意见，缓解局部纹理冲突。
+- Step 4: action `CALL(provenance_inspector)`
+  - Tool observation: provenance_inspector | signal=inconclusive | score=None — 未发现可用的 C2PA 或来源元数据线索，因此来源判断为 inconclusive。
+  - Visual: 华丽穹顶壁画与金色雕饰，透视结构清晰。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000147", "local_texture_analyzer | signal=synthetic_like | score=0.551443", "complementary_forensic_analyzer | signal=real | score=0.261310"]
+  - Conflict: ["局部纹理倾向合成，全局与互补倾向真实"]; gap: 缺少来源凭据（provenance_inspector）。; reason: 获取来源凭据，判断是否可排除AI生成可能。
+- Step 5: action `STOP`
+  - Visual: 华丽穹顶壁画与金色雕饰，透视结构清晰。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.000147", "local_texture_analyzer | signal=synthetic_like | score=0.551443", "complementary_forensic_analyzer | signal=real | score=0.261310", "provenance_inspector | signal=inconclusive | score=null"]
+  - Conflict: ["局部纹理倾向合成，全局与互补倾向真实"]; gap: ; reason: 证据冲突未解，但全局与互补模型支持真实，局部纹理为弱信号。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型高置信度倾向真实", "互补模型倾向真实"]; contradictory_evidence=["局部纹理分析倾向合成"]; remaining_uncertainty=局部纹理证据存在冲突，未获来源凭据。; stop_reason=现有证据支持真实，冲突证据强度弱，无新工具可调用。
+
+## 50. r170b020bt:raise
+- Selection stratum: fixed_seed_fill
+- Actor verdict: real | confidence: moderate
+- Step 1: action `CALL(global_forensic_analyzer)`
+  - Tool observation: global_forensic_analyzer | signal=real | score=0.0004697449621744454 — 全局取证原始合成分数为 0.000470，固定判定阈值为 0.5，信号倾向 real。
+  - Visual: 巴黎圣母院塔楼，前景有花与树，天空有云。
+  - Evidence summary: []
+  - Conflict: []; gap: 无工具证据，需调用至少一个工具获取初始证据。; reason: 无任何工具证据，需先获取全局取证倾向。
+- Step 2: action `CALL(local_texture_analyzer)`
+  - Tool observation: local_texture_analyzer | signal=synthetic_like | score=0.9977207779884338 — 局部纹理原始合成分数为 0.997721，固定判定阈值为 0.5，信号为 synthetic_like。
+  - Visual: 巴黎圣母院塔楼，前景有花与树，天空有云。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.00047", "global_forensic_analyzer | signal=real | score=0.00047"]
+  - Conflict: []; gap: 无显著缺口，但局部纹理证据未获取。; reason: 全局证据强支持真实，需局部纹理证据交叉验证。
+- Step 3: action `CALL(complementary_forensic_analyzer)`
+  - Tool observation: complementary_forensic_analyzer | signal=real | score=0.7560819387435913 — 互补取证原始合成分数为 0.756082，既有独立校准阈值为 0.9561132789，信号倾向 real。
+  - Visual: 巴黎圣母院塔楼，前景有花与树，天空有云。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.00047", "local_texture_analyzer | signal=synthetic_like | score=0.99772"]
+  - Conflict: ["全局倾向真实，局部纹理倾向合成"]; gap: 无来源凭据或互补证据，冲突未解。; reason: 现有证据冲突，需互补模型提供不同视角证据。
+- Step 4: action `STOP`
+  - Visual: 巴黎圣母院塔楼，前景有花与树，天空有云。
+  - Evidence summary: ["global_forensic_analyzer | signal=real | score=0.00047", "local_texture_analyzer | signal=synthetic_like | score=0.99772", "complementary_forensic_analyzer | signal=real | score=0.75608"]
+  - Conflict: ["局部纹理倾向合成，全局与互补倾向真实"]; gap: 无来源凭据，无法验证拍摄链。; reason: 证据冲突未解，但多数工具倾向真实，停止调查。
+- Final: final_verdict=real; final_confidence=moderate; supporting_evidence=["全局模型高置信度倾向真实", "互补模型中置信度倾向真实"]; contradictory_evidence=["局部纹理高置信度倾向合成"]; remaining_uncertainty=局部纹理证据与全局冲突未解。; stop_reason=多数工具支持真实，冲突未解但无新证据可调用。

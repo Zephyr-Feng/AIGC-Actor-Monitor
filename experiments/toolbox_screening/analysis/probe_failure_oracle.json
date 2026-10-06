@@ -1,0 +1,146 @@
+{
+  "manifest_sha256": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465",
+  "sample_count": 300,
+  "probe_correct_baseline": 294,
+  "oracle_definition": "A sample is oracle-correct when any listed expert is correct; diagnostic upper bound only.",
+  "score_thresholds": {
+    "PROBE": "score > 0.5 (fixed)",
+    "PatchCraft": "score > 0.5 (official fixed)",
+    "SAFE": 0.9561132788658143,
+    "FSD": "calibrated p_fake >= 0.5 (prior disjoint calibration)",
+    "AIDE": "calibrated p_fake >= 0.5 (prior disjoint calibration)"
+  },
+  "combination_results": {
+    "PROBE": {
+      "experts": [
+        "PROBE"
+      ],
+      "correct": 294,
+      "total": 300,
+      "accuracy": 0.98,
+      "gain_over_PROBE_correct_images": 0,
+      "gain_over_PROBE_percentage_points": 0.0,
+      "additional_rescued_images": 0,
+      "additional_rescued_image_ids": "none",
+      "diagnostic_only": true
+    },
+    "PROBE + PatchCraft": {
+      "experts": [
+        "PROBE",
+        "PatchCraft"
+      ],
+      "correct": 298,
+      "total": 300,
+      "accuracy": 0.9933333333333333,
+      "gain_over_PROBE_correct_images": 4,
+      "gain_over_PROBE_percentage_points": 1.3333333333333335,
+      "additional_rescued_images": 4,
+      "additional_rescued_image_ids": "r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux",
+      "diagnostic_only": true
+    },
+    "PROBE + SAFE": {
+      "experts": [
+        "PROBE",
+        "SAFE"
+      ],
+      "correct": 298,
+      "total": 300,
+      "accuracy": 0.9933333333333333,
+      "gain_over_PROBE_correct_images": 4,
+      "gain_over_PROBE_percentage_points": 1.3333333333333335,
+      "additional_rescued_images": 4,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "PROBE + FSD": {
+      "experts": [
+        "PROBE",
+        "FSD"
+      ],
+      "correct": 296,
+      "total": 300,
+      "accuracy": 0.9866666666666667,
+      "gain_over_PROBE_correct_images": 2,
+      "gain_over_PROBE_percentage_points": 0.6666666666666667,
+      "additional_rescued_images": 2,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r06743f8ft:sd3_5",
+      "diagnostic_only": true
+    },
+    "PROBE + AIDE": {
+      "experts": [
+        "PROBE",
+        "AIDE"
+      ],
+      "correct": 296,
+      "total": 300,
+      "accuracy": 0.9866666666666667,
+      "gain_over_PROBE_correct_images": 2,
+      "gain_over_PROBE_percentage_points": 0.6666666666666667,
+      "additional_rescued_images": 2,
+      "additional_rescued_image_ids": "r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "PROBE + PatchCraft + SAFE": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "SAFE"
+      ],
+      "correct": 300,
+      "total": 300,
+      "accuracy": 1.0,
+      "gain_over_PROBE_correct_images": 6,
+      "gain_over_PROBE_percentage_points": 2.0,
+      "additional_rescued_images": 6,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "PROBE + PatchCraft + FSD": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "FSD"
+      ],
+      "correct": 299,
+      "total": 300,
+      "accuracy": 0.9966666666666667,
+      "gain_over_PROBE_correct_images": 5,
+      "gain_over_PROBE_percentage_points": 1.6666666666666667,
+      "additional_rescued_images": 5,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux",
+      "diagnostic_only": true
+    },
+    "PROBE + PatchCraft + AIDE": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "AIDE"
+      ],
+      "correct": 299,
+      "total": 300,
+      "accuracy": 0.9966666666666667,
+      "gain_over_PROBE_correct_images": 5,
+      "gain_over_PROBE_percentage_points": 1.6666666666666667,
+      "additional_rescued_images": 5,
+      "additional_rescued_image_ids": "r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "PROBE + PatchCraft + SAFE + FSD + AIDE": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "SAFE",
+        "FSD",
+        "AIDE"
+      ],
+      "correct": 300,
+      "total": 300,
+      "accuracy": 1.0,
+      "gain_over_PROBE_correct_images": 6,
+      "gain_over_PROBE_percentage_points": 2.0,
+      "additional_rescued_images": 6,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    }
+  }
+}

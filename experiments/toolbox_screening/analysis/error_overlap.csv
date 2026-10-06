@@ -1,0 +1,4 @@
+first_tool,second_tool,scope,n,both_correct,first_correct_second_wrong,first_wrong_second_correct,both_wrong,disagreement_n,disagreement_rate,error_indicator_correlation
+PROBE,PatchCraft,overall,300,176,118,4,2,122,0.4066666666666667,-0.01944039478399355
+PROBE,RIGID,overall,300,106,188,0,6,188,0.6266666666666667,0.10559759511188922
+PatchCraft,RIGID,overall,300,20,160,86,34,246,0.82,-0.6206218632264752

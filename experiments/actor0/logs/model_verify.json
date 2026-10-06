@@ -1,0 +1,28 @@
+{
+  "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "snapshot_path": "/root/autodl-tmp/actor0-bfree-20261002/model-cache-xet/hub/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "model_type": "qwen3_vl",
+  "index_tensor_bytes": 17534247392,
+  "weight_file_bytes": 17534339512,
+  "weight_shards": {
+    "model-00002-of-00004.safetensors": 4915962496,
+    "model-00001-of-00004.safetensors": 4902275944,
+    "model-00003-of-00004.safetensors": 4999831048,
+    "model-00004-of-00004.safetensors": 2716270024
+  },
+  "config_sha256": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+  "index_sha256": "520b2e05079402e9468a8701d03d1154d14b2599593afb6effa7fb60c1bff070",
+  "processor_class": "Qwen3VLProcessor",
+  "image_processor_class": "Qwen2VLImageProcessorFast",
+  "tokenizer_class": "Qwen2TokenizerFast",
+  "transformers": "4.57.4",
+  "python": "3.12.3",
+  "verification": "PASS (local processor/config/index; no GPU inference)",
+  "weight_sha256": {
+    "model-00001-of-00004.safetensors": "d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+    "model-00002-of-00004.safetensors": "8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+    "model-00003-of-00004.safetensors": "83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+    "model-00004-of-00004.safetensors": "0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5"
+  },
+  "weight_sha256_method": "sha256sum over each downloaded safetensors file"
+}

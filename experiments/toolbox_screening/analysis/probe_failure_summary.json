@@ -1,0 +1,320 @@
+{
+  "analysis_scope": "Frozen 300-image PROBE failure complementarity; no model rerun or threshold tuning.",
+  "manifest_sha256": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465",
+  "probe_total": 300,
+  "probe_correct": 294,
+  "probe_errors": 6,
+  "error_image_ids": [
+    "r01a5f38at:flux",
+    "r0670f47ft:flux",
+    "r06743f8ft:sd3_5",
+    "r0b13d2a2t:flux",
+    "r17b2f789t:flux",
+    "r1cd8d9a4t:flux"
+  ],
+  "recovery": {
+    "patchcraft": {
+      "count": 4,
+      "total": 6,
+      "rate": 0.6666666666666666,
+      "image_ids": [
+        "r0670f47ft:flux",
+        "r06743f8ft:sd3_5",
+        "r0b13d2a2t:flux",
+        "r17b2f789t:flux"
+      ]
+    },
+    "safe": {
+      "count": 4,
+      "total": 6,
+      "rate": 0.6666666666666666,
+      "image_ids": [
+        "r01a5f38at:flux",
+        "r06743f8ft:sd3_5",
+        "r0b13d2a2t:flux",
+        "r1cd8d9a4t:flux"
+      ]
+    },
+    "fsd": {
+      "count": 2,
+      "total": 6,
+      "rate": 0.3333333333333333,
+      "image_ids": [
+        "r01a5f38at:flux",
+        "r06743f8ft:sd3_5"
+      ]
+    },
+    "aide": {
+      "count": 2,
+      "total": 6,
+      "rate": 0.3333333333333333,
+      "image_ids": [
+        "r17b2f789t:flux",
+        "r1cd8d9a4t:flux"
+      ]
+    }
+  },
+  "unique_recovery": {
+    "patchcraft": {
+      "count": 1,
+      "image_ids": [
+        "r0670f47ft:flux"
+      ]
+    },
+    "safe": {
+      "count": 0,
+      "image_ids": []
+    },
+    "fsd": {
+      "count": 0,
+      "image_ids": []
+    },
+    "aide": {
+      "count": 0,
+      "image_ids": []
+    }
+  },
+  "pairwise_recovery": {
+    "PatchCraft vs SAFE": {
+      "overlap": 2,
+      "first_only": 2,
+      "second_only": 2,
+      "neither": 0
+    },
+    "PatchCraft vs FSD": {
+      "overlap": 1,
+      "first_only": 3,
+      "second_only": 1,
+      "neither": 1
+    },
+    "PatchCraft vs AIDE": {
+      "overlap": 1,
+      "first_only": 3,
+      "second_only": 1,
+      "neither": 1
+    },
+    "SAFE vs FSD": {
+      "overlap": 2,
+      "first_only": 2,
+      "second_only": 0,
+      "neither": 2
+    },
+    "SAFE vs AIDE": {
+      "overlap": 1,
+      "first_only": 3,
+      "second_only": 1,
+      "neither": 1
+    },
+    "FSD vs AIDE": {
+      "overlap": 0,
+      "first_only": 2,
+      "second_only": 2,
+      "neither": 2
+    }
+  },
+  "patchcraft_safe": {
+    "overlap": 2,
+    "patchcraft_only": 2,
+    "safe_only": 2,
+    "neither": 0,
+    "same_recovery_set": false
+  },
+  "marginal_recovery": {
+    "safe_given_probe_patchcraft": 2,
+    "safe_given_probe_patchcraft_image_ids": "r01a5f38at:flux|r1cd8d9a4t:flux",
+    "fsd_given_probe_patchcraft_safe": 0,
+    "fsd_given_probe_patchcraft_safe_image_ids": "none",
+    "aide_given_probe_patchcraft_safe": 0,
+    "aide_given_probe_patchcraft_safe_image_ids": "none"
+  },
+  "oracle": {
+    "probe": {
+      "experts": [
+        "PROBE"
+      ],
+      "correct": 294,
+      "total": 300,
+      "accuracy": 0.98,
+      "gain_over_PROBE_correct_images": 0,
+      "gain_over_PROBE_percentage_points": 0.0,
+      "additional_rescued_images": 0,
+      "additional_rescued_image_ids": "none",
+      "diagnostic_only": true
+    },
+    "probe_patchcraft": {
+      "experts": [
+        "PROBE",
+        "PatchCraft"
+      ],
+      "correct": 298,
+      "total": 300,
+      "accuracy": 0.9933333333333333,
+      "gain_over_PROBE_correct_images": 4,
+      "gain_over_PROBE_percentage_points": 1.3333333333333335,
+      "additional_rescued_images": 4,
+      "additional_rescued_image_ids": "r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux",
+      "diagnostic_only": true
+    },
+    "probe_safe": {
+      "experts": [
+        "PROBE",
+        "SAFE"
+      ],
+      "correct": 298,
+      "total": 300,
+      "accuracy": 0.9933333333333333,
+      "gain_over_PROBE_correct_images": 4,
+      "gain_over_PROBE_percentage_points": 1.3333333333333335,
+      "additional_rescued_images": 4,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "probe_fsd": {
+      "experts": [
+        "PROBE",
+        "FSD"
+      ],
+      "correct": 296,
+      "total": 300,
+      "accuracy": 0.9866666666666667,
+      "gain_over_PROBE_correct_images": 2,
+      "gain_over_PROBE_percentage_points": 0.6666666666666667,
+      "additional_rescued_images": 2,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r06743f8ft:sd3_5",
+      "diagnostic_only": true
+    },
+    "probe_aide": {
+      "experts": [
+        "PROBE",
+        "AIDE"
+      ],
+      "correct": 296,
+      "total": 300,
+      "accuracy": 0.9866666666666667,
+      "gain_over_PROBE_correct_images": 2,
+      "gain_over_PROBE_percentage_points": 0.6666666666666667,
+      "additional_rescued_images": 2,
+      "additional_rescued_image_ids": "r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "probe_patchcraft_safe": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "SAFE"
+      ],
+      "correct": 300,
+      "total": 300,
+      "accuracy": 1.0,
+      "gain_over_PROBE_correct_images": 6,
+      "gain_over_PROBE_percentage_points": 2.0,
+      "additional_rescued_images": 6,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "probe_patchcraft_fsd": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "FSD"
+      ],
+      "correct": 299,
+      "total": 300,
+      "accuracy": 0.9966666666666667,
+      "gain_over_PROBE_correct_images": 5,
+      "gain_over_PROBE_percentage_points": 1.6666666666666667,
+      "additional_rescued_images": 5,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux",
+      "diagnostic_only": true
+    },
+    "probe_patchcraft_aide": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "AIDE"
+      ],
+      "correct": 299,
+      "total": 300,
+      "accuracy": 0.9966666666666667,
+      "gain_over_PROBE_correct_images": 5,
+      "gain_over_PROBE_percentage_points": 1.6666666666666667,
+      "additional_rescued_images": 5,
+      "additional_rescued_image_ids": "r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    },
+    "all_tools": {
+      "experts": [
+        "PROBE",
+        "PatchCraft",
+        "SAFE",
+        "FSD",
+        "AIDE"
+      ],
+      "correct": 300,
+      "total": 300,
+      "accuracy": 1.0,
+      "gain_over_PROBE_correct_images": 6,
+      "gain_over_PROBE_percentage_points": 2.0,
+      "additional_rescued_images": 6,
+      "additional_rescued_image_ids": "r01a5f38at:flux|r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux|r1cd8d9a4t:flux",
+      "diagnostic_only": true
+    }
+  },
+  "confidence_analysis": {
+    "definition": "margin=abs(PROBE score-0.5); near <0.10, moderate [0.10,0.30), high >=0.30 (descriptive fixed bands).",
+    "by_band": {
+      "near-threshold error": {
+        "count": 0,
+        "image_ids": []
+      },
+      "moderate-confidence error": {
+        "count": 4,
+        "image_ids": [
+          "r0670f47ft:flux",
+          "r06743f8ft:sd3_5",
+          "r0b13d2a2t:flux",
+          "r1cd8d9a4t:flux"
+        ]
+      },
+      "high-confidence error": {
+        "count": 2,
+        "image_ids": [
+          "r01a5f38at:flux",
+          "r17b2f789t:flux"
+        ]
+      }
+    },
+    "high_confidence_corrections": {
+      "PatchCraft": [
+        "r17b2f789t:flux"
+      ],
+      "SAFE": [
+        "r01a5f38at:flux"
+      ],
+      "FSD": [
+        "r01a5f38at:flux"
+      ],
+      "AIDE": [
+        "r17b2f789t:flux"
+      ]
+    }
+  },
+  "monitor_relevant": {
+    "has_complementary_evidence_n": 6,
+    "unrecoverable_failures": [],
+    "scope_note": "num_independent_correct_tools counts the four auxiliary tools per protocol; it does not assert statistical independence."
+  },
+  "unrecoverable_failures": [],
+  "other_preexisting_toolbox_results": {
+    "RIGID_correct_on_probe_failures": 0,
+    "RIGID_correct_image_ids": [],
+    "Provenance_actionable_overall_n": 0,
+    "Provenance_actionable_image_ids": []
+  },
+  "decisions": {
+    "PatchCraft": "CONDITIONAL KEEP (evidence-only; not an independent final verdict)",
+    "SAFE": "CONDITIONAL KEEP",
+    "FSD": "DROP FROM MAIN TOOLBOX",
+    "AIDE": "DROP FROM MAIN TOOLBOX"
+  }
+}

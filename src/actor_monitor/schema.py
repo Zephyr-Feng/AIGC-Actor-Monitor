@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from math import isfinite
 from typing import Any
 
 
@@ -29,12 +30,22 @@ class Outcome:
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Outcome":
+        correct = raw["correct"]
+        abstained = raw.get("abstained", False)
+        if type(correct) is not bool or type(abstained) is not bool:
+            raise ValueError("correct and abstained must be JSON booleans")
+        cost = raw.get("compute_cost", 0.0)
+        if isinstance(cost, bool) or not isinstance(cost, (int, float)):
+            raise ValueError("compute_cost must be a non-negative finite number")
+        cost = float(cost)
+        if not isfinite(cost) or cost < 0:
+            raise ValueError("compute_cost must be a non-negative finite number")
         return cls(
             episode_id=str(raw["episode_id"]),
             arm=str(raw["arm"]),
-            correct=bool(raw["correct"]),
-            abstained=bool(raw.get("abstained", False)),
-            compute_cost=float(raw.get("compute_cost", 0.0)),
+            correct=correct,
+            abstained=abstained,
+            compute_cost=cost,
             metadata=dict(raw.get("metadata") or {}),
         )
 
@@ -58,5 +69,6 @@ class MonitorPrediction:
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "MonitorPrediction":
         gains = {str(k): float(v) for k, v in raw["predicted_gain"].items()}
+        if not all(isfinite(gain) for gain in gains.values()):
+            raise ValueError("predicted gains must be finite")
         return cls(episode_id=str(raw["episode_id"]), predicted_gain=gains)
-

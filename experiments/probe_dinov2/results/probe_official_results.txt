@@ -1,0 +1,11 @@
+
+
+
+==================================================
+detector:Dino | Testset: /root/autodl-tmp/probe-dinov2-bfree-20261001/data/probe_eval_data/real, /root/autodl-tmp/probe-dinov2-bfree-20261001/data/probe_eval_data/fake_flux, /root/autodl-tmp/probe-dinov2-bfree-20261001/data/probe_eval_data/fake_sd35
+Crop size: 336
+Fake Accuracy: 97.00
+Real Accuracy: 100.00
+Overall Accuracy: 98.00
+Average Precision: 99.99
+==================================================

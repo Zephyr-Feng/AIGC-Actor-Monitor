@@ -1,0 +1,5 @@
+tool,recovered,total_probe_failures,recovery_rate,recovered_image_ids,unique_recovery,unique_recovery_image_ids,marginal_recovery_condition,marginal_recovery,marginal_recovery_image_ids
+PatchCraft,4,6,0.6666666666666666,r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux,1,r0670f47ft:flux,PROBE wrong; PatchCraft correct,4,r0670f47ft:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r17b2f789t:flux
+SAFE,4,6,0.6666666666666666,r01a5f38at:flux|r06743f8ft:sd3_5|r0b13d2a2t:flux|r1cd8d9a4t:flux,0,none,PROBE and PatchCraft wrong; SAFE correct,2,r01a5f38at:flux|r1cd8d9a4t:flux
+FSD,2,6,0.3333333333333333,r01a5f38at:flux|r06743f8ft:sd3_5,0,none,"PROBE, PatchCraft, and SAFE wrong; FSD correct",0,none
+AIDE,2,6,0.3333333333333333,r17b2f789t:flux|r1cd8d9a4t:flux,0,none,"PROBE, PatchCraft, and SAFE wrong; AIDE correct",0,none

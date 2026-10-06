@@ -1,0 +1,11 @@
+a1a9dc690cec5cbc7d15eef711feffc9d7e52bf184cd707a30239d1cc429926d  actor0-v1
+{
+  "actor_turns": 653,
+  "development_manifest_sha256": "b5529fc7f4abc2c0f2a279133c69258027f3a8c218199b53b1ce9c6ea92ebb84",
+  "development_trajectories": 180,
+  "final_verdict_parse_rate": 1.0,
+  "frozen_at_utc": "2026-10-02T11:50:30.816934+00:00",
+  "fully_parseable_trajectory_rate": 1.0,
+  "minimum_required_rate": 0.95,
+  "valid_turn_parse_rate": 1.0
+}

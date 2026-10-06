@@ -1,0 +1,46 @@
+{
+  "sample_ids": [
+    "r0d0ff43at:raise",
+    "r1639a65ct:raise",
+    "r000da54ft:flux",
+    "r0527f7e6t:flux",
+    "r1bca2388t:sd3_5",
+    "r0e04cc91t:sd3_5"
+  ],
+  "conditions": {
+    "full": {
+      "trajectories": 6,
+      "parse_valid": 6,
+      "turn_parse_errors": 0,
+      "global_calls": 5,
+      "four_image_actor_steps": 7,
+      "crop_grid_mismatch": 0,
+      "called_other_tools_after_global": 2,
+      "callable_protocol_errors": 0
+    },
+    "summary_mask": {
+      "trajectories": 6,
+      "parse_valid": 6,
+      "turn_parse_errors": 0,
+      "global_calls": 5,
+      "four_image_actor_steps": 7,
+      "crop_grid_mismatch": 0,
+      "called_other_tools_after_global": 2,
+      "callable_protocol_errors": 0
+    },
+    "output_rename": {
+      "trajectories": 6,
+      "parse_valid": 6,
+      "turn_parse_errors": 0,
+      "global_calls": 5,
+      "four_image_actor_steps": 7,
+      "crop_grid_mismatch": 0,
+      "called_other_tools_after_global": 2,
+      "callable_protocol_errors": 0
+    }
+  },
+  "all_conditions_same_prompt": true,
+  "all_conditions_same_crop_mode": true,
+  "input_leakage_count": 0,
+  "same_crop_pixels_when_called": true
+}

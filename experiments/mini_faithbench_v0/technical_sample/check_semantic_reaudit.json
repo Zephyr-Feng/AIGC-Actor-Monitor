@@ -1,0 +1,190 @@
+{
+  "sample_ids": [
+    "r0d0ff43at:raise",
+    "r1639a65ct:raise",
+    "r000da54ft:flux",
+    "r0527f7e6t:flux",
+    "r1bca2388t:sd3_5",
+    "r0e04cc91t:sd3_5"
+  ],
+  "conditions": {
+    "full": {
+      "trajectories": 6,
+      "parse_valid": 6,
+      "turn_parse_errors": 0,
+      "global_calls": 5,
+      "four_image_actor_steps": 7,
+      "crop_grid_mismatch": 0,
+      "called_other_tools_after_global": 2,
+      "callable_protocol_errors": 0,
+      "global_semantic_violations": [
+        {
+          "sample_id": "r0d0ff43at:raise",
+          "step": 3,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r0d0ff43at:raise",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r1639a65ct:raise",
+          "step": 5,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real_like | score=null"
+        },
+        {
+          "sample_id": "r000da54ft:flux",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r1bca2388t:sd3_5",
+          "step": 5,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r1bca2388t:sd3_5",
+          "step": 5,
+          "field": "contradictory_evidence",
+          "text": "互补模型与全局表征倾向真实"
+        },
+        {
+          "sample_id": "r0e04cc91t:sd3_5",
+          "step": 3,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=atypical_regions | score=null"
+        },
+        {
+          "sample_id": "r0e04cc91t:sd3_5",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=atypical_regions | score=null"
+        }
+      ]
+    },
+    "summary_mask": {
+      "trajectories": 6,
+      "parse_valid": 6,
+      "turn_parse_errors": 0,
+      "global_calls": 5,
+      "four_image_actor_steps": 7,
+      "crop_grid_mismatch": 0,
+      "called_other_tools_after_global": 2,
+      "callable_protocol_errors": 0,
+      "global_semantic_violations": [
+        {
+          "sample_id": "r0d0ff43at:raise",
+          "step": 3,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r0d0ff43at:raise",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r1639a65ct:raise",
+          "step": 5,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r000da54ft:flux",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r1bca2388t:sd3_5",
+          "step": 5,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r0e04cc91t:sd3_5",
+          "step": 3,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r0e04cc91t:sd3_5",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        }
+      ]
+    },
+    "output_rename": {
+      "trajectories": 6,
+      "parse_valid": 6,
+      "turn_parse_errors": 0,
+      "global_calls": 5,
+      "four_image_actor_steps": 7,
+      "crop_grid_mismatch": 0,
+      "called_other_tools_after_global": 2,
+      "callable_protocol_errors": 0,
+      "global_semantic_violations": [
+        {
+          "sample_id": "r0d0ff43at:raise",
+          "step": 3,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r0d0ff43at:raise",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r1639a65ct:raise",
+          "step": 5,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real_like | score=null"
+        },
+        {
+          "sample_id": "r1639a65ct:raise",
+          "step": 5,
+          "field": "supporting_evidence",
+          "text": "全局表征无异常区域，倾向真实"
+        },
+        {
+          "sample_id": "r000da54ft:flux",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real | score=null"
+        },
+        {
+          "sample_id": "r1bca2388t:sd3_5",
+          "step": 5,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=real_like | score=null"
+        },
+        {
+          "sample_id": "r0e04cc91t:sd3_5",
+          "step": 3,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=atypical_regions=9 | score=null"
+        },
+        {
+          "sample_id": "r0e04cc91t:sd3_5",
+          "step": 4,
+          "field": "evidence_summary",
+          "text": "global_forensic_analyzer | signal=atypical_regions=9 | score=null"
+        }
+      ]
+    }
+  },
+  "all_conditions_same_prompt": true,
+  "all_conditions_same_crop_mode": true,
+  "input_leakage_count": 0,
+  "same_crop_pixels_when_called": true
+}

@@ -1,0 +1,76 @@
+IDENTITY
+autodl-container-sbhn4u78c0-c07a45ba
+2026-10-05T20:06:54+08:00
+
+FILESYSTEMS
+Filesystem     Type     Size  Used Avail Use% Mounted on
+overlay        overlay   30G   11G   20G  35% /
+/dev/md0       xfs       50G   48G  2.8G  95% /root/autodl-tmp
+Filesystem       1B-blocks        Used  Available Use% Mounted on
+/dev/md0       53687091200 50750656512 2936434688  95% /root/autodl-tmp
+
+TOP20_DIRECTORIES_AFTER_CLEANUP
+400M	/root/autodl-tmp/toolbox_screening/venv/lib
+401M	/root/autodl-tmp/probe-dinov2-bfree-20261001/deps/probe
+416M	/root/autodl-tmp/probe-dinov2-bfree-20261001/deps
+482M	/root/autodl-tmp/actor0-bfree-20261002/data/eval
+490M	/root/autodl-tmp/probe-dinov2-bfree-20261001/data
+490M	/root/autodl-tmp/probe-dinov2-bfree-20261001/data/probe_eval_data
+778M	/root/autodl-tmp/actor0-bfree-20261002/data
+1.2G	/root/autodl-tmp/toolbox_screening/torch_home
+1.2G	/root/autodl-tmp/toolbox_screening/torch_home/hub
+1.9G	/root/autodl-tmp/toolbox_screening
+3.4G	/root/autodl-tmp/probe-dinov2-bfree-20261001/weights/aide
+4.6G	/root/autodl-tmp/probe-dinov2-bfree-20261001/weights
+6.0G	/root/autodl-tmp/probe-dinov2-bfree-20261001
+17G	/root/autodl-tmp/actor0-bfree-20261002/model-cache-xet
+17G	/root/autodl-tmp/actor0-bfree-20261002/model-cache-xet/hub
+18G	/root/autodl-tmp/actor0-bfree-20261002
+23G	/root/autodl-tmp/SAFE_official_data
+23G	/root/autodl-tmp/SAFE_official_data/DiTFake_repo
+23G	/root/autodl-tmp/SAFE_official_data/DiTFake_repo/DiTFake
+48G	/root/autodl-tmp
+
+ROOT_DATA_TOP_AFTER_CLEANUP
+928K	/root/autodl-tmp/SAFE_patch_diagnostic
+984K	/root/autodl-tmp/.autodl
+14M	/root/autodl-tmp/SAFE_positive_control
+1.9G	/root/autodl-tmp/toolbox_screening
+6.0G	/root/autodl-tmp/probe-dinov2-bfree-20261001
+18G	/root/autodl-tmp/actor0-bfree-20261002
+23G	/root/autodl-tmp/SAFE_official_data
+48G	/root/autodl-tmp
+
+PROTECTED_ARTIFACTS
+SAFE_DATA_PRESENT
+30000
+17G	/root/autodl-tmp/actor0-bfree-20261002/model-cache-xet
+4.6G	/root/autodl-tmp/probe-dinov2-bfree-20261001/weights
+1.9G	/root/autodl-tmp/toolbox_screening
+1604000 /root/autodl-tmp/actor0-bfree-20261002/trajectories/dev_trajectories.jsonl
+2465522 /root/autodl-tmp/actor0-bfree-20261002/trajectories/trajectories.jsonl
+1499 /root/autodl-tmp/SAFE_patch_diagnostic/patch_output/metrics.txt
+2666 /root/autodl-tmp/SAFE_patch_diagnostic/patch_output/run.log
+80029 /root/autodl-tmp/SAFE_patch_diagnostic/patch_output/scores.csv
+4671bafca394122723cf6a4c15e99a90d4b376a7338e5987b5e3800615d266d5  /root/autodl-tmp/SAFE_patch_diagnostic/crop_sha256.txt
+cf5026c1ac23cde46da6dad9a5cc33bcf36f53df1c323f9d3b3ae53634584a3d  /root/autodl-tmp/SAFE_patch_diagnostic/metadata.csv
+9b8a9fed86f80c631c96cf205f34162762ae963014394e06ce3f3359b6e5f618  /root/autodl-tmp/SAFE_patch_diagnostic/patch_output/scores.csv
+
+CLEANUP_TARGET_REMAINDERS
+0
+
+ACTIVE_NONPLATFORM_PROCESSES
+   PID     ELAPSED %CPU %MEM COMMAND
+   735       22:55  0.3  0.0 /root/miniconda3/bin/python /root/miniconda3/bin/jupyter-lab --allow-root --config=/init/jupyter/jupyter_config.py
+   734       22:55  0.1  0.0 autopanel serve --work-dir=/root/autodl-tmp --cache-dir=/root/autodl-tmp
+   732       22:55  0.1  0.0 /root/miniconda3/bin/python /root/miniconda3/bin/tensorboard --host 0.0.0.0 --port 6007 --logdir /root/tf-logs
+   710       22:55  1.5  0.0 /bin/supervisord -c /init/supervisor/supervisor.ini
+  1350       00:02  1.5  0.0 sshd: root@notty
+   789       22:46  0.0  0.0 /root/miniconda3/lib/python3.12/site-packages/tensorboard_data_server/bin/server --logdir=/root/tf-logs --reload=5 --samples-per-plugin= --port=0 --port-file=/tmp/tensorboard_data_server_krfwwzmp/port --die-after-stdin --error-file=/tmp/tensorboard_data_server_krfwwzmp/startup_error
+   733       22:55  0.0  0.0 sshd: /usr/sbin/sshd -D [listener] 1 of 10-100 startups
+  1348       01:13  0.0  0.0 sshd: [accepted]
+  1361       00:02  0.5  0.0 bash -c printf "IDENTITY\n"; hostname; date -Iseconds printf "\nFILESYSTEMS\n"; df -hT / /root/autodl-tmp; df -B1 /root/autodl-tmp printf "\nTOP20_DIRECTORIES_AFTER_CLEANUP\n"; du -x -h --max-depth=3 /root/autodl-tmp 2>/dev/null | sort -h | tail -n 20 printf "\nROOT_DATA_TOP_AFTER_CLEANUP\n"; du -h --max-depth=1 /root/autodl-tmp 2>/dev/null | sort -h printf "\nPROTECTED_ARTIFACTS\n"; test -d /root/autodl-tmp/SAFE_official_data/DiTFake_repo/DiTFake && echo SAFE_DATA_PRESENT; find /root/autodl-tmp/SAFE_official_data/DiTFake_repo/DiTFake -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) 2>/dev/null | wc -l; du -sh /root/autodl-tmp/actor0-bfree-20261002/model-cache-xet /root/autodl-tmp/probe-dinov2-bfree-20261001/weights /root/autodl-tmp/toolbox_screening 2>/dev/null; find /root/autodl-tmp/actor0-bfree-20261002/trajectories -maxdepth 1 -type f -printf "%s %p\n" 2>/dev/null; find /root/autodl-tmp/SAFE_patch_diagnostic/patch_output -maxdepth 1 -type f -printf "%s %p\n" 2>/dev/null | sort -k3; sha256sum /root/autodl-tmp/SAFE_patch_diagnostic/crop_sha256.txt /root/autodl-tmp/SAFE_patch_diagnostic/metadata.csv /root/autodl-tmp/SAFE_patch_diagnostic/patch_output/scores.csv printf "\nCLEANUP_TARGET_REMAINDERS\n"; find /root/autodl-tmp/actor0-bfree-20261002/model-cache/models--Qwen--Qwen3-VL-8B-Instruct/blobs -maxdepth 1 -type f -name "*.incomplete" -printf "%p\n" 2>/dev/null; find /root/autodl-tmp/SAFE_patch_diagnostic -maxdepth 1 -type d -name cropped_images -print; find /root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache -type f 2>/dev/null | wc -l printf "\nACTIVE_NONPLATFORM_PROCESSES\n"; ps -eo pid,etime,%cpu,%mem,args --sort=-%mem | awk 'NR==1 || /jupyter-lab|tensorboard|autopanel|supervisord|sshd/ {print}' | head -n 20 printf "\nGPU_QUERY\n"; nvidia-smi -L 2>&1; printf "nvidia_smi_exit=%s\n" "$?"
+  1383       00:00  0.0  0.0 awk NR==1 || /jupyter-lab|tensorboard|autopanel|supervisord|sshd/ {print}
+
+GPU_QUERY
+nvidia_smi_exit=0

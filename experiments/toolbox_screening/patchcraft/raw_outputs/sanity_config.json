@@ -1,0 +1,32 @@
+{
+  "tool": "PatchCraft",
+  "source": "aemilia/AIGCDetectionBenchMark/PatchCraft",
+  "manifest_sha256": "7473a4ce2ff93e05ca3766b4e598905443daffe7c6f5b266ba645debaca8916f",
+  "checkpoint_sha256": "c1c9612cc47215d7c4cbdc5ddff52a4312519d697fd0830ce478f63f58e733fd",
+  "seed": 42,
+  "official_defaults": {
+    "loadSize": 256,
+    "patch_num": 3,
+    "batch_size": 64,
+    "noise_type": null,
+    "input_transform": "official read_data_new -> processing_RPTC; RGB uint8 to [0,1] tensor; 3*8*8 random 32x32 crops sorted by pixel-difference energy into poor/rich grids",
+    "score": "sigmoid(logit), higher means fake; official prediction is score > 0.5"
+  },
+  "ordered_sample_ids": [
+    "r0f5475b5t:raise",
+    "r06cad2d6t:raise",
+    "r1cd8d9a4t:raise",
+    "r0ed019a4t:raise",
+    "r0a42c0f6t:raise",
+    "r0eba1984t:flux",
+    "r0c9910e4t:sd3_5",
+    "r1d00d8ect:sd3_5",
+    "r0703243bt:flux",
+    "r110f894ft:flux",
+    "r07598392t:sd3_5",
+    "r13b45303t:sd3_5",
+    "r1554cfadt:sd3_5",
+    "r1915909et:flux",
+    "r113402d4t:flux"
+  ]
+}

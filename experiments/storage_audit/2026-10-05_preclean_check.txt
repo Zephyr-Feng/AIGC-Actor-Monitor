@@ -1,0 +1,34 @@
+IDENTITY
+autodl-container-sbhn4u78c0-c07a45ba
+2026-10-05T19:55:40+08:00
+
+DATA_IMAGE_COUNTS
+DIR=/root/autodl-tmp/probe-dinov2-bfree-20261001/data/probe_eval_data
+300
+DIR=/root/autodl-tmp/actor0-bfree-20261002/data
+480
+DIR=/root/autodl-tmp/SAFE_official_data/DiTFake_repo/DiTFake
+30000
+
+CROP_AND_CACHE_COPY_HASHES
+4671bafca394122723cf6a4c15e99a90d4b376a7338e5987b5e3800615d266d5  /root/autodl-tmp/SAFE_patch_diagnostic/crop_sha256.txt
+cf5026c1ac23cde46da6dad9a5cc33bcf36f53df1c323f9d3b3ae53634584a3d  /root/autodl-tmp/SAFE_patch_diagnostic/metadata.csv
+9b8a9fed86f80c631c96cf205f34162762ae963014394e06ce3f3359b6e5f618  /root/autodl-tmp/SAFE_patch_diagnostic/patch_output/scores.csv
+
+PIP_CACHE_COUNT
+126
+93503772	/root/autodl-tmp/probe-dinov2-bfree-20261001/pip-cache
+
+PART_DOWNLOADS
+220200960 /root/autodl-tmp/actor0-bfree-20261002/model-cache/models--Qwen--Qwen3-VL-8B-Instruct/blobs/8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5.incomplete
+209715200 /root/autodl-tmp/actor0-bfree-20261002/model-cache/models--Qwen--Qwen3-VL-8B-Instruct/blobs/83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192.incomplete
+146800640 /root/autodl-tmp/actor0-bfree-20261002/model-cache/models--Qwen--Qwen3-VL-8B-Instruct/blobs/d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa.incomplete
+31457280 /root/autodl-tmp/actor0-bfree-20261002/model-cache/models--Qwen--Qwen3-VL-8B-Instruct/blobs/0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5.incomplete
+16384 /root/autodl-tmp/toolbox_screening/bin/c2patool-v0.28.1.stalled.part
+
+CROP_DIRECTORY_STATS
+count=1500 bytes=657821604
+
+BEFORE_CLEANUP_DF
+Filesystem       1B-blocks        Used  Available Use% Mounted on
+/dev/md0       53687091200 52113645568 1573445632  98% /root/autodl-tmp

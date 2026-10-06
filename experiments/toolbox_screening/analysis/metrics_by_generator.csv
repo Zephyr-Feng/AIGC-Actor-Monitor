@@ -1,0 +1,11 @@
+accuracy,actionable,average_precision,balanced_accuracy,c2pa_present,camera_metadata_present,comparison,exif_present,fake_recall,false_negative_rate,false_positive_rate,fn,fp,iptc_present,n,n_fake,n_real,roc_auc,software_metadata_present,specificity,tn,tool,tp,xmp_present
+0.975,,0.9996059017666479,0.975,,,RAISE_vs_FLUX,,0.95,0.05,0.0,5,0,,200,100,100,0.9996,,1.0,100,PROBE,95,
+0.425,,0.4294123869351968,0.425,,,RAISE_vs_FLUX,,0.74,0.26,0.89,26,89,,200,100,100,0.3841,,0.11,11,PatchCraft,74,
+0.52,,0.5749326350392203,0.52,,,RAISE_vs_FLUX,,0.11,0.89,0.07,89,7,,200,100,100,0.5698,,0.93,93,RIGID,11,
+0.995,,1.0,0.995,,,RAISE_vs_SD3_5,,0.99,0.01,0.0,1,0,,200,100,100,1.0,,1.0,100,PROBE,99,
+0.53,,0.5735096128772273,0.53,,,RAISE_vs_SD3_5,,0.95,0.05,0.89,5,89,,200,100,100,0.598,,0.11,11,PatchCraft,95,
+0.475,,0.4055804211343787,0.47500000000000003,,,RAISE_vs_SD3_5,,0.02,0.98,0.07,98,7,,200,100,100,0.3294,,0.93,93,RIGID,2,
+,0.0,,,0.0,0.0,overall,0.0,,,,,,0.0,300,,,,0.0,,,Provenance,,0.0
+,0.0,,,0.0,0.0,raise,0.0,,,,,,0.0,100,,,,0.0,,,Provenance,,0.0
+,0.0,,,0.0,0.0,flux,0.0,,,,,,0.0,100,,,,0.0,,,Provenance,,0.0
+,0.0,,,0.0,0.0,sd3_5,0.0,,,,,,0.0,100,,,,0.0,,,Provenance,,0.0

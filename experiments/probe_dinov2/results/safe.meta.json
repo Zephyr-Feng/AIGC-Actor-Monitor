@@ -1,0 +1,9 @@
+{
+  "purpose": "common frozen PROBE B-Free four-expert test set",
+  "manifest_sha256": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465",
+  "checkpoint_sha256": "b3f5ecfb46a154ed553aaaf4bf3ba59182310726ddb0cbb1fe42bd0e22d2f20e",
+  "source_commit": "4e998724651b227def64f5be0cd60c0aa1552c35",
+  "preprocessing": "RGB, CenterCrop(256), ToTensor()",
+  "score": "softmax(logits)[1] = fake probability",
+  "device": "cuda"
+}

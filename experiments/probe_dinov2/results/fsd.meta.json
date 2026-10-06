@@ -1,0 +1,7 @@
+{
+  "expert": "fsd",
+  "manifest_sha256": "61d9455417f5d388edd663ff8497c641db58e3ee3349fda94e64c01b77b2d465",
+  "repo": "/root/autodl-tmp/probe-dinov2-bfree-20261001/src/fsd/Forensic-Self-Descriptions-CVPR25-main",
+  "weights": "/root/autodl-tmp/probe-dinov2-bfree-20261001/weights/fsd-v1.2.0",
+  "device": "cuda"
+}

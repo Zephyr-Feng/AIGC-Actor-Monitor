@@ -1,0 +1,9 @@
+{
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "architecture": "Qwen3VLForConditionalGeneration",
+  "dtype": "bfloat16",
+  "device_map": "cuda",
+  "attn_implementation": "model default",
+  "trust_remote_code": false
+}

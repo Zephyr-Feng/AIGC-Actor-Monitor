@@ -1,0 +1,5 @@
+﻿sample_id,ground_truth,probe_signal,probe_score,probe_strength,actor_tool_calls,additional_tools_after_global,actor_final_verdict,actor_correct,recovered_by_additional_tools,stopped_early_after_global,global_signal_echoed_as_support
+r000da54ft:flux,fake,real,0.2783008813858032,low,global_forensic_analyzer | local_texture_analyzer | complementary_forensic_analyzer | provenance_inspector,local_texture_analyzer | complementary_forensic_analyzer | provenance_inspector,real,0,0,0,1
+r0cea5432t:flux,fake,real,0.4672015309333801,low,global_forensic_analyzer | local_texture_analyzer | provenance_inspector,local_texture_analyzer | provenance_inspector,fake,1,1,0,1
+r1882b6e6t:flux,fake,real,0.08575762808322906,high,global_forensic_analyzer,,real,0,0,1,1
+r0d0ff43at:raise,real,fake,0.6426970362663269,low,global_forensic_analyzer | local_texture_analyzer | complementary_forensic_analyzer | provenance_inspector,local_texture_analyzer | complementary_forensic_analyzer | provenance_inspector,fake,0,0,0,1
