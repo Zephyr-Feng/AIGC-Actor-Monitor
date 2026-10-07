@@ -14,6 +14,8 @@ from actor_b_protocol import TOOLS, extract_object
 
 DIRECTIONAL = {"local_texture_analyzer", "complementary_forensic_analyzer"}
 GLOBAL = "global_forensic_analyzer"
+
+
 def read_jsonl(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
@@ -75,16 +77,20 @@ def main() -> None:
     parser.add_argument("--trajectories", type=Path, required=True)
     parser.add_argument("--runtime", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--expected-records", type=int, default=30)
     args = parser.parse_args()
     rows = read_jsonl(args.trajectories)
-    if len(rows) != 30:
-        raise ValueError("expected fixed 30-image Actor-B0 sanity set")
+    if len(rows) != args.expected_records:
+        raise ValueError(f"expected {args.expected_records} Actor-B records")
     violations = [hit for row in rows for hit in global_attribution_violations(row)]
     total_steps = sum(len(row["steps"]) for row in rows)
+    accepted_steps = sum(step.get("actor_output") is not None for row in rows for step in row["steps"])
     total_calls = sum(row["num_tool_calls"] for row in rows)
     requested, legal, repeated_attempts = map(sum, zip(*(call_attempts(row) for row in rows)))
     metrics = {
         "records": len(rows),
+        "accepted_steps": accepted_steps,
+        "total_steps": total_steps,
         "parse_success": sum(row["parse_valid"] for row in rows) / len(rows),
         "legal_tool_call_rate": legal / requested if requested else None,
         "tool_call_requests": requested,
@@ -94,10 +100,13 @@ def main() -> None:
         "multi_step_completion_rate": sum(row["parse_valid"] and row["num_tool_calls"] >= 2 for row in rows) / len(rows),
         "final_balanced_accuracy": None,
         "global_directional_attribution_steps": len(violations),
-        "global_directional_attribution_step_rate": len(violations) / max(total_steps, 1),
+        "global_directional_attribution_step_rate": len(violations) / max(accepted_steps, 1),
         "global_directional_attribution_samples": len({hit["sample_id"] for hit in violations}),
         "first_tool_counts": Counter(row["tool_calls"][0] if row["tool_calls"] else "STOP" for row in rows),
         "tool_call_counts": Counter(tool for row in rows for tool in row["tool_calls"]),
+        "tool_call_distribution": Counter(row["num_tool_calls"] for row in rows),
+        "tool_sequence_distribution": Counter(" > ".join(row["tool_calls"]) or "STOP"
+                                               for row in rows),
         "format_errors": sum(row["format_error_count"] for row in rows),
         "forced_or_missing_final": sum(not row["parse_valid"] for row in rows),
     }
@@ -117,11 +126,11 @@ def main() -> None:
         json.dumps(violations, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     runtime = json.loads(args.runtime.read_text(encoding="utf-8"))
     decision = "B0_REVIEW_REQUIRED"
-    report = f"""# Actor-B0 Baseline Report
+    report = f"""# Actor-B Orchestration Report
 
 ## Reproducibility
 
-- Code base commit: `1f84902`; runner and evaluator have local post-commit changes.
+- Runtime metadata and exact code revisions are recorded with this run; use the freeze manifest for a frozen Actor release.
 - Model revision: `{runtime['model_revision']}`
 - Prompt SHA-256: `{runtime['prompt_sha256']}`
 - Schema SHA-256: `{runtime['schema_sha256']}`
@@ -141,9 +150,9 @@ Premature STOP is a diagnostic flag: no directional tool was called, or unresolv
 
 `{decision}`
 
-This sanity set is for Actor orchestration decisions only. It is not a confirmation benchmark and must not support headline accuracy claims.
+This set is for Actor orchestration decisions only. It is not an accuracy benchmark and must not support headline accuracy claims.
 """
-    (args.output_dir / "ACTOR_B0_BASELINE_REPORT.md").write_text(report, encoding="utf-8")
+    (args.output_dir / "ACTOR_B_ORCHESTRATION_REPORT.md").write_text(report, encoding="utf-8")
     print(json.dumps({"decision": decision, **metrics}, ensure_ascii=False, indent=2, default=dict))
 
 

@@ -1,0 +1,12 @@
+{
+  "records": 30,
+  "accepted_steps": 125,
+  "explicit_steps": 21,
+  "explicit_attribution_violation_rate": 0.168,
+  "implicit_steps": 19,
+  "implicit_attribution_violation_rate": 0.152,
+  "attribution_violation_samples": 24,
+  "sample_level_attribution_violation_rate": 0.8,
+  "ambiguous_steps": 3,
+  "annotations_sha256": "7d55d0bee4bb9bb5ee249a31b3cfc11178c8b2495aa54a16111387c5c653d40d"
+}

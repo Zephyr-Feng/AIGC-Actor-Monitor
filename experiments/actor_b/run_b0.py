@@ -50,6 +50,7 @@ def main() -> None:
     parser.add_argument("--tool-cards", type=Path, required=True)
     parser.add_argument("--experiment-dir", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--expected-records", type=int, default=30)
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
 
@@ -72,8 +73,8 @@ def main() -> None:
 
     manifest = read_jsonl(args.manifest)
     tools_by_id = {row["sample_id"]: row for row in read_jsonl(args.tool_results)}
-    if len(manifest) != 30 or set(tools_by_id) != {row["sample_id"] for row in manifest}:
-        raise ValueError("Actor-B0 expects the fixed 30-image sanity set")
+    if len(manifest) != args.expected_records or set(tools_by_id) != {row["sample_id"] for row in manifest}:
+        raise ValueError(f"Actor-B expects {args.expected_records} aligned images and tool records")
     torch.manual_seed(int(generation["seed"]))
     torch.cuda.manual_seed_all(int(generation["seed"]))
     processor = transformers.AutoProcessor.from_pretrained(args.model_dir)

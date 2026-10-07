@@ -1,0 +1,20 @@
+{
+  "audit_date": "2026-10-07",
+  "records": 60,
+  "accepted_steps": 244,
+  "explicit_attribution_violation_steps": 45,
+  "explicit_attribution_violation_rate": 0.18442622950819673,
+  "implicit_attribution_violation_steps": 58,
+  "implicit_attribution_violation_rate": 0.23770491803278687,
+  "sample_level_attribution_violation_samples": 47,
+  "sample_level_attribution_violation_rate": 0.7833333333333333,
+  "ambiguous_steps": 5,
+  "opposing_directional_tool_samples": 12,
+  "conflict_omission_samples": 2,
+  "conflict_omission_rate": 0.16666666666666666,
+  "conflict_omission_due_missing_final": 2,
+  "unsupported_synthesis_samples": 33,
+  "unsupported_synthesis_rate": 0.55,
+  "missing_valid_final_samples": 5,
+  "retry_prompt_copied_to_final_reason_samples": 5
+}

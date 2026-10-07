@@ -86,7 +86,9 @@ def validate_action(value: dict[str, Any], used_tools: set[str] | None = None) -
             raise ValueError("STOP requires selected_tool=null")
         if value["final_verdict"] not in ("real", "fake"):
             raise ValueError("STOP final_verdict must be real or fake")
-        if value["final_confidence"] not in CONFIDENCE:
+        # Confidence is ancillary metadata. A missing value must stay missing;
+        # it must not invalidate an otherwise explicit real/fake STOP verdict.
+        if value["final_confidence"] is not None and value["final_confidence"] not in CONFIDENCE:
             raise ValueError("STOP final_confidence is invalid")
     return value
 

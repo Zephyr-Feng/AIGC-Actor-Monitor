@@ -1,0 +1,52 @@
+{
+  "accepted_steps": 125,
+  "average_tool_calls": 3.1666666666666665,
+  "by_label": {
+    "fake": {
+      "n": 20,
+      "recall": 0.95
+    },
+    "real": {
+      "n": 10,
+      "recall": 0.5
+    }
+  },
+  "final_balanced_accuracy": 0.725,
+  "first_tool_counts": {
+    "global_forensic_analyzer": 14,
+    "provenance_inspector": 16
+  },
+  "forced_or_missing_final": 0,
+  "format_errors": 8,
+  "global_directional_attribution_samples": 10,
+  "global_directional_attribution_step_rate": 0.128,
+  "global_directional_attribution_steps": 16,
+  "legal_tool_call_rate": 1.0,
+  "multi_step_completion_rate": 1.0,
+  "parse_success": 1.0,
+  "premature_stop_rate": 0.06666666666666667,
+  "records": 30,
+  "repeated_tool_call_attempt_rate": 0.0,
+  "tool_call_counts": {
+    "complementary_forensic_analyzer": 15,
+    "global_forensic_analyzer": 30,
+    "local_texture_analyzer": 30,
+    "provenance_inspector": 20
+  },
+  "tool_call_distribution": {
+    "2": 8,
+    "3": 9,
+    "4": 13
+  },
+  "tool_call_requests": 95,
+  "tool_sequence_distribution": {
+    "global_forensic_analyzer > local_texture_analyzer": 8,
+    "global_forensic_analyzer > local_texture_analyzer > complementary_forensic_analyzer": 2,
+    "global_forensic_analyzer > local_texture_analyzer > complementary_forensic_analyzer > provenance_inspector": 3,
+    "global_forensic_analyzer > local_texture_analyzer > provenance_inspector > complementary_forensic_analyzer": 1,
+    "provenance_inspector > global_forensic_analyzer > local_texture_analyzer > complementary_forensic_analyzer": 2,
+    "provenance_inspector > local_texture_analyzer > global_forensic_analyzer": 7,
+    "provenance_inspector > local_texture_analyzer > global_forensic_analyzer > complementary_forensic_analyzer": 7
+  },
+  "total_steps": 125
+}

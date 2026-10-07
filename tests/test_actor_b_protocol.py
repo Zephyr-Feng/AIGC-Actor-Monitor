@@ -30,6 +30,18 @@ class ActorBProtocolTests(unittest.TestCase):
         value = base("STOP", None, "fake", "moderate")
         self.assertEqual(parse_action(__import__("json").dumps(value))["final_verdict"], "fake")
 
+    def test_stop_allows_missing_confidence_without_imputation(self):
+        value = base("STOP", None, "real", None)
+        self.assertIsNone(parse_action(__import__("json").dumps(value))["final_confidence"])
+
+    def test_stop_still_requires_verdict(self):
+        with self.assertRaisesRegex(ValueError, "real or fake"):
+            parse_action(__import__("json").dumps(base("STOP", None, None, None)))
+
+    def test_stop_rejects_invalid_confidence(self):
+        with self.assertRaisesRegex(ValueError, "final_confidence is invalid"):
+            parse_action(__import__("json").dumps(base("STOP", None, "fake", "certain")))
+
     def test_reject_repeat(self):
         with self.assertRaisesRegex(ValueError, "already been called"):
             parse_action(__import__("json").dumps(base()), {"global_forensic_analyzer"})
