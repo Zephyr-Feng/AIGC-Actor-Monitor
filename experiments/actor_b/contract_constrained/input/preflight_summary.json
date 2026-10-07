@@ -1,0 +1,11 @@
+{
+  "all_stop_contexts_reconstruct": true,
+  "all_tool_observations_match": true,
+  "both_legal_verdicts_parse_for_all": true,
+  "manifest_sha256": "fe53bd24557f04705b6a26788e7a57c3f3ab5cc8981029b49ba952eb6ab80531",
+  "original_invalid": 5,
+  "original_valid": 55,
+  "records": 60,
+  "tool_results_sha256": "94e0b02b7d582057cac32ea8c416f348c9b60ee3854594216c3c7d562a51b919",
+  "trajectories_sha256": "276715a5ebd42bc9a7c3b27d5d18f6c5550145d1be9f3ba2bf873f7b0767cec9"
+}

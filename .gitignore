@@ -21,6 +21,7 @@
 /experiments/actor_b/heldout_confirmation/outputs/
 /experiments/actor_b/heldout_confirmation/evidence/
 /experiments/actor_b/heldout_confirmation/analysis/attribution_violations.json
+/experiments/actor_b/contract_constrained/outputs/
 
 # Python.
 __pycache__/

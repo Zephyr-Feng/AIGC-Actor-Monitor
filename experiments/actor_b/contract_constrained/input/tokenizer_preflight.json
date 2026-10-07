@@ -1,0 +1,10 @@
+{
+  "candidate_divergence_is_local_to_verdict": true,
+  "checked_context_tokens_and_grids_match": true,
+  "max_field_boundary_retokenized_tokens": 0,
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "processor_contexts_checked": 2,
+  "processor_transformers": "4.57.4",
+  "records": 60,
+  "trajectories_sha256": "276715a5ebd42bc9a7c3b27d5d18f6c5550145d1be9f3ba2bf873f7b0767cec9"
+}

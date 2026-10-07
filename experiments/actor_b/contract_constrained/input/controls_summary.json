@@ -1,0 +1,21 @@
+{
+  "confidence_counts": {
+    "None": 2,
+    "high": 4,
+    "low": 2,
+    "moderate": 7
+  },
+  "conflict_counts": {
+    "False": 6,
+    "True": 9
+  },
+  "controls": 15,
+  "controls_sha256": "21704dab3cea8f3ef06c985910d641669e9c9572375cb6f688a4bcea634b972f",
+  "selection": "deterministic greedy coverage of verdict, confidence, conflict, tool sequence",
+  "source_trajectories_sha256": "276715a5ebd42bc9a7c3b27d5d18f6c5550145d1be9f3ba2bf873f7b0767cec9",
+  "unique_tool_sequences": 8,
+  "verdict_counts": {
+    "fake": 9,
+    "real": 6
+  }
+}
