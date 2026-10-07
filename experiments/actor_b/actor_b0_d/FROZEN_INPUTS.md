@@ -41,9 +41,10 @@ The original B0-C tool-card JSON is not in this local checkout. Before inference
 
 - B0-C tool-source bundle SHA-256: `b24bde84bf39b1c47d2f2a895b63e97585bebfac5b68a3c2a8165c8991466f75`
 - B0-C component hashes are recorded in the pre-run history below and can be recomputed from the listed source files.
-- B0-D runner SHA-256: **fill after code commit, before run**.
-- B0-D evaluator SHA-256: **fill after code commit, before run**.
-- Git commit used for the run: **fill after code commit, before run**.
+- B0-D runner SHA-256: `9d9fd8a8d867433d7675d5bf64ddef58b8f702c1ef5a1f1c87fb5509eefbae62`
+- B0-D evaluator SHA-256: `d913bf1b33c023ceb7381e80e39c51d0c971d9f0a1c36efdd41b5adc29d15b10`
+- B0-D preparation/control bundle SHA-256 (four Python controls, canonical path/hash map): `0666b74f4dd375b2ad35f9b905c02da409449a75860eefe039daa8fe45264b7b`
+- Git source commit for the run: `1c26bca4bae2bde5f94f409e4cf430fdaabd98ec`. Any later commit before execution is documentation-only; verify these script hashes again before running.
 - Active AutoDL instance, host and port: **fill after user opens a card and endpoint is verified**.
 - Verified remote tool-card file SHA-256 and recomputed prompt SHA-256: **pending remote preflight**.
 - Condition-specific prompt/schema/card hashes and run fingerprints are written to each condition's `runtime.json` before final evaluation.
@@ -62,4 +63,4 @@ The original B0-C tool-card JSON is not in this local checkout. Before inference
 | `experiments/probe_evidence_v1/build_evidence.py` | `5365b2a31fcaf5d6ee48e40dc5ec9852aa939071de7320b51439136ce24876c8` |
 | `experiments/probe_evidence_v1/extract_features.py` | `ca306e3d3f2e0e09c371fdd6b4a7768928411087ddf2b77d68fe25044a789f67` |
 
-Local code and evaluator tests passed before GPU readiness. The evaluator smoke test re-used the FULL fixture in all four slots only to validate file alignment and output generation; it is not a B0-D condition result and must not be reported as one.
+Local code and evaluator tests passed before GPU readiness. The evaluator smoke test re-used the FULL fixture in all four slots only to validate file alignment and output generation; it is not a B0-D condition result and must not be reported as one. The source commit above contains the B0-D scripts; this freeze record may be committed afterward without changing those scripts.
