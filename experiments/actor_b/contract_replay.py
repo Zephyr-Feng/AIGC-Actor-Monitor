@@ -261,9 +261,15 @@ def main() -> None:
             model, processor, messages, raw, int(last_attempt["input_tokens"]),
             int(last_attempt["image_grids"]), torch)
         torch.cuda.synchronize()
+        tie_break_used = False
         if scores["real"] == scores["fake"]:
-            raise ValueError("forced choice is tied")
-        chosen = max(scores, key=scores.get)
+            original_verdict = json.loads(raw).get("final_verdict")
+            if original_verdict not in CANDIDATES:
+                raise ValueError("invalid raw verdict has an exact forced-choice tie")
+            chosen = original_verdict
+            tie_break_used = True
+        else:
+            chosen = max(scores, key=scores.get)
         constrained = replace_verdict(raw, chosen)
         parsed = parse_action(constrained, set(row["tool_calls"]))
         original, _, _ = verdict_span(raw)
@@ -277,6 +283,7 @@ def main() -> None:
                             "contract_verdict": parsed["final_verdict"],
                             "verdict_log_likelihood": {key: round(value, 9)
                                                        for key, value in scores.items()},
+                            "exact_tie_preserved_original": tie_break_used,
                             "field_boundary_retokenized_tokens": retokenized_tokens,
                             "verdict_preserved": row["parse_valid"] and
                                                  parsed["final_verdict"] == row["final_verdict"],
