@@ -15,4 +15,4 @@
 
 `contract_replay.py` 按旧轨迹重建最后一次 STOP 生成前的消息与多模态输入。Stage 1 使用原始生成的 JSON 原文；Stage 2 让**同一个冻结模型**在 `final_verdict` 字段处分别计算 JSON 字符串 `"real"` 与 `"fake"` 的条件对数似然，选分数较高者。原始生成 token ID 未保存，因此原文前缀需要由同一 tokenizer 从文本重编码；这点在报告中保留为方法限制。模型不读取 GT 标签，parser 不依据工具分数补判。输出同时保存 `raw_unconstrained_output`、`contract_constrained_output` 和两种合法值的模型分数；只允许最终 verdict 字段变化。Qwen3-VL 仅计算候选后缀所需的 logits。
 
-先运行原失败 5 图与成功对照 15 图。若 5/5 合法且 15/15 保持原合法 verdict，再回放全部原 60 图；此门槛用于避免约束悄然改变原行为。完整回放须达到 60/60 合法终态、60/60 工具序列保持和 55/55 原合法 verdict 保持，才考虑 `ACTOR_B0_C_FREEZE`。任何异常先核对原因并保留原始输出，不重跑 detector、crops 或工具，也不使用预留的 74 个 Monitor test 来源组。
+先运行原失败 5 图与成功对照 15 图。技术检查要求 5/5 失败修复、20/20 合法终态及 20/20 工具序列保持；成功对照的 verdict 保持率按用户方案报告（方案将约 100% 列为理想结果，未设硬阈值）。完整回放报告 verdict 保持率，并须达到 60/60 合法终态、60/60 工具序列保持和 55/55 原合法 verdict 保持，才考虑 `ACTOR_B0_C_FREEZE`。任何异常先核对原因并保留原始输出，不重跑 detector、crops 或工具，也不使用预留的 74 个 Monitor test 来源组。

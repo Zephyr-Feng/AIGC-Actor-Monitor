@@ -58,7 +58,9 @@ def evaluate(original: list[dict], replay: list[dict], controls: set[str], mode:
               "tool_sequence_preservation_rate": sequence_preserved / len(replay),
               "pre_stop_history_preserved": True, "non_verdict_stop_fields_preserved": True}
     if mode == "pilot":
-        result["pilot_gate_pass"] = failed_fixed == 5 and preserved == 15 and sequence_preserved == 20
+        result["pilot_technical_gate_pass"] = (
+            valid == 20 and failed_fixed == 5 and sequence_preserved == 20
+        )
     else:
         result["freeze_gate_pass"] = (valid == 60 and preserved == 55 and
                                        sequence_preserved == 60)

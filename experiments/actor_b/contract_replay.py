@@ -157,7 +157,7 @@ def score_legal_verdicts(model, processor, messages: list[dict], raw: str,
                            logits_to_keep=candidate_tokens + 1).logits[0]
             targets = continuation[0, shared:]
             log_probs = torch.log_softmax(logits[:-1].float(), dim=-1)
-            scores[verdict] = round(float(log_probs.gather(1, targets[:, None]).sum()), 6)
+            scores[verdict] = float(log_probs.gather(1, targets[:, None]).sum())
     return scores, len(prefix_ids) - shared
 
 
@@ -275,7 +275,8 @@ def main() -> None:
                             "raw_unconstrained_output": raw,
                             "contract_constrained_output": constrained,
                             "contract_verdict": parsed["final_verdict"],
-                            "verdict_log_likelihood": scores,
+                            "verdict_log_likelihood": {key: round(value, 9)
+                                                       for key, value in scores.items()},
                             "field_boundary_retokenized_tokens": retokenized_tokens,
                             "verdict_preserved": row["parse_valid"] and
                                                  parsed["final_verdict"] == row["final_verdict"],
