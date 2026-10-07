@@ -4,8 +4,8 @@
 
 ## 当前状态（2026-10-07）
 
-- **Actor-B0-D GPU 条件进行中：PROBE-MASK、PROBE-DELAY 各完成 60/60，TOOL-RENAME 正在运行。** 已按用户确认复用 B0-C 的同一 60 图 cohort；将诊断类别固定为 EASY 12、PROBE 困难代理 12、工具方向冲突 16、弱证据 10、困难可解 10。历史 PROBE 错误例与这 60 图重叠为 0，代理样本不会描述成真实 PROBE 失败复现；Monitor 预留的 74 个来源组未触碰。冻结 FULL 从 B0-C 原轨迹派生，只修复既有 5 条非法 STOP，保留 55 条合法 verdict。缓存工具输出中 36/60 图的方向工具相反，B0-C 实际同时调用两种冲突方向来源的为 12/36；这只是后续条件比较的基线描述，不构成 SFT 结论。[B0-D 方案、冻结记录与本地脚本](../experiments/actor_b/actor_b0_d/README.md)。
-- B0-D 源码冻结于 `1c26bca4bae2bde5f94f409e4cf430fdaabd98ec`，运行器冻结时 39 项仓库测试通过；离线评价修正后全套 43 项通过。用户开卡后，当前入口 `connect.bjb1.seetacloud.com:33082` 的 B0-C prompt、模型 config、60/60 图像 hash、180/180 crops 与运行版本核验通过。PROBE-MASK 原始解析 57/60、effective 60/60；PROBE-DELAY 原始解析 52/60、effective 60/60，28 次首步 PROBE 禁止尝试已记录。两个条件已本地备份且 hash 与远端一致。最后一组 TOOL-RENAME 已启动并持久写日志；人工审计与最终 SFT gate 尚未完成。
+- **Actor-B0-D 三个 GPU 条件和四条件自动评价均已完成；人工审计等待中。** PROBE-MASK、PROBE-DELAY、TOOL-RENAME 各 60/60，GPU 已释放。当前决策 `ACTOR_B0_D_INCONCLUSIVE`，原因是方案规定的 20 图 × 4 条件人审（80 行）及 827 条工具选择审计尚未开始；自动指标不能替代人审。诊断类别固定为 EASY 12、PROBE 困难代理 12、工具方向冲突 16、弱证据 10、困难可解 10；历史 PROBE 错误图重叠为 0，74 个 Monitor 预留来源组未触碰。完整数值、限制和审计入口见[B0-D 报告与说明](../experiments/actor_b/actor_b0_d/README.md)。
+- B0-D 源码冻结于 `1c26bca4bae2bde5f94f409e4cf430fdaabd98ec`，运行器冻结时 39 项仓库测试通过；离线评价修正后全套 43 项通过。用户开卡后，当前入口 `connect.bjb1.seetacloud.com:33082` 的 B0-C prompt、模型 config、60/60 图像 hash、180/180 crops 与运行版本核验通过。PROBE-MASK 原始解析 57/60、effective 60/60；PROBE-DELAY 原始解析 52/60、effective 60/60，28 次首步 PROBE 禁止尝试已记录。三个条件均已备份且轨迹/runtime hash 与远端一致；60/60 顺序和 runner hash 核验通过。正式评价输出四条件各 60 条、80 行固定盲审模板和 827 行调用审计表。FULL/MASK/DELAY/RENAME 的有效终态分别为 60/60、60/60、60/60、59/60；RENAME 唯一无效轨迹为预算耗尽后两次请求重复工具。SFT gate 暂为 INCONCLUSIVE，等待人审。
 - **Actor-B Contract-Constrained Freeze Gate 通过，决策为 `ACTOR_B0_C_FREEZE`；未启动 SFT。** 用户选择保留已有合法 `real/fake` verdict，只对 5 条非法 STOP 使用同模型 forced choice。独立派生评价为 60/60 合法终态、5/5 失败修复、55/55 原合法 verdict 保持、60/60 工具序列及 STOP 前历史保持。先前“每条 STOP 均做 forced choice”的候选仅保留 37/55 verdict，已作为失败诊断保留，不作冻结版本。所选派生 replay SHA-256 `89fbe915fdf32505b20da820a50236c2a2238fc3fa72ab0e4bce06447464f130`，详见[最终报告](../experiments/actor_b/ACTOR_B_CONSTRAINED_FREEZE_REPORT.md)。
 - **Actor-B0 原 30 图 sanity（历史记录）。** 30/30 PROBE Evidence-only、30/30 B0 推理完成；28/30 有合法最终输出，95/95 工具调用请求合法、0 重复，平均 3.17 次/图。两张失败均为 STOP 的 `final_confidence` 为空；9/30 图出现明确把 PROBE 全局偏离标成 `real`/`fake` 的归因错误。小样 balanced accuracy 0.65 仅作诊断。自动评价最初把 `inconclusive` 算作归因违规，50.4% 已撤回；原始“考虑 SFT”标签也因阈值未经确认而撤回。[报告](../experiments/actor_b/baseline_b0/analysis/ACTOR_B0_BASELINE_REPORT.md)、[轨迹复核](../experiments/actor_b/baseline_b0/analysis/ACTOR_B0_AUDIT.md)。
 - **Mini FaithBench v0 停在第三轮技术小样。** 按用户最后授权，仅补强 PROBE observation / Actor inference 的归因边界和 STOP 的 `real|fake` 输出说明；固定 6 图×3 条件重跑为 18/18 最终可解析，crop 图像输入、其他工具 callable 和 PROBE 输入结论泄漏检查均正常。但人工复核发现 PROBE 偏离仍被写成真假倾向；一次原始 STOP 仍输出 `final_verdict=uncertain`，虽在下一步重试恢复。按预设门槛**不再叠加 prompt patch、不冻结 prompt、不启动正式 900 条或 SFT**。结论：Prompt-only schema adaptation is insufficient to reliably enforce evidence attribution boundaries。[本轮报告和原始轨迹](../experiments/mini_faithbench_v0/technical_sample_v3/REPORT.md)；[前轮失败](../experiments/mini_faithbench_v0/technical_sample_v2/REPORT.md)。
@@ -16,12 +16,14 @@
 
 ## 续跑位置与约束
 
-- 当前核验的 AutoDL 入口：`connect.bjb1.seetacloud.com:33082`（2026-10-07 用户开卡后重新核验可达）。B0-D 目录 `/root/autodl-tmp/actor-b-schema-20261007/actor_b/actor_b0_d/`；前两组已完成，TOOL-RENAME 进程 PID 7077，日志 `tool_rename.log`，PID 记录 `tool_rename.pid`。该进程脱离 SSH 会话运行，对话中断后应先只读检查，不重复启动。GPU 工作尚未全部结束；结束后检查 0 MiB / 0% 并通知用户可关卡。入口会随克隆改变，无凭证记录。
+- 2026-10-07 在 connect.bjb1.seetacloud.com:33082 完成 B0-D 推理；远端目录 /root/autodl-tmp/actor-b-schema-20261007/actor_b/actor_b0_d/。TOOL-RENAME PID 7077 已退出，60/60 runtime 写入，GPU 检查为 0 MiB / 0%，用户已获知可关卡。入口会随克隆改变，无凭证记录。剩余工作仅为本地人工审计及据此更新最终 gate。
 - Actor-B0 远端隔离目录：`/root/autodl-tmp/actor-b0-20261007/`；30 图原始轨迹还在此目录及本地 `experiments/actor_b/baseline_b0/outputs/`（Git 忽略，不上传 GitHub）。冻结输入及运行哈希见 B0 报告。旧实例的两份派生 JSONL 传输曾获单次授权；用户随后提供新克隆并明确要求在新实例续跑，held-out 输入仅在该实例用于此次实验，仍不上传 GitHub。
 - 远端 Mini FaithBench 隔离目录：`/root/autodl-tmp/mini-faithbench-v0/`；独立 Actor venv 为 `transformers==4.57.4`、`accelerate==1.10.1`，PROBE 环境未改。模型与 processor 使用上述同一 revision。三轮小样在 `technical_sample/`、`technical_sample_v2/`、`technical_sample_v3/`；`formal/` 尚无正式轨迹。
 - 本地入口：`experiments/mini_faithbench_v0/`（runner、三条件 inputs、benchmark config、prompt 与技术小样）；`experiments/probe_evidence_v1/results/output/`（Evidence v1）；`runs/actor0-bfree-20261002/`（旧 Actor-0 原始结果，忽略目录）。代码和研究文件存在未提交改动，不重置或覆盖。
 - Actor-B0-C 已按获批最小策略冻结。下一步回到主方案安排 FaithBench 阶段；正式 benchmark 尚未启动。当前不运行 SFT 或正式 900 条。PROBE 归因错误保留为可检测的失败案例。旧实验记录保留在各报告及上述归档，历史 SSH 端口不要当作当前入口。
 
+
+四条件 B0-D 推理及自动配对评价完成。TOOL-RENAME 轨迹/runtime SHA-256 分别为 `83fba0e96c644a6a1107ec327581060b566c2a7572634b004357140e0e39c51d` 与 `af08cf140b58e46a38fc8885709c3a511763c297781cbbb50f194071a263b90c`，与远端一致；四条件顺序、runner hash 核验通过。raw/effective 合法终态：FULL 55/60→60/60，MASK 57/60→60/60，DELAY 52/60→60/60，RENAME 59/60→59/60。评价器生成 80 行固定人审包和 827 行调用审计；仅聚合 metrics、报告与 runtime 可提交，逐样本结果留本地。当前 gate `ACTOR_B0_D_INCONCLUSIVE`，待真实人审。FULL 无 PROBE-first immediate STOP；RENAME 首工具 60/60 集中至 tool_alpha（原 global/PROBE），显示改名敏感信号；冲突机会调整后，FULL/MASK/DELAY/RENAME 有机会时跟进计数为 3/4、27/27、5/9、20/20。报告见 `experiments/actor_b/actor_b0_d/report/ACTOR_B0_D_REPORT.md`。没有训练 SFT 或启动 Monitor。
 ## 早期阶段索引
 
 | 阶段 | 保留结论 | 详细记录 |

@@ -1,6 +1,6 @@
 # Actor-B0-D：执行与产物说明
 
-本目录按已归档的 [B0-D 方案](ACTOR_B0_D_PLAN.md)评估冻结 Actor-B0-C 的取证策略。诊断 manifest 与 B0-C 使用同一批 60 图，不构成独立 held-out；PROBE 类是困难代理样本，不是真实历史 PROBE 错误复现。Monitor 预留的 74 个来源组不参与本轮。
+本目录按已归档的 [B0-D 方案](ACTOR_B0_D_PLAN.md)评估冻结 Actor-B0-C 的取证策略。GPU 阶段已完成，正式汇总见[报告](report/ACTOR_B0_D_REPORT.md)，当前 gate 为 ACTOR_B0_D_INCONCLUSIVE，等待方案要求的真实人工审计。诊断 manifest 与 B0-C 使用同一批 60 图，不构成独立 held-out；PROBE 类是困难代理样本，不是真实历史 PROBE 错误复现。Monitor 预留的 74 个来源组不参与本轮。
 
 ## 无卡准备
 
@@ -41,4 +41,4 @@ python experiments/actor_b/actor_b0_d/evaluate_b0_d.py
 
 评估器检查四条件样本及顺序完全一致；冲突由冻结的局部纹理和互补取证方向输出预先定义，不使用 Actor verdict。它生成逐样本、冲突和逐调用表，以及 20 图 × 4 条件的盲审包。按 [人工审计说明](evaluation/HUMAN_AUDIT_GUIDE.md) 完成 `evaluation/human_audit.jsonl` 与 `tool_selection_audit.csv` 后再解释 SFT gate。评估重跑会保留已填的人工标注。
 
-逐样本输入、轨迹、审计包和标签表留在本地并由 `.gitignore` 排除；GitHub 只存方案、代码、去标识的汇总报告与必要的冻结记录。
+逐样本输入、轨迹、盲审包、per-sample.csv、conflict_analysis.csv、827 条调用审计表和人工标签留在本地并由 `.gitignore` 排除。GitHub 仅存代码、冻结记录、聚合 metrics.json 和去标识汇总报告。人审完成后重跑评价器会保留已填写标签，再更新报告决策。

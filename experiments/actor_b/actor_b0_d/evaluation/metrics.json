@@ -1,0 +1,553 @@
+{
+  "condition_deltas_vs_full": {
+    "PROBE-DELAY": {
+      "accuracy_all_samples_delta_vs_full": 0.033333333333333326,
+      "final_parse_success_delta_vs_full": 0,
+      "first_tool_share_delta_vs_full": {
+        "complementary_forensic_analyzer": 0.0,
+        "global_forensic_analyzer": -0.4666666666666667,
+        "local_texture_analyzer": 0.4666666666666667,
+        "no_tool_call": 0.0,
+        "provenance_inspector": 0.0
+      },
+      "max_absolute_first_tool_share_shift": 0.4666666666666667,
+      "max_absolute_tool_call_share_shift": 0.03395516282114219,
+      "mean_evidence_sources_delta_vs_full": 0.09999999999999964,
+      "tool_call_share_delta_vs_full": {
+        "complementary_forensic_analyzer": 0.0328096874488627,
+        "global_forensic_analyzer": -0.03395516282114219,
+        "local_texture_analyzer": -0.008181966944853514,
+        "provenance_inspector": 0.009327442317133061
+      }
+    },
+    "PROBE-MASK": {
+      "accuracy_all_samples_delta_vs_full": -0.050000000000000044,
+      "final_parse_success_delta_vs_full": 0,
+      "first_tool_share_delta_vs_full": {
+        "complementary_forensic_analyzer": 0.0,
+        "global_forensic_analyzer": -0.4666666666666667,
+        "local_texture_analyzer": 0.8,
+        "no_tool_call": 0.0,
+        "provenance_inspector": -0.3333333333333333
+      },
+      "max_absolute_first_tool_share_shift": 0.8,
+      "max_absolute_tool_call_share_shift": 0.31746031746031744,
+      "mean_evidence_sources_delta_vs_full": -0.21666666666666723,
+      "tool_call_share_delta_vs_full": {
+        "complementary_forensic_analyzer": 0.20821140374212999,
+        "global_forensic_analyzer": -0.31746031746031744,
+        "local_texture_analyzer": 0.01773521326593952,
+        "provenance_inspector": 0.09151370045224794
+      }
+    },
+    "TOOL-RENAME": {
+      "accuracy_all_samples_delta_vs_full": -0.1166666666666667,
+      "final_parse_success_delta_vs_full": -1,
+      "first_tool_share_delta_vs_full": {
+        "complementary_forensic_analyzer": 0.0,
+        "global_forensic_analyzer": 0.5333333333333333,
+        "local_texture_analyzer": 0.0,
+        "no_tool_call": 0.0,
+        "provenance_inspector": -0.5333333333333333
+      },
+      "max_absolute_first_tool_share_shift": 0.5333333333333333,
+      "max_absolute_tool_call_share_shift": 0.12413694924905688,
+      "mean_evidence_sources_delta_vs_full": 0.20564971751412386,
+      "tool_call_share_delta_vs_full": {
+        "complementary_forensic_analyzer": 0.12413694924905688,
+        "global_forensic_analyzer": -0.04840202149619188,
+        "local_texture_analyzer": -0.04840202149619188,
+        "provenance_inspector": -0.027332906256673062
+      }
+    }
+  },
+  "conditions": {
+    "FULL": {
+      "accuracy_all_samples_invalid_as_incorrect": 0.75,
+      "accuracy_valid_only": 0.75,
+      "actor_observed_conflict_samples": 12,
+      "balanced_accuracy_valid_only": 0.7124999999999999,
+      "conflict_followup_rate_all_frozen_conflicts": {
+        "count": 3,
+        "denominator": 36,
+        "rate": 0.08333333333333333
+      },
+      "conflict_followup_rate_conditional_on_observed_conflict": {
+        "count": 3,
+        "denominator": 12,
+        "rate": 0.25
+      },
+      "delay_contract": {
+        "blocked_first_probe_attempts": 0,
+        "probe_unavailable_attempts": 0
+      },
+      "evidence_source_count_distribution": {
+        "one_source_rate": 0.0,
+        "three_or_more_sources_rate": 0.9833333333333333,
+        "two_sources_rate": 0.016666666666666666
+      },
+      "fake_recall": 0.825,
+      "final_parse_success_after_minimal_policy": 60,
+      "first_tool_counts": {
+        "complementary_forensic_analyzer": 0,
+        "global_forensic_analyzer": 28,
+        "local_texture_analyzer": 0,
+        "no_tool_call": 0,
+        "provenance_inspector": 32
+      },
+      "first_tool_share": {
+        "complementary_forensic_analyzer": 0.0,
+        "global_forensic_analyzer": 0.4666666666666667,
+        "local_texture_analyzer": 0.0,
+        "no_tool_call": 0.0,
+        "provenance_inspector": 0.5333333333333333
+      },
+      "frozen_conflict_samples": 36,
+      "human_audit": {
+        "conflict_handling_categories": {},
+        "evidence_sufficient": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "premature_stop_weak_and_conflict_subset": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "reasoning_faithful": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "stop_timing_categories": {},
+        "tool_selection_quality_categories": {},
+        "unsupported_claim": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "verdict_consistent": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        }
+      },
+      "invalid_trajectory_rate": 0.0,
+      "mean_evidence_sources_at_stop": 4.133333333333334,
+      "mean_successful_tool_calls_per_sample": 3.15,
+      "median_evidence_sources_at_stop": 4.0,
+      "n": 60,
+      "probe_first": {
+        "among_samples_with_a_call_denominator": 60,
+        "count": 28,
+        "denominator": 60
+      },
+      "probe_first_immediate_stop": {
+        "count": 0,
+        "denominator": 28
+      },
+      "probe_only_stop": {
+        "count": 0,
+        "denominator": 60,
+        "rate": 0.0
+      },
+      "raw_final_parse_success": 55,
+      "redundancy": {
+        "duplicate_call_parser_rejections": 0,
+        "repeated_successful_call_rate": 0.0,
+        "repeated_successful_calls": 0,
+        "successful_tool_calls": 189
+      },
+      "single_tool_stop": {
+        "count": 0,
+        "denominator": 60,
+        "rate": 0.0
+      },
+      "specificity_for_fake_positive_real_negative": 0.6,
+      "tool_call_share": {
+        "complementary_forensic_analyzer": 0.12698412698412698,
+        "global_forensic_analyzer": 0.31746031746031744,
+        "local_texture_analyzer": 0.31746031746031744,
+        "provenance_inspector": 0.23809523809523808
+      },
+      "tool_calls": {
+        "complementary_forensic_analyzer": 24,
+        "global_forensic_analyzer": 60,
+        "local_texture_analyzer": 60,
+        "provenance_inspector": 45
+      },
+      "total_successful_tool_calls": 189
+    },
+    "PROBE-DELAY": {
+      "accuracy_all_samples_invalid_as_incorrect": 0.7833333333333333,
+      "accuracy_valid_only": 0.7833333333333333,
+      "actor_observed_conflict_samples": 17,
+      "balanced_accuracy_valid_only": 0.7625,
+      "conflict_followup_rate_all_frozen_conflicts": {
+        "count": 5,
+        "denominator": 36,
+        "rate": 0.1388888888888889
+      },
+      "conflict_followup_rate_conditional_on_observed_conflict": {
+        "count": 5,
+        "denominator": 17,
+        "rate": 0.29411764705882354
+      },
+      "delay_contract": {
+        "blocked_first_probe_attempts": 28,
+        "probe_unavailable_attempts": 0
+      },
+      "evidence_source_count_distribution": {
+        "one_source_rate": 0.0,
+        "three_or_more_sources_rate": 1.0,
+        "two_sources_rate": 0.0
+      },
+      "fake_recall": 0.825,
+      "final_parse_success_after_minimal_policy": 60,
+      "first_tool_counts": {
+        "complementary_forensic_analyzer": 0,
+        "global_forensic_analyzer": 0,
+        "local_texture_analyzer": 28,
+        "no_tool_call": 0,
+        "provenance_inspector": 32
+      },
+      "first_tool_share": {
+        "complementary_forensic_analyzer": 0.0,
+        "global_forensic_analyzer": 0.0,
+        "local_texture_analyzer": 0.4666666666666667,
+        "no_tool_call": 0.0,
+        "provenance_inspector": 0.5333333333333333
+      },
+      "frozen_conflict_samples": 36,
+      "human_audit": {
+        "conflict_handling_categories": {},
+        "evidence_sufficient": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "premature_stop_weak_and_conflict_subset": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "reasoning_faithful": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "stop_timing_categories": {},
+        "tool_selection_quality_categories": {},
+        "unsupported_claim": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "verdict_consistent": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        }
+      },
+      "invalid_trajectory_rate": 0.0,
+      "mean_evidence_sources_at_stop": 4.233333333333333,
+      "mean_successful_tool_calls_per_sample": 3.2333333333333334,
+      "median_evidence_sources_at_stop": 4.0,
+      "n": 60,
+      "probe_first": {
+        "among_samples_with_a_call_denominator": 60,
+        "count": 0,
+        "denominator": 60
+      },
+      "probe_first_immediate_stop": {
+        "count": 0,
+        "denominator": 0
+      },
+      "probe_only_stop": {
+        "count": 0,
+        "denominator": 60,
+        "rate": 0.0
+      },
+      "raw_final_parse_success": 52,
+      "redundancy": {
+        "duplicate_call_parser_rejections": 0,
+        "repeated_successful_call_rate": 0.0,
+        "repeated_successful_calls": 0,
+        "successful_tool_calls": 194
+      },
+      "single_tool_stop": {
+        "count": 0,
+        "denominator": 60,
+        "rate": 0.0
+      },
+      "specificity_for_fake_positive_real_negative": 0.7,
+      "tool_call_share": {
+        "complementary_forensic_analyzer": 0.15979381443298968,
+        "global_forensic_analyzer": 0.28350515463917525,
+        "local_texture_analyzer": 0.30927835051546393,
+        "provenance_inspector": 0.24742268041237114
+      },
+      "tool_calls": {
+        "complementary_forensic_analyzer": 31,
+        "global_forensic_analyzer": 55,
+        "local_texture_analyzer": 60,
+        "provenance_inspector": 48
+      },
+      "total_successful_tool_calls": 194
+    },
+    "PROBE-MASK": {
+      "accuracy_all_samples_invalid_as_incorrect": 0.7,
+      "accuracy_valid_only": 0.7,
+      "actor_observed_conflict_samples": 36,
+      "balanced_accuracy_valid_only": 0.65,
+      "conflict_followup_rate_all_frozen_conflicts": {
+        "count": 27,
+        "denominator": 36,
+        "rate": 0.75
+      },
+      "conflict_followup_rate_conditional_on_observed_conflict": {
+        "count": 27,
+        "denominator": 36,
+        "rate": 0.75
+      },
+      "delay_contract": {
+        "blocked_first_probe_attempts": 0,
+        "probe_unavailable_attempts": 0
+      },
+      "evidence_source_count_distribution": {
+        "one_source_rate": 0.0,
+        "three_or_more_sources_rate": 1.0,
+        "two_sources_rate": 0.0
+      },
+      "fake_recall": 0.8,
+      "final_parse_success_after_minimal_policy": 60,
+      "first_tool_counts": {
+        "complementary_forensic_analyzer": 0,
+        "global_forensic_analyzer": 0,
+        "local_texture_analyzer": 48,
+        "no_tool_call": 0,
+        "provenance_inspector": 12
+      },
+      "first_tool_share": {
+        "complementary_forensic_analyzer": 0.0,
+        "global_forensic_analyzer": 0.0,
+        "local_texture_analyzer": 0.8,
+        "no_tool_call": 0.0,
+        "provenance_inspector": 0.2
+      },
+      "frozen_conflict_samples": 36,
+      "human_audit": {
+        "conflict_handling_categories": {},
+        "evidence_sufficient": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "premature_stop_weak_and_conflict_subset": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "reasoning_faithful": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "stop_timing_categories": {},
+        "tool_selection_quality_categories": {},
+        "unsupported_claim": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "verdict_consistent": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        }
+      },
+      "invalid_trajectory_rate": 0.0,
+      "mean_evidence_sources_at_stop": 3.9166666666666665,
+      "mean_successful_tool_calls_per_sample": 2.9833333333333334,
+      "median_evidence_sources_at_stop": 4.0,
+      "n": 60,
+      "probe_first": {
+        "among_samples_with_a_call_denominator": 60,
+        "count": 0,
+        "denominator": 60
+      },
+      "probe_first_immediate_stop": {
+        "count": 0,
+        "denominator": 0
+      },
+      "probe_only_stop": {
+        "count": 0,
+        "denominator": 60,
+        "rate": 0.0
+      },
+      "raw_final_parse_success": 57,
+      "redundancy": {
+        "duplicate_call_parser_rejections": 0,
+        "repeated_successful_call_rate": 0.0,
+        "repeated_successful_calls": 0,
+        "successful_tool_calls": 179
+      },
+      "single_tool_stop": {
+        "count": 0,
+        "denominator": 60,
+        "rate": 0.0
+      },
+      "specificity_for_fake_positive_real_negative": 0.5,
+      "tool_call_share": {
+        "complementary_forensic_analyzer": 0.33519553072625696,
+        "global_forensic_analyzer": 0.0,
+        "local_texture_analyzer": 0.33519553072625696,
+        "provenance_inspector": 0.329608938547486
+      },
+      "tool_calls": {
+        "complementary_forensic_analyzer": 60,
+        "global_forensic_analyzer": 0,
+        "local_texture_analyzer": 60,
+        "provenance_inspector": 59
+      },
+      "total_successful_tool_calls": 179
+    },
+    "TOOL-RENAME": {
+      "accuracy_all_samples_invalid_as_incorrect": 0.6333333333333333,
+      "accuracy_valid_only": 0.6440677966101694,
+      "actor_observed_conflict_samples": 32,
+      "balanced_accuracy_valid_only": 0.6269736842105263,
+      "conflict_followup_rate_all_frozen_conflicts": {
+        "count": 20,
+        "denominator": 36,
+        "rate": 0.5555555555555556
+      },
+      "conflict_followup_rate_conditional_on_observed_conflict": {
+        "count": 20,
+        "denominator": 32,
+        "rate": 0.625
+      },
+      "delay_contract": {
+        "blocked_first_probe_attempts": 0,
+        "probe_unavailable_attempts": 0
+      },
+      "evidence_source_count_distribution": {
+        "one_source_rate": 0.0,
+        "three_or_more_sources_rate": 0.9830508474576272,
+        "two_sources_rate": 0.01694915254237288
+      },
+      "fake_recall": 0.675,
+      "final_parse_success_after_minimal_policy": 59,
+      "first_tool_counts": {
+        "complementary_forensic_analyzer": 0,
+        "global_forensic_analyzer": 60,
+        "local_texture_analyzer": 0,
+        "no_tool_call": 0,
+        "provenance_inspector": 0
+      },
+      "first_tool_share": {
+        "complementary_forensic_analyzer": 0.0,
+        "global_forensic_analyzer": 1.0,
+        "local_texture_analyzer": 0.0,
+        "no_tool_call": 0.0,
+        "provenance_inspector": 0.0
+      },
+      "frozen_conflict_samples": 36,
+      "human_audit": {
+        "conflict_handling_categories": {},
+        "evidence_sufficient": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "premature_stop_weak_and_conflict_subset": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "reasoning_faithful": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "stop_timing_categories": {},
+        "tool_selection_quality_categories": {},
+        "unsupported_claim": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        },
+        "verdict_consistent": {
+          "positive": 0,
+          "rate": null,
+          "reviewed": 0
+        }
+      },
+      "invalid_trajectory_rate": 0.016666666666666666,
+      "mean_evidence_sources_at_stop": 4.338983050847458,
+      "mean_successful_tool_calls_per_sample": 3.716666666666667,
+      "median_evidence_sources_at_stop": 4,
+      "n": 60,
+      "probe_first": {
+        "among_samples_with_a_call_denominator": 60,
+        "count": 60,
+        "denominator": 60
+      },
+      "probe_first_immediate_stop": {
+        "count": 0,
+        "denominator": 60
+      },
+      "probe_only_stop": {
+        "count": 0,
+        "denominator": 59,
+        "rate": 0.0
+      },
+      "raw_final_parse_success": 59,
+      "redundancy": {
+        "duplicate_call_parser_rejections": 1,
+        "repeated_successful_call_rate": 0.0,
+        "repeated_successful_calls": 0,
+        "successful_tool_calls": 223
+      },
+      "single_tool_stop": {
+        "count": 0,
+        "denominator": 59,
+        "rate": 0.0
+      },
+      "specificity_for_fake_positive_real_negative": 0.5789473684210527,
+      "tool_call_share": {
+        "complementary_forensic_analyzer": 0.25112107623318386,
+        "global_forensic_analyzer": 0.26905829596412556,
+        "local_texture_analyzer": 0.26905829596412556,
+        "provenance_inspector": 0.21076233183856502
+      },
+      "tool_calls": {
+        "complementary_forensic_analyzer": 56,
+        "global_forensic_analyzer": 60,
+        "local_texture_analyzer": 60,
+        "provenance_inspector": 47
+      },
+      "total_successful_tool_calls": 223
+    }
+  },
+  "definitions": {
+    "accuracy": "Invalid trajectories count as incorrect in accuracy_all_samples_invalid_as_incorrect.",
+    "conflict": "Frozen local_texture and complementary_forensic outputs map to opposing real/fake directions; no Actor verdict is used.",
+    "conflict_followup": "After both opposing directional sources have been observed, a later distinct tool is called.",
+    "evidence_sources_at_stop": "Distinct sources cited in final current_evidence, restricted to sources actually called (visual is available from the original image).",
+    "manual_metrics": "Premature STOP, verdict consistency, unsupported claims, and reasoning faithfulness require completed human audit rows; unreviewed values remain missing.",
+    "probe_first_immediate_stop": "The first successful tool is PROBE and STOP follows without another CALL_TOOL request, including rejected requests; STOP format repair or the frozen invalid-verdict projection is allowed.",
+    "specificity": "Real recall when fake is treated as the positive class."
+  },
+  "paired_conditions": {
+    "human_audit_completed_rows": 0,
+    "human_audit_images": 20,
+    "human_audit_rows": 80,
+    "same_order_verified": true,
+    "sample_count": 60,
+    "source_group_count": 20,
+    "tool_selection_calls_requiring_manual_review": 827,
+    "tool_selection_manual_ratings_completed": 0
+  }
+}

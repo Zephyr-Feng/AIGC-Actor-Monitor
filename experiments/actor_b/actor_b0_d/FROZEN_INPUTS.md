@@ -2,7 +2,7 @@
 
 ## 运行状态
 
-**2026-10-07：PROBE-MASK 与 PROBE-DELAY 已各完成 60/60，TOOL-RENAME 正在运行。** 用户开卡后，`connect.bjb1.seetacloud.com:33082` 已重新核验可达。模型配置、B0-C canonical prompt、schema、generation、运行环境、60/60 原图 SHA-256、60 张 Evidence cards、180/180 crops、缓存工具输入与 B0-C 原始轨迹均通过核验。前两组已取回本地且与远端 SHA-256 一致。人工复核和最终 SFT gate 尚未完成。此处不记录任何凭证。
+**2026-10-07：PROBE-MASK、PROBE-DELAY、TOOL-RENAME 已各完成 60/60。** 用户开卡后核验 `connect.bjb1.seetacloud.com:33082` 可达；模型、B0-C canonical prompt、schema、generation、60/60 原图哈希、60 张 Evidence cards、180/180 crops、缓存工具输入与 B0-C 轨迹均通过核验。三组轨迹/runtime 均取回并与远端 SHA-256 一致，样本顺序对齐，运行器哈希一致。推理进程退出，GPU 最终为 0 MiB / 0%。正式评价已生成 240 条条件记录、20 图 × 4 条件的 80 行盲审包和 827 条工具选择审计行。人审尚未完成，当前 gate 为 ACTOR_B0_D_INCONCLUSIVE。此处不记录任何凭证。
 
 ## 冻结配置
 
@@ -21,7 +21,7 @@
 | Evidence v1 official repository commit | `b145f7130004c02725e9b3703954a3329ebf56de` |
 | Evidence v1 config file SHA-256 | `4388677edb2f3e75e580777c2a8e8bd499fd9196a1e3730858acbc86138ff0fc` |
 
-The original B0-C tool-card JSON is not in this local checkout. Before inference, retrieve it from the active cloned instance and record its file SHA-256. Recompute the canonical B0-C hash from the frozen system prompt, exact tool cards, schema, and generation config; it **must equal** the value above. Also verify the remote model config, 60 image hashes, Evidence v1 outputs/crops, cached tool-results SHA, and runtime versions. No prompt/schema/crop/detector/model patch is authorized in this stage.
+The original B0-C tool-card JSON is not in this local checkout. During the 2026-10-07 run, its remote SHA-256 was verified as 4bea66b6aad42ff93ed7a4ff128b5094550e81fb72f1b8452fdfb464a98867fb; the recomputed canonical hash matched the frozen value above. Model/config, image hashes, cached Evidence/crops, tool results, runtime versions and input order were verified before inference.
 
 ## Data and order
 
@@ -75,10 +75,15 @@ Remote run directory: `/root/autodl-tmp/actor-b-schema-20261007/actor_b/actor_b0
 |---|---:|---|---:|---:|---|---|
 | PROBE-MASK | 60 | 57/60 / 60/60 | 3 | 2037.68 | `d8a832646a3806decd668c5503022587c60bcf57392018fd46e0f81ab7f7c6ea` | `693039dd31e2ff8ff2f3f29f76ffc45eda03c991d0814bcd7228eaecd2e856a7` |
 | PROBE-DELAY | 60 | 52/60 / 60/60 | 8 | 2607.43 | `38f8acbf4597df494e88501be962695135f204089fe410afe1fa172df54226cb` | `b886d0f23ec9aa5a1172e39189833f9579c83cd4481dd4a966c4b0a3058f90e3` |
-| TOOL-RENAME | running | pending | pending | pending | pending | pending |
+| TOOL-RENAME | 60 | 59/60 / 59/60 | 0 | 2276.64 | `83fba0e96c644a6a1107ec327581060b566c2a7572634b004357140e0e39c51d` | `af08cf140b58e46a38fc8885709c3a511763c297781cbbb50f194071a263b90c` |
 
 PROBE-MASK material hash: `b2a71a84b0238162c239bece146dec11a819c8d20b4ca67685f91dafd455d12b`. PROBE-DELAY material hash equals B0-C. PROBE-DELAY recorded 28 blocked first-PROBE attempts and 0 unavailable-tool attempts. These are runtime counts; tool-selection quality, premature STOP and faithfulness require the human audit.
 
 ## Offline reporting correction (2026-10-07)
 
 Before the four-condition evaluation, inspection found that the original `probe_first_immediate_stop` numerator counted every PROBE-first trajectory with a final STOP, even when other tools followed. It now requires one successful PROBE call followed by STOP with no subsequent CALL_TOOL request (including rejected requests); the frozen STOP projection and STOP format repair remain allowed. Four targeted regression cases distinguish immediate STOP, later successful calls, rejected later calls and projected STOP. The corrected evaluator SHA-256 is `bb9a12fbcaa1205f835b6f865ee6dd05a26fcb6d4b9775f25ce831de8303beeb`. The pre-run bundle hash above remains a historical source record; inference runner, inputs and policy hashes are unchanged.
+
+
+
+
+Final evaluation (2026-10-07): corrected evaluator SHA-256 bb9a12fbcaa1205f835b6f865ee6dd05a26fcb6d4b9775f25ce831de8303beeb; aggregate metrics at evaluation/metrics.json; report at report/ACTOR_B0_D_REPORT.md. Current gate: ACTOR_B0_D_INCONCLUSIVE because the required human review remains pending. The audit packet and per-sample/call-level tables stay local and are excluded from GitHub.
