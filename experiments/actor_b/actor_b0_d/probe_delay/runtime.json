@@ -1,0 +1,30 @@
+{
+  "base_prompt_sha256": "739abe138a0a40b1c21a77308565165bb309a0f45d28f1cf2d0da5354e8da1ea",
+  "blocked_probe_attempts": 28,
+  "condition": "probe_delay",
+  "condition_prompt_sha256": "739abe138a0a40b1c21a77308565165bb309a0f45d28f1cf2d0da5354e8da1ea",
+  "effective_parse_success": 60,
+  "generation": {
+    "do_sample": false,
+    "max_actor_steps": 6,
+    "max_format_repairs_per_step": 1,
+    "max_new_tokens": 768,
+    "max_tool_calls": 4,
+    "repetition_penalty": 1.05,
+    "seed": 20261006
+  },
+  "manifest_sha256": "b5a8fadd99a04b8c213a95640cc2537e5746a5bce1cb75fab0e099c5153c83c2",
+  "model_config_sha256": "5cd452860dc1e9c29dd71cc3cef7f39b338b7a40793f7a260655c2d3568f3661",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "raw_parse_success": 52,
+  "records": 60,
+  "run_control_sha256": "9d9fd8a8d867433d7675d5bf64ddef58b8f702c1ef5a1f1c87fb5509eefbae62",
+  "run_fingerprint": "897cea1d37ada215e1982eafd96f9676670ae488dad4e71648b63c8e5cf9ce0c",
+  "runtime_seconds_sum": 2607.43,
+  "schema_sha256": "c6948b7c79c70c28bf1378a2b7e84e906bc259303ed400282011f04572bd06cc",
+  "tool_cards_sha256": "6fb8ecdb822666e6c2451991dcc2e7d2a2a276e9bc6dea7e161b34c6a946ae31",
+  "tool_results_sha256": "94e0b02b7d582057cac32ea8c416f348c9b60ee3854594216c3c7d562a51b919",
+  "torch": "2.12.1+cu130",
+  "transformers": "4.57.4",
+  "unavailable_tool_attempts": 0
+}

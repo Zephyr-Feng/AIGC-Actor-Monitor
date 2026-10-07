@@ -2,7 +2,7 @@
 
 ## 运行状态
 
-**尚未开始 GPU 条件运行。** 本文件先记录本地可核验的冻结资产。启动前须连接用户当前开卡的 AutoDL 克隆，只读核验模型、B0-C tool cards、图像与缓存工具输出；缺失或 hash 不匹配时停止，不覆盖旧文件。当前已知旧入口 `connect.bjb1.seetacloud.com:33082` 在上一阶段之后拒绝连接，不能视作当前有效入口。此处不记录任何凭证。
+**2026-10-07：PROBE-MASK 与 PROBE-DELAY 已各完成 60/60，TOOL-RENAME 正在运行。** 用户开卡后，`connect.bjb1.seetacloud.com:33082` 已重新核验可达。模型配置、B0-C canonical prompt、schema、generation、运行环境、60/60 原图 SHA-256、60 张 Evidence cards、180/180 crops、缓存工具输入与 B0-C 原始轨迹均通过核验。前两组已取回本地且与远端 SHA-256 一致。人工复核和最终 SFT gate 尚未完成。此处不记录任何凭证。
 
 ## 冻结配置
 
@@ -42,11 +42,11 @@ The original B0-C tool-card JSON is not in this local checkout. Before inference
 - B0-C tool-source bundle SHA-256: `b24bde84bf39b1c47d2f2a895b63e97585bebfac5b68a3c2a8165c8991466f75`
 - B0-C component hashes are recorded in the pre-run history below and can be recomputed from the listed source files.
 - B0-D runner SHA-256: `9d9fd8a8d867433d7675d5bf64ddef58b8f702c1ef5a1f1c87fb5509eefbae62`
-- B0-D evaluator SHA-256: `d913bf1b33c023ceb7381e80e39c51d0c971d9f0a1c36efdd41b5adc29d15b10`
+- B0-D pre-run evaluator SHA-256: `d913bf1b33c023ceb7381e80e39c51d0c971d9f0a1c36efdd41b5adc29d15b10`; reporting correction below records the current evaluator.
 - B0-D preparation/control bundle SHA-256 (four Python controls, canonical path/hash map): `0666b74f4dd375b2ad35f9b905c02da409449a75860eefe039daa8fe45264b7b`
 - Git source commit for the run: `1c26bca4bae2bde5f94f409e4cf430fdaabd98ec`. Any later commit before execution is documentation-only; verify these script hashes again before running.
-- Active AutoDL instance, host and port: **fill after user opens a card and endpoint is verified**.
-- Verified remote tool-card file SHA-256 and recomputed prompt SHA-256: **pending remote preflight**.
+- Active AutoDL instance, host and port: `connect.bjb1.seetacloud.com:33082`, verified on 2026-10-07.
+- Verified remote tool-card file SHA-256: `4bea66b6aad42ff93ed7a4ff128b5094550e81fb72f1b8452fdfb464a98867fb`; recomputed canonical prompt SHA-256: `739abe138a0a40b1c21a77308565165bb309a0f45d28f1cf2d0da5354e8da1ea`.
 - Condition-specific prompt/schema/card hashes and run fingerprints are written to each condition's `runtime.json` before final evaluation.
 
 ## 2026-10-07 pre-run history
@@ -64,3 +64,21 @@ The original B0-C tool-card JSON is not in this local checkout. Before inference
 | `experiments/probe_evidence_v1/extract_features.py` | `ca306e3d3f2e0e09c371fdd6b4a7768928411087ddf2b77d68fe25044a789f67` |
 
 Local code and evaluator tests passed before GPU readiness. The evaluator smoke test re-used the FULL fixture in all four slots only to validate file alignment and output generation; it is not a B0-D condition result and must not be reported as one. The source commit above contains the B0-D scripts; this freeze record may be committed afterward without changing those scripts.
+
+## 2026-10-07 GPU run checkpoint
+
+The exact cards were verified at `/root/autodl-tmp/actor-b0-20261007/actor_b/config/tool_cards.json`. Image root: `/root/autodl-tmp/actor0-bfree-20261002/data` (manifest paths begin with `eval/`). Crop root: `/root/autodl-tmp/probe-evidence-v1/output/evidence`. Model snapshot: `/root/autodl-tmp/mini-faithbench-v0/model-cache/models--Qwen--Qwen3-VL-8B-Instruct/snapshots/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b`. Interpreter: `/root/autodl-tmp/mini-faithbench-v0/actor-venv/bin/python`. Cached Evidence outputs are reused; no detector or crop generation is run.
+
+Remote run directory: `/root/autodl-tmp/actor-b-schema-20261007/actor_b/actor_b0_d/`. The clone lacked `contract_replay.py` at its Actor root; the exact frozen helper (`a4a50858e3acac2b43181cdd71c699bec3df46c208f714bbbc2711480c650cdf`) was placed in the new B0-D directory. The runner, helper and GT-free Actor manifest were transferred; existing code and results were preserved. TOOL-RENAME uses a detached process with `tool_rename.log` and `tool_rename.pid` so a chat interruption does not stop the run.
+
+| Condition | Records | Raw / effective parse | STOP projections | Inference seconds sum | Trajectory SHA-256 | Runtime SHA-256 |
+|---|---:|---|---:|---:|---|---|
+| PROBE-MASK | 60 | 57/60 / 60/60 | 3 | 2037.68 | `d8a832646a3806decd668c5503022587c60bcf57392018fd46e0f81ab7f7c6ea` | `693039dd31e2ff8ff2f3f29f76ffc45eda03c991d0814bcd7228eaecd2e856a7` |
+| PROBE-DELAY | 60 | 52/60 / 60/60 | 8 | 2607.43 | `38f8acbf4597df494e88501be962695135f204089fe410afe1fa172df54226cb` | `b886d0f23ec9aa5a1172e39189833f9579c83cd4481dd4a966c4b0a3058f90e3` |
+| TOOL-RENAME | running | pending | pending | pending | pending | pending |
+
+PROBE-MASK material hash: `b2a71a84b0238162c239bece146dec11a819c8d20b4ca67685f91dafd455d12b`. PROBE-DELAY material hash equals B0-C. PROBE-DELAY recorded 28 blocked first-PROBE attempts and 0 unavailable-tool attempts. These are runtime counts; tool-selection quality, premature STOP and faithfulness require the human audit.
+
+## Offline reporting correction (2026-10-07)
+
+Before the four-condition evaluation, inspection found that the original `probe_first_immediate_stop` numerator counted every PROBE-first trajectory with a final STOP, even when other tools followed. It now requires one successful PROBE call followed by STOP with no subsequent CALL_TOOL request (including rejected requests); the frozen STOP projection and STOP format repair remain allowed. Four targeted regression cases distinguish immediate STOP, later successful calls, rejected later calls and projected STOP. The corrected evaluator SHA-256 is `bb9a12fbcaa1205f835b6f865ee6dd05a26fcb6d4b9775f25ce831de8303beeb`. The pre-run bundle hash above remains a historical source record; inference runner, inputs and policy hashes are unchanged.

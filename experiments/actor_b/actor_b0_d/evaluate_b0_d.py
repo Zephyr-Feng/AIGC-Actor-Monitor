@@ -133,6 +133,35 @@ def action_for_step(step: dict[str, Any]) -> dict[str, Any] | None:
     return action if isinstance(action, dict) else None
 
 
+def probe_first_immediate_stop(trajectory: dict[str, Any]) -> bool:
+    """One successful PROBE call followed by STOP, with no later CALL request."""
+    if successful_calls(trajectory) != [TOOLS[0]]:
+        return False
+    final = final_output(trajectory)
+    if not final or final.get("next_action") != "STOP":
+        return False
+    statuses = call_status_by_step(trajectory)
+    seen_probe = False
+    for index, step in enumerate(trajectory.get("steps", []), start=1):
+        action = action_for_step(step)
+        if not seen_probe:
+            if (statuses.get(index) == "success" and action
+                    and canonical_tool(action.get("selected_tool")) == TOOLS[0]):
+                seen_probe = True
+            continue
+        actions = [action] if action else []
+        for attempt in step.get("attempts", []):
+            try:
+                parsed = extract_object(attempt.get("raw", ""))
+            except (ValueError, TypeError, json.JSONDecodeError):
+                continue
+            if isinstance(parsed, dict):
+                actions.append(parsed)
+        if any(a.get("next_action") == "CALL_TOOL" for a in actions):
+            return False
+    return seen_probe
+
+
 def observed_conflict_position(calls: list[str], frozen: dict[str, Any]) -> int | None:
     """Return the zero-based position when both opposing directional sources were observed."""
     if not frozen["frozen_tool_conflict"]:
@@ -235,8 +264,7 @@ def condition_metrics(rows: list[dict[str, Any]]) -> dict[str, Any]:
                         "denominator": len(rows),
                         "among_samples_with_a_call_denominator": sum(bool(row["calls"]) for row in rows)},
         "probe_first_immediate_stop": {
-            "count": sum(row["calls"][:1] == ["global_forensic_analyzer"] and row["is_stop"]
-                         for row in rows),
+            "count": sum(row["probe_first_immediate_stop"] for row in rows),
             "denominator": sum(row["calls"][:1] == ["global_forensic_analyzer"] for row in rows),
         },
         "frozen_conflict_samples": len(conflict_rows),
@@ -390,6 +418,7 @@ def evaluate(args: argparse.Namespace) -> None:
                 "prediction": prediction,
                 "correct": bool(effective_valid and prediction == sample["gt"]),
                 "is_stop": stop,
+                "probe_first_immediate_stop": probe_first_immediate_stop(trajectory),
                 "calls": calls,
                 "frozen_tool_conflict": frozen["frozen_tool_conflict"],
                 "local_direction": frozen["local_direction"],
@@ -435,6 +464,7 @@ def evaluate(args: argparse.Namespace) -> None:
                 "num_successful_tool_calls": len(calls),
                 "single_tool_stop": stop and len(calls) == 1,
                 "probe_only_stop": stop and calls == ["global_forensic_analyzer"],
+                "probe_first_immediate_stop": item["probe_first_immediate_stop"],
                 "frozen_tool_conflict": frozen["frozen_tool_conflict"],
                 "actor_observed_conflict": item["actor_observed_conflict"],
                 "conflict_followup": followup,
@@ -582,6 +612,7 @@ def evaluate(args: argparse.Namespace) -> None:
         "definitions": {
             "conflict": "Frozen local_texture and complementary_forensic outputs map to opposing real/fake directions; no Actor verdict is used.",
             "conflict_followup": "After both opposing directional sources have been observed, a later distinct tool is called.",
+            "probe_first_immediate_stop": "The first successful tool is PROBE and STOP follows without another CALL_TOOL request, including rejected requests; STOP format repair or the frozen invalid-verdict projection is allowed.",
             "evidence_sources_at_stop": "Distinct sources cited in final current_evidence, restricted to sources actually called (visual is available from the original image).",
             "specificity": "Real recall when fake is treated as the positive class.",
             "accuracy": "Invalid trajectories count as incorrect in accuracy_all_samples_invalid_as_incorrect.",
