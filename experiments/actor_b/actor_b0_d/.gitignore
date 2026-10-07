@@ -1,0 +1,16 @@
+# Per-sample research inputs and raw outputs stay local/private.
+/data/diagnostic_manifest.jsonl
+/data/actor_input_manifest.jsonl
+/data/manual_audit_samples.jsonl
+/full/trajectories.jsonl
+/probe_mask/records/
+/probe_delay/records/
+/tool_rename/records/
+/probe_mask/trajectories.jsonl
+/probe_delay/trajectories.jsonl
+/tool_rename/trajectories.jsonl
+/evaluation/per_sample.csv
+/evaluation/conflict_analysis.csv
+/evaluation/tool_selection_audit.csv
+/evaluation/audit_packet.jsonl
+/evaluation/human_audit.jsonl

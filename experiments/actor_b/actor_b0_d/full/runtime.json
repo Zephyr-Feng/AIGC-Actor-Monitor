@@ -1,0 +1,10 @@
+{
+  "condition": "FULL",
+  "effective_trajectories_sha256": "24b08992bf3add37e0644f6c9fe1b397af374ddaee312f1d1fad82b24658af34",
+  "minimal_policy_replay_sha256": "89fbe915fdf32505b20da820a50236c2a2238fc3fa72ab0e4bce06447464f130",
+  "minimal_projection_records": 5,
+  "original_trajectories_sha256": "276715a5ebd42bc9a7c3b27d5d18f6c5550145d1be9f3ba2bf873f7b0767cec9",
+  "preserved_legal_records": 55,
+  "records": 60,
+  "source": "reused frozen Actor-B0-C held-out trajectories; no rerun"
+}
