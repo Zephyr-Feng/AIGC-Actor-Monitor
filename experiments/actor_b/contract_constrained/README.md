@@ -1,5 +1,9 @@
 # Actor-B0-C：STOP 字段约束回放
 
+## 冻结决策
+
+用户选择的最终策略为：原 STOP 已给出合法 `real/fake` 时保留原输出；只对原 5 条非法 STOP 用同一个冻结模型的 forced-choice 结果替换 `final_verdict`。按此策略评价为 60/60 合法终态、55/55 原合法 verdict 保持、60/60 工具序列保持，决定 `ACTOR_B0_C_FREEZE`。全 60 条都做 forced choice 的候选造成 18/55 个合法 verdict 改变，未被采用。逐样本结果留在 Git 忽略的 `outputs/minimal_policy/`。
+
 执行依据为[用户新方案](../../../docs/ACTOR_B_CONSTRAINED_FREEZE_PLAN.md)。本轮只处理 `STOP.final_verdict ∈ {real,fake}`；原 reasoning prompt、schema、工具、Evidence v1、图像和已生成轨迹保持冻结。B1 SFT 暂缓。
 
 ## 冻结输入与 CPU 检查

@@ -4,7 +4,7 @@
 
 ## 当前状态（2026-10-07）
 
-- **Actor-B Contract-Constrained 回放完成；尚未冻结，也未启动 SFT。** [用户新方案](ACTOR_B_CONSTRAINED_FREEZE_PLAN.md)取代上一轮立即进入 B1 SFT 的下一步安排，先只约束 STOP 的 `final_verdict` 字段。5 个原失败 STOP 全部修复，完整 60/60 合法终态，工具序列和 STOP 前历史 60/60 保持；但原 55 个合法 verdict 仅 37 个保持（67.3%），18 个改变，包含 17 个 `fake→real`。因此当前“每条 STOP 均做 forced choice”的实现不通过行为保持审查，不能据此冻结。此次结果也未显示 tool orchestration failure，不足以单独证明 SFT 必须启动；下一步需决定是否保留原本合法 verdict、仅对 5 条非法输出执行同模型 forced choice，或转入 B1 方案。详见[完整报告](../experiments/actor_b/ACTOR_B_CONSTRAINED_FREEZE_REPORT.md)和[回放方法](../experiments/actor_b/contract_constrained/README.md)。
+- **Actor-B Contract-Constrained Freeze Gate 通过，决策为 `ACTOR_B0_C_FREEZE`；未启动 SFT。** 用户选择保留已有合法 `real/fake` verdict，只对 5 条非法 STOP 使用同模型 forced choice。独立派生评价为 60/60 合法终态、5/5 失败修复、55/55 原合法 verdict 保持、60/60 工具序列及 STOP 前历史保持。先前“每条 STOP 均做 forced choice”的候选仅保留 37/55 verdict，已作为失败诊断保留，不作冻结版本。所选派生 replay SHA-256 `89fbe915fdf32505b20da820a50236c2a2238fc3fa72ab0e4bce06447464f130`，详见[最终报告](../experiments/actor_b/ACTOR_B_CONSTRAINED_FREEZE_REPORT.md)。
 - **Actor-B0 原 30 图 sanity（历史记录）。** 30/30 PROBE Evidence-only、30/30 B0 推理完成；28/30 有合法最终输出，95/95 工具调用请求合法、0 重复，平均 3.17 次/图。两张失败均为 STOP 的 `final_confidence` 为空；9/30 图出现明确把 PROBE 全局偏离标成 `real`/`fake` 的归因错误。小样 balanced accuracy 0.65 仅作诊断。自动评价最初把 `inconclusive` 算作归因违规，50.4% 已撤回；原始“考虑 SFT”标签也因阈值未经确认而撤回。[报告](../experiments/actor_b/baseline_b0/analysis/ACTOR_B0_BASELINE_REPORT.md)、[轨迹复核](../experiments/actor_b/baseline_b0/analysis/ACTOR_B0_AUDIT.md)。
 - **Mini FaithBench v0 停在第三轮技术小样。** 按用户最后授权，仅补强 PROBE observation / Actor inference 的归因边界和 STOP 的 `real|fake` 输出说明；固定 6 图×3 条件重跑为 18/18 最终可解析，crop 图像输入、其他工具 callable 和 PROBE 输入结论泄漏检查均正常。但人工复核发现 PROBE 偏离仍被写成真假倾向；一次原始 STOP 仍输出 `final_verdict=uncertain`，虽在下一步重试恢复。按预设门槛**不再叠加 prompt patch、不冻结 prompt、不启动正式 900 条或 SFT**。结论：Prompt-only schema adaptation is insufficient to reliably enforce evidence attribution boundaries。[本轮报告和原始轨迹](../experiments/mini_faithbench_v0/technical_sample_v3/REPORT.md)；[前轮失败](../experiments/mini_faithbench_v0/technical_sample_v2/REPORT.md)。
 - **Prompt 版本。** 旧 Actor-0 prompt material SHA-256 `a1a9dc690cec5cbc7d15eef711feffc9d7e52bf184cd707a30239d1cc429926d`；前轮 Evidence-compatible 候选 `cc128afa3e4f6ec0f0cc68509386c2668f6375f551fdc45803369746b6c8882f`；本轮**未冻结候选** `5cc7a1cd8ffda55b7d2b94b7546619944073c933ed1a064c0a2d07c0c94604f2`。完整文件与哈希记录在 `experiments/mini_faithbench_v0/config/`；三条件使用同一候选。
@@ -18,7 +18,7 @@
 - Actor-B0 远端隔离目录：`/root/autodl-tmp/actor-b0-20261007/`；30 图原始轨迹还在此目录及本地 `experiments/actor_b/baseline_b0/outputs/`（Git 忽略，不上传 GitHub）。冻结输入及运行哈希见 B0 报告。旧实例的两份派生 JSONL 传输曾获单次授权；用户随后提供新克隆并明确要求在新实例续跑，held-out 输入仅在该实例用于此次实验，仍不上传 GitHub。
 - 远端 Mini FaithBench 隔离目录：`/root/autodl-tmp/mini-faithbench-v0/`；独立 Actor venv 为 `transformers==4.57.4`、`accelerate==1.10.1`，PROBE 环境未改。模型与 processor 使用上述同一 revision。三轮小样在 `technical_sample/`、`technical_sample_v2/`、`technical_sample_v3/`；`formal/` 尚无正式轨迹。
 - 本地入口：`experiments/mini_faithbench_v0/`（runner、三条件 inputs、benchmark config、prompt 与技术小样）；`experiments/probe_evidence_v1/results/output/`（Evidence v1）；`runs/actor0-bfree-20261002/`（旧 Actor-0 原始结果，忽略目录）。代码和研究文件存在未提交改动，不重置或覆盖。
-- 下一步与用户确定 B0-C 行为保持策略，再更新最终 freeze/SFT 决策。当前不运行 SFT、正式 900 条或建立 `frozen_actor`。PROBE 归因错误保留为可检测的失败案例。旧实验记录保留在各报告及上述归档，历史 SSH 端口不要当作当前入口。
+- Actor-B0-C 已按获批最小策略冻结。下一步回到主方案安排 FaithBench 阶段；正式 benchmark 尚未启动。当前不运行 SFT 或正式 900 条。PROBE 归因错误保留为可检测的失败案例。旧实验记录保留在各报告及上述归档，历史 SSH 端口不要当作当前入口。
 
 ## 早期阶段索引
 
@@ -33,6 +33,8 @@
 ## 2026-10-07 维护记录
 
 按[Contract-Constrained Freeze Gate 方案](ACTOR_B_CONSTRAINED_FREEZE_PLAN.md)完成 20 图 pilot 和 60 图完整 forced-choice replay。Pilot：5/5 原失败修复，20/20 parse、20/20 工具序列保持，15 个合法对照的 verdict 保持 10/15（66.7%）。完整回放：60/60 parse，5/5 原失败修复；原合法 verdict 保持 37/55（67.3%），变化 18 条（17 fake→real、1 real→fake）；工具序列、STOP 前历史、非 verdict STOP 字段均 60/60 保持。1 条精确 likelihood tie 使用预先记录的规则保留原合法 verdict。最终 replay SHA-256 `ff410c84cb94c9a093b48e8edde06b6f0ab9d88428f184cba041654bd3261488`，runtime SHA-256 `223b4f69d29e60f4d016583f3004bd4dbfcd40630ab04f0d9bc2aabe86949a0f`。当前不冻结，不据此启动 SFT；需要决定是否仅对 5 条非法 STOP 做强制选择并保留原合法输出。第一次全量运行因 6 位舍入造成并列、第二次发现精确并列而中止；两次部分结果保留在远端，第三次全量完成。用户已获知 GPU 空闲可关卡。
+
+用户选择“只修复 5 条非法 STOP”。在不新增推理的情况下，从完整评分结果派生最小策略输出：55 条本来合法的 STOP 原文原 verdict 保持；5 条非法 STOP 使用原先冻结模型的 forced-choice 结果。独立评价 60/60 parse、5/5 失败修复、55/55 合法 verdict 保持、60/60 工具序列保持、60/60 STOP 前历史和其他 STOP 字段保持；freeze gate 通过，决策 `ACTOR_B0_C_FREEZE`。派生 replay SHA-256 `89fbe915fdf32505b20da820a50236c2a2238fc3fa72ab0e4bce06447464f130`，metrics SHA-256 `5bc26a596ee48e4014b97de2398038165ffa606dbcff4f8e2e1e5fc9d97dda14`。未训练 SFT，未重跑 detector、crop 或工具。详见[最终报告](../experiments/actor_b/ACTOR_B_CONSTRAINED_FREEZE_REPORT.md)。
 
 接收[Contract-Constrained Freeze Gate 新方案](ACTOR_B_CONSTRAINED_FREEZE_PLAN.md)，明确先验证仅约束 `STOP.final_verdict` 的工程路径，上一轮 `ACTOR_B1_SFT_REQUIRED` 暂缓执行。保留原始 60 图轨迹与 frozen 输入，建立独立回放程序、15 条确定性成功对照、CPU 结构与 tokenizer 预检及评价脚本；不重跑检测器、工具或图块。原轨迹 SHA-256 `276715a5ebd42bc9a7c3b27d5d18f6c5550145d1be9f3ba2bf873f7b0767cec9`，工具输入 SHA-256 `94e0b02b7d582057cac32ea8c416f348c9b60ee3854594216c3c7d562a51b919`。60/60 结构预检通过，60/60 tokenizer 边界及 2 条多模态 processor 上下文通过，34 项本地测试通过。未解决：GPU pilot 和完整回放尚未运行，控制组 verdict 能否保持、能否冻结 Actor 均未知；待用户开卡后先运行 pilot。
 
