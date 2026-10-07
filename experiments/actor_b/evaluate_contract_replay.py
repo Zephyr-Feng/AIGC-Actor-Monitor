@@ -95,7 +95,7 @@ def main() -> None:
 - Tool sequence preserved: {metrics['tool_sequence_preservation_count']}/{metrics['records']}
 - Pre-STOP steps and all non-verdict STOP fields: exact preservation confirmed.
 
-{'Pilot gate pass: ' + str(metrics['pilot_gate_pass']) if args.mode == 'pilot' else 'Freeze gate pass: ' + str(metrics['freeze_gate_pass'])}
+{'Pilot technical gate pass: ' + str(metrics['pilot_technical_gate_pass']) if args.mode == 'pilot' else 'Freeze gate pass: ' + str(metrics['freeze_gate_pass'])}
 
 This report checks only the STOP output contract and preservation. It does not judge forensic accuracy or repair evidence attribution.
 """
