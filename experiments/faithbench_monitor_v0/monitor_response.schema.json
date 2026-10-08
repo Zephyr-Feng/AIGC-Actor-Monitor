@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aigc:offline-monitor:dev-v0",
+  "title": "Offline forensic Monitor development response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "decision",
+    "checks",
+    "findings",
+    "uncertainties"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNASSESSABLE"
+      ]
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attribution_error",
+        "unsupported_synthesis",
+        "conflict_omission",
+        "evidence_insufficiency",
+        "premature_stop",
+        "unnecessary_continuation",
+        "verdict_inconsistency",
+        "verdict_supported",
+        "stop_justified",
+        "call_justified"
+      ],
+      "properties": {
+        "attribution_error": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "unsupported_synthesis": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "conflict_omission": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "evidence_insufficiency": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "premature_stop": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "unnecessary_continuation": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "verdict_inconsistency": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "verdict_supported": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "stop_justified": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        },
+        "call_justified": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessable",
+            "not_applicable"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "failure_type",
+          "assessment",
+          "explanation",
+          "evidence_refs"
+        ],
+        "properties": {
+          "failure_type": {
+            "enum": [
+              "attribution_error",
+              "unsupported_synthesis",
+              "conflict_omission",
+              "evidence_insufficiency",
+              "premature_stop",
+              "unnecessary_continuation",
+              "verdict_inconsistency"
+            ]
+          },
+          "assessment": {
+            "enum": [
+              "violated",
+              "unassessable"
+            ]
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "pointer",
+                "quote"
+              ],
+              "properties": {
+                "pointer": {
+                  "type": "string",
+                  "pattern": "^/"
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

@@ -4,6 +4,8 @@
 
 ## 当前状态（2026-10-08）
 
+- **FaithBench开发与离线Monitor无卡准备完成。** 用户授权后复用锁定盲化输入，生成827条CALL前缀、80条原始终态（20图×4条件）、8个说明性开发例；silver预审标签和后处理投影单独保存，当前CALL结果与未来步骤不进入请求。完成七类中文规范、Monitor prompt/Schema与引用/状态解析入口，907输入来源hash/时间边界检查通过，新增8项测试及全仓库51项通过。代码/文档可归档，逐样本与资产留本地且Git忽略。没有实际Monitor推理，未读取74个预留组或身份映射；人工确认0，B0-D gate仍INCONCLUSIVE，暂不追加Actor SFT。见[开发入口](../experiments/faithbench_monitor_v0/README.md)、[阶段报告](../experiments/faithbench_monitor_v0/PREPARATION_REPORT.md)。下一步确认8例文字技术检查的模型/口径后再开卡，独立效能评价另议。
+
 - **B0-D Agent 辅助预审已完成80/80轨迹、827/827 CALL并独立锁定。** 按[新方案](../experiments/actor_b/actor_b0_d/audit_assist/AGENT_AUDIT_PLAN.md)先锁定调用前审核，再审完整轨迹，最后配对。原人工标签文件SHA保持不变，真实人工确认0；当前gate仍为`ACTOR_B0_D_INCONCLUSIVE`。CALL预审812 appropriate、2 reasonable_but_redundant、13 inappropriate；均为模型提议。人审材料为80轨迹全量及243条去重CALL（P0=13、P1=212、P2=18）。TOOL-RENAME全部CALL置信medium，严格高置信P2没有候选，四条件P2覆盖例外已向研究者提问，当前保持原门槛；RENAME首次选择通过P1全量覆盖。[预审报告](../experiments/actor_b/actor_b0_d/audit_assist/AGENT_AUDIT_REPORT.md)、[人审指南](../experiments/actor_b/actor_b0_d/audit_assist/HUMAN_REVIEW_GUIDE.md)。本轮不需要GPU，未解盲、未启动SFT或Monitor。
 
 - **Actor-B0-D 三个 GPU 条件和四条件自动评价均已完成；人工审计等待中。** PROBE-MASK、PROBE-DELAY、TOOL-RENAME 各 60/60，GPU 已释放。当前决策 `ACTOR_B0_D_INCONCLUSIVE`，原因是方案规定的 20 图 × 4 条件人审（80 行）及 827 条工具选择审计尚未开始；自动指标不能替代人审。诊断类别固定为 EASY 12、PROBE 困难代理 12、工具方向冲突 16、弱证据 10、困难可解 10；历史 PROBE 错误图重叠为 0，74 个 Monitor 预留来源组未触碰。完整数值、限制和审计入口见[B0-D 报告与说明](../experiments/actor_b/actor_b0_d/README.md)。
@@ -37,6 +39,8 @@
 | 存储 | 旧实例曾清理至约 2.8 GB 可用并建议扩容；克隆后空间必须重新核验。 | [存储审计](../experiments/storage_audit/STORAGE_AUDIT_REPORT.md) |
 
 ## 2026-10-08 维护记录
+
+研究者授权“直接进行工作”，完成[FaithBench与离线Monitor无卡准备](../experiments/faithbench_monitor_v0/PREPARATION_REPORT.md)。复用已有盲化轨迹与SHA锁、Actor JSON提取器及审计读写/核验函数，核对Mini FaithBench、GLEAN及Vectara文本FaithBench适用差异；后者仓库许可为CC BY-NC-SA 4.0，未引入外部数据/代码。使用experimental-design技能核对相关重复/来源组评估边界并记录原始论文来源。生成80终态和827前缀、8开发例，私有manifest SHA-256 `5359eb808e00f5d21447434720c3a0d5b8a74045470717d38811a76fbdd44e6e`；28个来源hash与登记产物hash、全部输入白名单和过去步骤检查通过。4条非法原始终态保留，投影不进入输入。新增8项针对性测试，全仓库51项通过；虚构响应1/1入口校验通过，无语义效能评价。silver预审与case索引/资产/请求被Git忽略，人工标签/锁未改。未解决：真实Monitor模型/输入模态与评价口径、独立标签与正式来源组划分；尚未推理/训练/解盲，用户当前不用开卡。
 
 研究者询问是否可进入下一环节。核对主方案Phase II FaithBench与Phase III离线Monitor、现成Mini FaithBench实现后，形成[下一阶段入口建议](FAITHBENCH_NEXT_STAGE_ENTRY.md)：可先无卡整理标注规范、开发案例和离线Monitor协议；现有Agent提议作为开发标签，不充作独立ground truth。74个Monitor预留来源组不动，正式小样/划分/模型/标签依据和实验条件待确认。没有启动新实验、训练或在线干预，也未把B0-D正式gate改为通过。
 

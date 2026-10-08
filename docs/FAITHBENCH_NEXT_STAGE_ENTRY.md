@@ -1,6 +1,6 @@
 # 下一阶段入口：FaithBench与离线Monitor准备
 
-日期：2026-10-08。状态：研究路线建议，待研究者确认具体执行范围；当前可进行无卡准备，未启动正式实验。依据主方案Phase II/III及B0-D模型审计判断，暂不追加Actor SFT。正式B0-D gate仍为`ACTOR_B0_D_INCONCLUSIVE`，未冒充人工确认或证据忠实度冻结通过。
+日期：2026-10-08。状态：研究者已授权并完成下述无卡准备，产出见[开发协议与入口](../experiments/faithbench_monitor_v0/README.md)及[阶段报告](../experiments/faithbench_monitor_v0/PREPARATION_REPORT.md)；真实Monitor推理及正式实验尚未启动。依据主方案Phase II/III及B0-D模型审计判断，暂不追加Actor SFT。正式B0-D gate仍为`ACTOR_B0_D_INCONCLUSIVE`，未冒充人工确认或证据忠实度冻结通过。
 
 ## 推荐顺序
 
