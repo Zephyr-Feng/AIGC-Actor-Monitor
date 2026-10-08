@@ -14,3 +14,12 @@
 /evaluation/tool_selection_audit.csv
 /evaluation/audit_packet.jsonl
 /evaluation/human_audit.jsonl
+
+# Agent proposals, source mappings and per-record human review stay private.
+/audit_assist/*.json
+/audit_assist/*.jsonl
+/audit_assist/*.csv
+/audit_assist/work/
+/audit_assist/review_packets/
+/audit_assist/INPUT_VALIDATION.md
+/audit_assist/PAIRED_CONDITION_ANALYSIS.md

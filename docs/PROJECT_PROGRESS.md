@@ -2,7 +2,9 @@
 
 > 新对话先读本页、仓库根目录 `AGENTS.md` 和[项目主方案](Actor_Monitor_MVP_Protocol.md)。[文档导航](README.md)区分现行方案与历史材料；详细过程和旧版进度见[2026-10-06 压缩前归档](archive/PROJECT_PROGRESS_20261006_precompact.md)。
 
-## 当前状态（2026-10-07）
+## 当前状态（2026-10-08）
+
+- **B0-D Agent 辅助预审已完成80/80轨迹、827/827 CALL并独立锁定。** 按[新方案](../experiments/actor_b/actor_b0_d/audit_assist/AGENT_AUDIT_PLAN.md)先锁定调用前审核，再审完整轨迹，最后配对。原人工标签文件SHA保持不变，真实人工确认0；当前gate仍为`ACTOR_B0_D_INCONCLUSIVE`。CALL预审812 appropriate、2 reasonable_but_redundant、13 inappropriate；均为模型提议。人审材料为80轨迹全量及243条去重CALL（P0=13、P1=212、P2=18）。TOOL-RENAME全部CALL置信medium，严格高置信P2没有候选，四条件P2覆盖例外已向研究者提问，当前保持原门槛；RENAME首次选择通过P1全量覆盖。[预审报告](../experiments/actor_b/actor_b0_d/audit_assist/AGENT_AUDIT_REPORT.md)、[人审指南](../experiments/actor_b/actor_b0_d/audit_assist/HUMAN_REVIEW_GUIDE.md)。本轮不需要GPU，未解盲、未启动SFT或Monitor。
 
 - **Actor-B0-D 三个 GPU 条件和四条件自动评价均已完成；人工审计等待中。** PROBE-MASK、PROBE-DELAY、TOOL-RENAME 各 60/60，GPU 已释放。当前决策 `ACTOR_B0_D_INCONCLUSIVE`，原因是方案规定的 20 图 × 4 条件人审（80 行）及 827 条工具选择审计尚未开始；自动指标不能替代人审。诊断类别固定为 EASY 12、PROBE 困难代理 12、工具方向冲突 16、弱证据 10、困难可解 10；历史 PROBE 错误图重叠为 0，74 个 Monitor 预留来源组未触碰。完整数值、限制和审计入口见[B0-D 报告与说明](../experiments/actor_b/actor_b0_d/README.md)。
 - B0-D 源码冻结于 `1c26bca4bae2bde5f94f409e4cf430fdaabd98ec`，运行器冻结时 39 项仓库测试通过；离线评价修正后全套 43 项通过。用户开卡后，当前入口 `connect.bjb1.seetacloud.com:33082` 的 B0-C prompt、模型 config、60/60 图像 hash、180/180 crops 与运行版本核验通过。PROBE-MASK 原始解析 57/60、effective 60/60；PROBE-DELAY 原始解析 52/60、effective 60/60，28 次首步 PROBE 禁止尝试已记录。三个条件均已备份且轨迹/runtime hash 与远端一致；60/60 顺序和 runner hash 核验通过。正式评价输出四条件各 60 条、80 行固定盲审模板和 827 行调用审计表。FULL/MASK/DELAY/RENAME 的有效终态分别为 60/60、60/60、60/60、59/60；RENAME 唯一无效轨迹为预算耗尽后两次请求重复工具。SFT gate 暂为 INCONCLUSIVE，等待人审。
@@ -33,6 +35,12 @@
 | SAFE 图块诊断 | 位置有描述性差异，固定阈值下真图误报仍高；未证明总体改进。 | [报告](../SAFE_patch_diagnostic/REPORT.md) |
 | PROBE 与异构工具 | PROBE 冻结 300 图表现强，但论文覆盖 FLUX/SD3、训练图逐图重叠未知；工具角色以上方当前状态为准。 | [PROBE](../experiments/probe_dinov2/REPORT.md)、[筛选](../experiments/toolbox_screening/REPORT.md) |
 | 存储 | 旧实例曾清理至约 2.8 GB 可用并建议扩容；克隆后空间必须重新核验。 | [存储审计](../experiments/storage_audit/STORAGE_AUDIT_REPORT.md) |
+
+## 2026-10-08 维护记录
+
+完成Agent辅助审计阶段。用户授权不继承聊天历史的隔离子Agent，各条件先审全部CALL前缀，写SHA锁后再审20条完整轨迹和实际图像/裁片，全部独立锁定后生成配对分析。240条实验轨迹、80条固定审计轨迹、827次调用、60/60原图和180/180源裁片匹配；输入fingerprint为`7b8f962172d9a28454895d0b120e2018b068a57b1cc4345b208d1905d9d3db70`。本地冻结工具卡已找到并SHA核验（此前“本地无tool cards”属于未定位，现已修正）。额度中断后核对已有锁，从未完成部分继续；本地自动审批曾多次超时，未把超时当实验失败或填补未审核结果。
+
+产出逐轨迹Agent标签、全827调用Agent标签、243条去重CALL人工队列、80条完整轨迹人审页面、私有配对分析、公共预审报告及人工导入/锁定入口。逐样本材料、身份映射、图像、HTML与源标签留本地且被Git忽略。真实离线浏览器验证80轨迹加载、图像显示和JavaScript正常；虚构数据验证人工理由/阅读勾选必填，以及最终unassessable判断可保留并按字段记录。未调用真实人工导入，原人工文件SHA不变。待解决：P2的RENAME空候选例外、80轨迹与243 CALL真实人工复核及争议裁决；之后才显式解盲。不能将风险子集复核声称827次独立人审，不根据预审统计作SFT决策。
 
 ## 2026-10-07 维护记录
 

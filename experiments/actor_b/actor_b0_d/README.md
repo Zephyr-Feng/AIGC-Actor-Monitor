@@ -2,7 +2,13 @@
 
 本目录按已归档的 [B0-D 方案](ACTOR_B0_D_PLAN.md)评估冻结 Actor-B0-C 的取证策略。GPU 阶段已完成，正式汇总见[报告](report/ACTOR_B0_D_REPORT.md)，当前 gate 为 ACTOR_B0_D_INCONCLUSIVE，等待方案要求的真实人工审计。诊断 manifest 与 B0-C 使用同一批 60 图，不构成独立 held-out；PROBE 类是困难代理样本，不是真实历史 PROBE 错误复现。Monitor 预留的 74 个来源组不参与本轮。
 
-## 无卡准备
+## 当前 Agent 辅助审计
+
+按[2026-10-08审计方案](audit_assist/AGENT_AUDIT_PLAN.md)进行80条轨迹与827次CALL独立预审；真实人审范围为80条轨迹全量和风险CALL子集，详见[协议修订](audit_assist/PROTOCOL_AMENDMENT.md)与[人审指南](audit_assist/HUMAN_REVIEW_GUIDE.md)。逐记录输入、Agent标签、图片、配对分析和HTML仅本地保存，不上传GitHub。未完成真实人审前维持`ACTOR_B0_D_INCONCLUSIVE`。
+
+预审已完成，见[Agent汇总报告](audit_assist/AGENT_AUDIT_REPORT.md)。离线页面位于`audit_assist/review_packets/human_review.html`，当前为80轨迹+243去重CALL；P2的RENAME空候选例外待研究者确认。真实人工标签尚未写入。
+
+## 无卡准备命令
 
 ```powershell
 python experiments/actor_b/actor_b0_d/prepare_b0_d_inputs.py
@@ -14,7 +20,7 @@ python -m pytest -q tests
 
 ## GPU 条件运行
 
-启动前必须先核对 `FROZEN_INPUTS.md` 中的模型、prompt、schema、tool cards、Evidence、缓存工具结果、运行时和 Git 版本。当前本地仓库没有 B0-C 原始 tool cards；远端读到的 card 文件只有在与已冻结的 B0-C `prompt_sha256` 完全一致时才可运行。
+启动前必须先核对 `FROZEN_INPUTS.md` 中的模型、prompt、schema、tool cards、Evidence、缓存工具结果、运行时和 Git 版本。本轮审计已找到本地冻结原始工具卡`experiments/mini_faithbench_v0/config/tool_cards.json`，SHA-256为`4bea66b6aad42ff93ed7a4ff128b5094550e81fb72f1b8452fdfb464a98867fb`；运行前仍须核对完整冻结输入。
 
 每个新条件各运行一次：
 
