@@ -40,6 +40,8 @@
 
 ## 2026-10-08 维护记录
 
+研究者要求先讨论Monitor设计。后续先确认监督目标、证据充分/STOP标准、信息范围、结构与评价对照，再选择模型并运行技术小样；此前8例同模型文字检查仅为建议，未获执行确认。现有规范/prompt/schema是可修改开发草案，不代表研究架构已定稿。本轮不启动推理或新增实验。
+
 研究者授权“直接进行工作”，完成[FaithBench与离线Monitor无卡准备](../experiments/faithbench_monitor_v0/PREPARATION_REPORT.md)。复用已有盲化轨迹与SHA锁、Actor JSON提取器及审计读写/核验函数，核对Mini FaithBench、GLEAN及Vectara文本FaithBench适用差异；后者仓库许可为CC BY-NC-SA 4.0，未引入外部数据/代码。使用experimental-design技能核对相关重复/来源组评估边界并记录原始论文来源。生成80终态和827前缀、8开发例，私有manifest SHA-256 `5359eb808e00f5d21447434720c3a0d5b8a74045470717d38811a76fbdd44e6e`；28个来源hash与登记产物hash、全部输入白名单和过去步骤检查通过。4条非法原始终态保留，投影不进入输入。新增8项针对性测试，全仓库51项通过；虚构响应1/1入口校验通过，无语义效能评价。silver预审与case索引/资产/请求被Git忽略，人工标签/锁未改。未解决：真实Monitor模型/输入模态与评价口径、独立标签与正式来源组划分；尚未推理/训练/解盲，用户当前不用开卡。
 
 研究者询问是否可进入下一环节。核对主方案Phase II FaithBench与Phase III离线Monitor、现成Mini FaithBench实现后，形成[下一阶段入口建议](FAITHBENCH_NEXT_STAGE_ENTRY.md)：可先无卡整理标注规范、开发案例和离线Monitor协议；现有Agent提议作为开发标签，不充作独立ground truth。74个Monitor预留来源组不动，正式小样/划分/模型/标签依据和实验条件待确认。没有启动新实验、训练或在线干预，也未把B0-D正式gate改为通过。
