@@ -2,6 +2,8 @@
 
 ## 现行入口
 
+- [2026-10-08新对话交接](SESSION_HANDOFF_20261008.md)：当前进度、Actor与标签边界、Monitor/STOP讨论建议、待决定问题和续谈开场。
+
 - [项目主方案](Actor_Monitor_MVP_Protocol.md)：Evidence-Grounded Actor–Monitor Framework；后续研究路线以此为准。
 - [项目进度与交接](PROJECT_PROGRESS.md)：已完成工作、当前限制、远端续跑位置和下一步。
 - [FaithBench与离线Monitor下一阶段入口](FAITHBENCH_NEXT_STAGE_ENTRY.md)：可先执行的无卡准备、开发标签边界与正式实验前待确认事项。

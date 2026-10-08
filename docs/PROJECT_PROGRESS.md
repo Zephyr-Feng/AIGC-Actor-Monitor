@@ -4,6 +4,8 @@
 
 ## 当前状态（2026-10-08）
 
+- **最新续谈点：Monitor的STOP条件设计。** 研究者要求先讨论设计，后定模型和实验；“现有模型跑8例”仍为未确认建议。已整理[新对话交接](SESSION_HANDOFF_20261008.md)，含已完成实验、Actor契约冻结与B0-D gate区别、预审/silver边界、STOP提议与预算定义、本地入口及待决定事项。STOP标准尚未批准或写入代码；本阶段不需开卡。
+
 - **FaithBench开发与离线Monitor无卡准备完成。** 用户授权后复用锁定盲化输入，生成827条CALL前缀、80条原始终态（20图×4条件）、8个说明性开发例；silver预审标签和后处理投影单独保存，当前CALL结果与未来步骤不进入请求。完成七类中文规范、Monitor prompt/Schema与引用/状态解析入口，907输入来源hash/时间边界检查通过，新增8项测试及全仓库51项通过。代码/文档可归档，逐样本与资产留本地且Git忽略。没有实际Monitor推理，未读取74个预留组或身份映射；人工确认0，B0-D gate仍INCONCLUSIVE，暂不追加Actor SFT。见[开发入口](../experiments/faithbench_monitor_v0/README.md)、[阶段报告](../experiments/faithbench_monitor_v0/PREPARATION_REPORT.md)。下一步确认8例文字技术检查的模型/口径后再开卡，独立效能评价另议。
 
 - **B0-D Agent 辅助预审已完成80/80轨迹、827/827 CALL并独立锁定。** 按[新方案](../experiments/actor_b/actor_b0_d/audit_assist/AGENT_AUDIT_PLAN.md)先锁定调用前审核，再审完整轨迹，最后配对。原人工标签文件SHA保持不变，真实人工确认0；当前gate仍为`ACTOR_B0_D_INCONCLUSIVE`。CALL预审812 appropriate、2 reasonable_but_redundant、13 inappropriate；均为模型提议。人审材料为80轨迹全量及243条去重CALL（P0=13、P1=212、P2=18）。TOOL-RENAME全部CALL置信medium，严格高置信P2没有候选，四条件P2覆盖例外已向研究者提问，当前保持原门槛；RENAME首次选择通过P1全量覆盖。[预审报告](../experiments/actor_b/actor_b0_d/audit_assist/AGENT_AUDIT_REPORT.md)、[人审指南](../experiments/actor_b/actor_b0_d/audit_assist/HUMAN_REVIEW_GUIDE.md)。本轮不需要GPU，未解盲、未启动SFT或Monitor。
@@ -39,6 +41,8 @@
 | 存储 | 旧实例曾清理至约 2.8 GB 可用并建议扩容；克隆后空间必须重新核验。 | [存储审计](../experiments/storage_audit/STORAGE_AUDIT_REPORT.md) |
 
 ## 2026-10-08 维护记录
+
+按研究者要求整理[新对话交接](SESSION_HANDOFF_20261008.md)，核对最近审计与开发报告、版本和调用预算实现。记录当前思考：分别判断证据忠实性、结论支持与停止合理性；建议区分证据支持的STOP和资源受限结束，拒绝STOP应给出缺口/引用/可执行补证据方向。局部单信号且互补工具可用时的默认补证据、两工具一致后的STOP审核、冲突处理及置信标准均仍待讨论，不冒充确认规则。预算为每图最多4次计入额度的CALL，格式重试不计、DELAY首步受阻请求也计入。当前保留Actor候选，暂不SFT，正式B0-D gate不变。仅文档整理与GitHub归档，没有新推理/训练/标签导入或测试重跑。
 
 研究者要求先讨论Monitor设计。后续先确认监督目标、证据充分/STOP标准、信息范围、结构与评价对照，再选择模型并运行技术小样；此前8例同模型文字检查仅为建议，未获执行确认。现有规范/prompt/schema是可修改开发草案，不代表研究架构已定稿。本轮不启动推理或新增实验。
 
