@@ -2,6 +2,34 @@
 /mllm-forensics-training-free/
 /server-aigc-snapshot/
 
+# Local tools, downloads, datasets, and runtime artifacts (source is kept).
+/.agents/
+/.cache/
+/.codex-build/
+/*.zip
+/SAFE_patch_diagnostic/cropped_images/
+/SAFE_patch_diagnostic/patch_output/
+/SAFE_patch_diagnostic/inspection_random10.png
+/SAFE_patch_diagnostic/baseline_file_list.txt
+/SAFE_patch_diagnostic/crop_sha256.txt
+/SAFE_patch_diagnostic/metadata.csv
+/experiments/actor0/analysis/qualitative_audit_review/contact_sheet_*.jpg
+/experiments/actor0/data/licenses/RAISE_License.pdf
+/experiments/actor0/logs/*.log
+/experiments/mini_faithbench_v0/technical_sample_v*/run.log
+/experiments/probe_dinov2/results/logs/
+/experiments/probe_evidence_v1/config/manifests/licenses/RAISE_License.pdf
+/experiments/probe_evidence_v1/results/
+/experiments/probe_evidence_v1/visual_audit/
+/experiments/toolbox_screening/logs/*.log
+/experiments/toolbox_screening/provenance/c2pa_unavailable_attempt/raw/
+/experiments/toolbox_screening/provenance/raw/
+/experiments/toolbox_screening/remote_known_hosts
+/experiments/toolbox_screening/rigid/calibration/images/
+/experiments/toolbox_screening/rigid/calibration/licenses/RAISE_License.pdf
+/experiments/toolbox_screening/vendor/
+/experiments/toolbox_screening/vendor_readme.tmp
+
 # Data, model weights, trajectories, and generated results.
 /data/
 /models/
