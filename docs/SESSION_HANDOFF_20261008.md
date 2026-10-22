@@ -1,5 +1,7 @@
 # 新对话交接：Actor现状与Monitor/STOP设计讨论
 
+> 历史交接，状态截至2026-10-08。当前已完成v1/v2的8B试做和27B无卡准备，请改读[2026-10-09交接](SESSION_HANDOFF_20261009.md)。下文保留当时讨论与未确认事项，不作为当前执行指令。
+
 更新日期：2026-10-08。工作区：`D:\Codex\AIGC`。本页整理截至本次对话的事实、判断与待讨论建议；现行主方案仍为[Evidence-Grounded Actor–Monitor Framework](Actor_Monitor_MVP_Protocol.md)。
 
 ## 1. 新对话先从这里接续

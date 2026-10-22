@@ -1,8 +1,14 @@
 # FaithBench 开发与离线 Monitor v0
 
-用户于2026-10-08授权无卡准备；本目录实现文字审核的输入适配、中文规范/提示词、输出 Schema 和引用校验。**没有模型推理、训练、正式分割或效能评价。** Actor-B0-C 保持原冻结版本，B0-D正式 gate 仍 INCONCLUSIVE。
+> 当前（2026-10-13）：[自然30组结果](independent_evaluation_v1/REPORT.md)已完成Actor/30次DeepSeek/逐例初评，找全核心10/23、可用反馈5/23、新增错误4/30。局部能力有，但本配置不能认定独立自动审核通过。GPU/API退出，研究者确认0；FULL20不重跑、不训练、不执行反馈。下方旧日期服务状态属于历史。
+
+> 2026-10-10：按持续用卡自主授权完成七轮实验及复审，尚未采用默认。当前18203实例服务PID1503健康、无runner；G完整接口8/8，H来源6/6但语义不稳定，第八轮尚未实现/启动。接续先读[最新交接](../../docs/SESSION_HANDOFF_20261010.md)、[阶段总结](pilot_v3/ITERATION_REVIEW_20261010.md)与[最新进度](../../docs/PROJECT_PROGRESS.md)。下列v2结束/待人审状态是旧阶段记录；仍不SFT、不执行Actor反馈，人工gold0、74预留来源组未读。
+
+用户于2026-10-08授权初始无卡准备；本目录实现文字审核的输入适配、中文规范/提示词、输出 Schema 和引用校验。8例Monitor v1/v2冻结8B及27B单次推理均已完成，27B完整接口6/8、语义待人审，服务退出、显存0 MiB，可关卡；现行入口见[pilot_v2](pilot_v2/README.md)、[27B报告](pilot_v2/RUN_REPORT_27B_20261009.md)和[新对话交接](../../docs/SESSION_HANDOFF_20261009.md)。Actor-B0-C保持冻结，B0-D正式gate仍INCONCLUSIVE；未训练、正式分割或独立效能评价。
 
 ## 文件与运行
+
+以下入口说明初始开发包；接续8例任务使用v2的`private/pilot_v2_locked`，不重新运行准备器。
 
 - [标注规范](ANNOTATION_GUIDELINES.md)：七类问题、引用、时间边界、争议标签。
 - [Monitor prompt](monitor_prompt.md)、[输出 Schema](monitor_response.schema.json)、[协议与解析](monitor_protocol.py)。

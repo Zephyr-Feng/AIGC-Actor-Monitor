@@ -1,0 +1,9 @@
+# 第十轮跨平台准备修正，未改变实验条件
+
+2026-10-10。第十轮v1仅准备输入，远端启动检查发现manifest SHA不一致后停止，未推理、无runner或启动记录。旧本地round10_inputs、远端round10_inputs及失败日志/清单保留。
+
+只读比较确认所有8份输入文件规范化换行后SHA相同；差异为本地Windows文本写入CRLF、远端LF，及artifact_hashes按目录枚举顺序写入。此前差异检查中的local_sha256曾使用read_text规范化换行，真正原文件SHA是b845e665d6114198779beddfcae5b2981126f116a288dc425c394802135a74fc；更正另存round10_line_endings_verified.json，不覆盖原检查。
+
+新prepare_reasoned_portable.py按UTF-8字节直接写入LF，JSON键及artifact文件名排序；新目录round10_portable_inputs。6fixture、关系定义、中文理由契约、seed42顺序、原模型/采样/运行器不变。输入仍由已批准的R9材料两端独立派生。两端原始manifest和逐文件SHA必须一致才启动，不以语义等价放宽冻结条件。
+
+只上传新增准备代码和本说明两文件，没有内部来源文本或目标。旧被冻结reasoned_control.py/计划/输入不修改；新manifest增加准备实现及本文的hash。此为准备实现修复，不算模型结果或能力改善。

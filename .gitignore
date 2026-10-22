@@ -3,7 +3,10 @@
 /server-aigc-snapshot/
 
 # Local tools, downloads, datasets, and runtime artifacts (source is kept).
-/.agents/
+/.agents/*
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/research-loop/
 /.cache/
 /.codex-build/
 /*.zip
@@ -38,6 +41,7 @@
 /runs/
 /artifacts/
 *.jsonl
+!/docs/research_loop/experiments.jsonl
 *.pt
 *.pth
 *.safetensors

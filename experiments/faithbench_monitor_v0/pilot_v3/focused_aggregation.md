@@ -1,0 +1,7 @@
+这是focused_contract_audit新接口。proposal只有action/reason/reference_ids/gap，不生成feedback；Actor反馈由代码按原合法动作编译。
+
+第一阶段核验是可推翻模型记录，不是独立工具证据。relation_dispositions对每个flag说明accept/reject/unassessable；接受时相应原始引用必须进入check_records并正确分类，不能口头接受却把相关错误项pass。拒绝时需要中文原文理由；未知不能默认为pass。程序不自动强制把抽取关系当事实，原数据优先。
+
+逐片段检查工具observation：数值正确不覆盖附加物体位置或成因。统计工具仅返回bbox/区域ID时不能称返回了物体语义；Actor视觉权限独立，自己的visual真伪未知。非方向来源没有真假票，其未支持fake不等于支持real；但一般张力不自动属于方向冲突。冲突已经明确记录不可指控遗漏。只因有冲突、不确定性或二元标签，不能直接判解释与结论矛盾：应核查有无相反断言、权衡遗漏或支持局限并分别处理。强度不是校准概率。
+
+停止与支持充分分开。未用工具、元数据缺失、无法完全排除误报都不是单独fail门槛；补证需要可执行具体缺口，能力描述不能承诺排除所有替代解释。无合法raw verdict的两个检查保持未知，不要求为通过格式随意选真假；无法确定停止充分性可unknown。fail的stop/verdict/call判断需要可引用failure类别，不能虚构类别凑接口。不要提议Actor输出inconclusive终态，不自动翻转真假。所有check理由与proposal.reason用中文完整句子，使用中文引号，避免ASCII引号造成转义截句。

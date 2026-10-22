@@ -1,0 +1,11 @@
+# 第三轮：原子定位有收益，来源方向与动作关联仍失败
+
+D `atomic_typed_audit`8/8终结，实际14次模型调用（两个首次CALL无工具来源声明，核验阶段显式跳过并保留unknown，未当通过）；5/8完整接口。两个REVISE带非空gap失败，另一个终态UA检查同时ALLOW失败。单份检查记录解决重复findings/checks书写不一致，但不能解决所有动作关联或语义。
+
+合计518.4802秒，输入172,904/输出18,922tokens，仍比单阶段更贵。13份原/中间产物备份hash一致，responses SHA 4bf6e1c11dd07b9c65245e665d6532639aecef8e444b511d00c7fd109e8ec8b5。
+
+细审发现：terminal_0005正确指出门牌号并非统计工具返回，terminal_0001正确指出过曝天空/方尖碑/云层被归为工具observation。两例接口失败，但语义定位比前轮具体。正常terminal_0061和两个首次CALL恢复合理允许，视觉权限不再被误伤。非法raw verdict两检查未知是代码保证，不算新语义能力。
+
+仍不能采用：terminal_0002 source.direction明确fake却被“可能”措辞合理化，所有检查通过并ALLOW，严重漏判；假冲突未稳定识别，terminal_0041仍以张力合理化非方向冲突；预算0 CALL反馈要求可输出inconclusive，违反冻结Actor二元终态。格式稳定与定位若干细节不足以证明整体验证改善。
+
+方法反思：开放模型不应反复重猜已知显式角色/预算契约。第四轮E用实际evidence_type/signal与来源direction做静态核验，剩余语义仍由模型判断；动作/gap联合Schema，继续原v2拒绝门槛。先8例回归，再12个按固定哈希选出的未送本轮Monitor开发终态作A/E配对。不声称未见图像/来源组或独立准确率，保持人工gold0/无SFT/无Actor执行/74预留组未读。
